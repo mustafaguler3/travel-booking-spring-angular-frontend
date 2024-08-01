@@ -1,0 +1,33 @@
+<nav class="navbar p-4 text-uppercase">
+  <div class="navbar-brand">
+    <a routerLink="/home">
+      M-Travel
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <a href="#" routerLink="/home">Home</a>
+    <a href="#">Hotels</a>
+    <a href="#">Flights</a>
+    <a href="#">About</a>
+  </div>
+  <div class="navbar-search">
+    <input type="text" placeholder="Search..." />
+    <button (click)="onSearch()">
+      <i class="fas fa-search"></i>
+  </button>
+  </div>
+  <div class="navbar-user" *ngIf="currentUser; else loggedOut">
+    <p class="text-white">{{ currentUser.username }}</p>
+    <img [src]="getProfilePictureUrl()" alt="User Avatar" class="avatar" (click)="toggleDropdown()" />
+    <div class="dropdown" *ngIf="dropdownOpen">
+      <a href="#">Profile</a>
+      <a (click)="logout()">Logout</a>
+    </div>
+  </div>
+  <ng-template #loggedOut>
+    <div class="auth-buttons">
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    </div>
+  </ng-template>
+</nav>

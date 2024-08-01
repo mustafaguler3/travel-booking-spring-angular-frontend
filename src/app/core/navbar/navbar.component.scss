@@ -1,0 +1,120 @@
+$main-color: #8B3EEA;
+$white-color: #ffffff;
+$black-color: #2B2540;
+$black-color-opacity: #2b2540c4;
+$paragraph-color: #818090;
+$bg-color: #F3F6FD;
+$transition: .4s all ease-in-out;
+
+
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: $main-color;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin-bottom: 100px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbar-brand a {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  outline: none;
+  width: 200px; /* Gerekirse genişliği ayarlayın */
+}
+
+.navbar-search button {
+  border: none;
+  background: transparent;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.navbar-search button i {
+  color: #ffffff; /* İkon rengi */
+}
+.navbar-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.dropdown a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
+.auth-buttons a {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-buttons a:hover {
+  background-color: white;
+  color: #6200ea;
+}

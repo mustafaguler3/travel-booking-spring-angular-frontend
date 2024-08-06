@@ -20,11 +20,11 @@ $transition: .4s all ease-in-out;
 }
 
 .banner_one_text h1 {
-    color: var(--white-color);
+    color: $white-color;
 }
 
 .banner_one_text h3 {
-    color: var(--white-color);
+    color: $white-color;
     padding-top: 13px;
 }
 html,
@@ -1910,6 +1910,16 @@ section {
       display: inline-grid;
       align-items: center;
   }
+  #common_banner {
+    background-image: url("/src/assets/img/");
+    padding: 200px 0 130px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0 100px 0;
+}
+section {
+    position: relative;
+}
 
   .main_header_arae {
       position: inherit;
@@ -1917,9 +1927,6 @@ section {
       z-index: 9999;
   }
 
-  #common_banner {
-      padding: 100px 0 100px 0;
-  }
 
   .news_two_content h2 {
       font-size: 24px;

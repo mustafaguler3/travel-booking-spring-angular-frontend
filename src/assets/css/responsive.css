@@ -1,0 +1,1800 @@
+@media (min-width: 1400px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1440px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .flight_categories_search .nav-tabs {
+        border-bottom: none;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .flight_categories_search {
+        position: inherit;
+    }
+
+    .flight_Search_boxed input {
+        font-size: 18px;
+        width: 70%;
+    }
+
+    .dropdown_passenger_area button {
+        font-size: 18px;
+    }
+
+    .banner_four_text h1 {
+        font-size: 60px;
+        font-weight: 500;
+        padding-top: 13px;
+        line-height: 70px;
+    }
+
+    .banner_four_text h3 {
+        padding-top: 10px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .banner_four_img {
+        width: 42%;
+    }
+
+    .banner_four_text {
+        padding-right: 200px;
+    }
+
+    .banner_bootom_four {
+        padding-top: 100px;
+    }
+
+    .banner_five_text h1 {
+        font-size: 82px;
+        line-height: 102px;
+    }
+
+    .benefit_list {
+        display: block;
+    }
+
+    .about_item_one::after {
+        position: absolute;
+        top: 71px;
+        left: 33px;
+        height: 100%;
+        content: " ";
+    }
+
+    .amazing_end_bottom .amazing_tour_box .amazing_tour_box_content .rating_outof i{
+        font-size: 10px;
+    }
+
+    .amazing_end_bottom .amazing_tour_box .amazing_tour_box_content .amazing_tour_content h5 {
+        color: var(--white-color);
+        font-size: 12px;
+    }
+
+    .banner_seven_text h1 {
+        font-size: 70px;
+        line-height: 100px;
+    }
+
+    #home_seven_banner {
+        padding: 120px 0px 300px 0px;
+    }
+
+    .countre_seven_item {
+        padding: 74px 26px;
+        gap: 8px;
+    }
+    .countre_seven_item h3 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+
+    .news_admin ::before{
+        height: 0px;
+        }
+
+        .home_seven_news_content h3 a {
+            font-size: 20px;
+        }
+        .padding_img{
+            margin-bottom: -20px;
+        }
+
+        .banner_nine_text h1 {
+            font-size: 163px;
+        }
+
+        .subcribe_form_area {
+            padding: 100px 119px 100px 30px;
+        }
+
+        .theme_search_form_two{
+            width: 100%;
+            margin: auto;
+        }
+
+        .banner_ten_text h1 {
+            font-size: 40px;
+            line-height: 55px;
+        }
+
+        .banner_ten_slider_item {
+            width: 100%;
+            margin: auto;
+        }
+        .question_ten_wrapper {
+            padding: 30px 0;
+        }
+
+        .banner_eleven_text h1 {
+            font-size: 70px;
+            line-height: 96px;
+        }
+        .slider-slide-btn .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            top: 64%;
+            left: 30%;
+        }
+        .slider-slide-btn .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            top: 64%;
+            right: 30%;
+        }
+
+        .banner_thirteen_text h1 {
+            font-size: 120px;
+            left: 17%;
+        }
+
+        .news_card_thirteen_top {
+            top: -71px;
+            right: 0px;
+        }
+
+        .banner_fourteen_text h1 span::after {
+            right: 15%;
+            bottom: 24px;
+        }
+}
+
+@media (max-width: 1199px) {
+    .flight_show_down_wrapper {
+        display: inherit;
+    }
+
+    .flex_widht_less {
+        width: 68%;
+        padding-left: 0px;
+    }
+
+    .flight_refund_policy {
+        padding-top: 16px;
+    }
+
+    .room_book_item {
+        display: inherit;
+    }
+
+    .room_book_img img {
+        width: 100%;
+    }
+
+    .room_booking_right_side {
+        padding: 15px 25px 25px 25px;
+    }
+
+    .theme_nav_tab_item .nav-tabs .nav-link {
+        margin-bottom: 0;
+        background: 0 0;
+        border: 1px solid var(--main-color);
+        color: var(--black-color);
+        padding: 6px 20px;
+        border-radius: 5px;
+        margin-right: 14px;
+    }
+
+    .banner_one_text h1 {
+        font-size: 50px;
+    }
+
+    .tab_destinations_conntent h3 {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 150px;
+    }
+
+    .video_play_area img {
+        height: 50vh;
+    }
+
+    .banner_five_text h1 {
+        font-size: 64px;
+        line-height: 88px;
+        padding-bottom: 16px;
+    }
+
+    .benefit_text {
+        padding-right: 0px;
+    }
+
+    #download_area {
+        padding: 100px 0;
+    }
+
+    .app_download_right {
+        padding-right: 0px;
+    }
+
+    .about_item_one {
+        margin-bottom: 30px;
+    }
+
+    .testimonial-text p {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .about_six_list_item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .home_six_about_left {
+        margin-bottom: 30px;
+    }
+
+    .theme_nav_tab_six_item .nav-tabs {
+        justify-content: center;
+    }
+
+    .theme_nav_tab_six_item .nav-tabs .nav-link {
+        margin-left: 6px;
+        padding: 8px 19px;
+    }
+
+    .home_six_section_heading h2::after {
+        left: 43%;
+    }
+
+    .benefit_list {
+        padding: 18px 0;
+    }
+
+    .hotel_img, .flight_img {
+        width: 50%;
+    }
+
+    .navbar_color_black .main-navbar .navbar .navbar-nav .nav-item a {
+        color: var(--white-color);
+    }
+    
+    .navbar_color_black .topbar-list li a {
+        color: var(--white-color);
+    }
+    
+    .navbar_color_black .topbar-list li i {
+        color: var(--white-color);
+    }
+    
+    .navbar_color_black .topbar-others-options li a {
+        color: var(--white-color);
+    }
+    
+    .navbar_color_black .topbar-others-options li .language-option button {
+        color: var(--white-color);
+    }
+    
+    #top_place .section_heading_five h2::before {
+        left: 45%;
+    }
+
+    #best_travel_section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin: 0px;
+    }
+
+    .benefit_list:last-child {
+        padding-bottom: 0;
+    }
+    .trending_destinations_wrapper {
+        justify-content: center;
+        gap: 20px;
+    }
+    .amazing_end_bottom .amazing_tour_box .amazing_tour_box_content .amazing_tour_content h5 {
+       display: none;
+    }
+
+    .banner_seven_text h1 {
+        font-size: 48px;
+        line-height: 72px;
+    }
+
+    #home_seven_banner {
+        padding: 100px 0px 270px 0px;
+    }
+
+    .banner_seven_text p {
+        width: 100%;
+    }
+    .home_seven_video_area {
+        position: absolute;
+        bottom: 34%;
+        left: 48%;
+    }
+
+    .home_eight_card_text {
+        width: 100%;
+    }
+
+    .banner_nine_text h1 {
+        font-size: 120px;
+    }
+    #home_nine_banner {
+        padding: 160px 0px 240px 0px;
+    }
+    .subcribe_form_area {
+        padding: 60px 30px 60px 30px;
+    }
+
+    .banner_ten_slider_item {
+       padding: 128px 0px 230px 0px;
+    }
+    .banner_ten_button_style.owl-theme .owl-nav {
+        bottom: 29%;
+    }
+    .banner_ten_text {
+        width: 80%;
+    }
+
+    .banner_eleven_text h1 {
+        font-size: 56px;
+        line-height: 76px;
+    }
+
+    .about_mission_vission_item {
+        display: block;
+    }
+    .about_mission_icon, .about_vission_icon {
+        width: 30%;
+    }
+    .about_experience h3 {
+        padding-right: 0px;
+    }
+    .about_mission_area{
+        margin-bottom: 16px;
+    }
+    .testimonial_eleven_text p {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .banner_twelve_text h1 {
+        font-size: 60px;
+        line-height: 100px;
+    }
+    .banner_twelve_text h1 span {
+        font-size: 60px;
+    }
+
+    #banner_twelve {
+        padding: 150px 0px 250px 0px;
+    }
+    .travel_service_content p{
+        display: none;
+    }
+    .about_twelve_list_item {
+        display: block;
+    }
+
+    /* .faq_img_twelve img{
+       position: initial;
+    } */
+    .banner_thirteen_text h1 {
+        font-size: 100px;
+    }
+
+    .discount_timer_text {
+        width: 100%;
+    }
+    .testimonial_thirteen_text p {
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    .news_card_thirteen_list li {
+        padding-right: 6px;
+    }
+
+    .banner_fourteen_text h1 {
+        font-size: 68px;
+        line-height: 90px;
+    }
+
+    .banner_fourteen_text p {
+        width: 90%;
+    }
+
+    .news_card_fourteen_list li {
+        font-size: 14px;
+    }
+
+    .news_card_ten_list li a {
+        font-size: 14px;
+    }
+
+    .news_card_ten_text h3 a{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .news_card_ten_text h3 {
+        padding-top: 10px;
+        padding-bottom: 24px;
+    }
+
+    .news_card_ten_top h3{
+        padding: 10px 20px;
+    }
+
+    .news_card_ten_top {
+        padding: 0px 0px;
+        right: 20px;
+    }
+    .news_card_fourteen_text h3 a{
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .news_card_fourteen_text h3 {
+        padding-top: 10px;
+        padding-bottom: 24px;
+    }
+
+    .news_card_fourteen_top h3{
+        padding: 10px 20px;
+    }
+
+    .news_card_fourteen_top {
+        padding: 0px 0px;
+        right: 20px;
+    }
+
+    .hotel_booking_content .discount_tab {
+        right: 0px;
+        top: -55px;
+    }
+}
+
+@media (max-width: 992px) {
+    .theme_search_form_tabbtn .nav-tabs {
+        border-bottom: none;
+        justify-content: center;
+    }
+
+    .theme_search_form_tabbtn .nav-item {
+        margin-bottom: 20px;
+    }
+
+    .bus_seat_left_side {
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .side_map_wrapper {
+        display: none;
+    }
+
+    .cruise_item_inner_content {
+        padding: 15px 20px 22px 23px;
+    }
+
+    .top_details_four_item {
+        display: none;
+    }
+
+    .theme_nav_tab_four_item {
+        padding-bottom: 30px;
+    }
+
+    .theme_nav_tab_six_item {
+        padding-bottom: 30px;
+    }
+
+    .four_banner_bottom_item {
+        margin-bottom: 30px;
+    }
+
+    .vendor_img {
+        display: none;
+    }
+
+    .about_us_right {
+        padding-top: 60px;
+    }
+
+    .about_offer_banner {
+        padding-bottom: 30px;
+    }
+
+    .about_service_boxed {
+        margin-bottom: 30px;
+    }
+
+    .footer_link_area {
+        padding-bottom: 30px;
+    }
+
+    #home_one_banner {
+        padding: 275px 0 280px 0;
+    }
+
+    .topbar-list li:first-child {
+        display: none;
+    }
+
+    #footer_area {
+        padding: 70px 0px 40px 0;
+    }
+
+    .offer_area_box {
+        margin-bottom: 30px;
+    }
+
+    .theme_nav_tab_item .nav-tabs .nav-link {
+        margin-bottom: 10px;
+    }
+
+    .cat_form {
+        padding-top: 30px;
+    }
+
+    .flight_Search_boxed {
+        margin-bottom: 30px;
+    }
+
+    .imagination_boxed {
+        padding-top: 30px;
+    }
+
+    .contact_boxed {
+        margin-bottom: 30px;
+    }
+
+    .news_area_top_right {
+        padding-top: 30px;
+    }
+
+    .recent_news_img {
+        width: auto;
+    }
+
+    .flight_multis_area_wrapper {
+        display: inherit;
+        padding: 20px 0;
+    }
+
+    .home_client_wrpper {
+        top: 25px;
+    }
+
+    .client_two_area_bg {
+        padding: 75px 34px;
+    }
+
+    .two_client_area_left {
+        padding-left: 15px;
+    }
+
+    .home_two_client_slider {
+        padding: 0 20px;
+    }
+
+    .three_about_right {
+        padding-top: 40px;
+    }
+
+    #three_We_area .owl-theme .owl-nav {
+        margin-top: 30px;
+        position: inherit;
+        right: 0;
+        top: 0;
+    }
+
+    .home_three_client_right {
+        display: none;
+    }
+
+    #home_five_banner {
+        text-align: center;
+    }
+
+    .destination_card_two {
+        margin-top: 0px;
+    }
+
+    .popular_destination_card {
+        margin-bottom: 30px;
+    }
+
+    .process_card {
+        margin-bottom: 30px;
+    }
+
+    .phone_img {
+        margin-bottom: -125px;
+        margin-top: 20px;
+    }
+
+    .banner_five_img img {
+        display: none;
+    }
+
+    .banner_five_img {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .couple_tour {
+        margin-bottom: 30px;
+    }
+
+    .five_about_img {
+        margin-top: 30px;
+    }
+
+    .theme_nav_tab_six_item .nav-tabs {
+        margin-top: 20px;
+    }
+
+    .theme_nav_tab_six {
+        padding-top: 30px;
+    }
+
+    #home_five_banner {
+        padding-top: 214px;
+        padding-bottom: 68px;
+    }
+
+    .hotel_img, .flight_img {
+        width: 30%;
+    }
+
+    #footer_area_bg {
+        padding: 70px 0px 0px 0;
+    }
+
+    #our_partners{
+        padding: 60px 0;
+    }
+
+    .why_choose_andtour_card{
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .discount_img{
+        margin-top: 30px;
+    }
+    .discount_left_area {
+        padding: 0px;
+    }
+
+    .amazing_end_bottom .amazing_tour_box .amazing_tour_box_content .rating_outof i{
+        font-size: 14px;
+    }
+
+    .amazing_end_bottom .amazing_tour_box .amazing_tour_box_content .amazing_tour_content h5 {
+        display: block;
+        color: var(--white-color);
+        font-size: 18px;
+    }
+
+    .countre_seven_item {
+        padding: 52px 18px;
+        gap: 8px;
+    }
+
+    .countre_seven_item h3 {
+        font-size: 30px;
+    }
+
+    .countre_seven_item {
+        padding: 54px 22px;
+    }
+
+    .choose_img {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .banner_eight_text h1 {
+        padding-top: 60px;
+        font-size: 52px;
+        line-height: 66px;
+    }
+
+    .home_eight_card {
+        margin-bottom: 30px;
+    }
+
+    .home_eight_service_boxed {
+        text-align: center;
+    }
+
+    .team-card {
+        margin-bottom: 30px;
+    }
+
+    #home_eight_banner {
+        height: 70vh;
+    }
+
+    .banner_nine_text p {
+        padding: 0px 0px;
+    }
+
+    .subcribe_form_area {
+        margin-top: 30px;
+        border-radius: 8px;
+    }
+
+    .tour_category_nine_card {
+        margin-bottom: 30px;
+    }
+
+    .news_card_nine_wrapper{
+        margin-bottom: 30px;
+    }
+    .banner_ten_text {
+        width: 90%;
+    }
+
+    .visa_service_card_wrapper{
+        margin-bottom: 30px;
+    }
+
+    .home_ten_about_left {
+        margin-bottom: 30px;
+    }
+    .check_form_img {
+        margin-top: 30px;
+    }
+    .question_img img {
+        display: none;
+    }
+    .banner_eleven_text{
+        text-align: center;
+    }
+    .banner_eleven_text h1 {
+        font-size: 50px;
+        line-height: 76px;
+    }
+
+    .home_eleven_video_area{display: none;}
+    .banner_eleven_text p {
+        width: 100%;
+    }
+    .home_ten_about_right{
+        margin-top: 30px;
+    }
+    .about_mission_icon, .about_vission_icon {
+        width: 15%;
+    }
+    .home_eleven_service_boxed {
+        text-align: center;
+    }
+    .section_heading_eight {
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .section_heading_eight h2::after {
+        position: absolute;
+        content: " ";
+        background-color: var(--main-color);
+        height: 2px;
+        width: 80px;
+        bottom: 0;
+        left: 45%;
+    }
+
+    .gallery_eleven_boxed_area {
+       display: block;
+    }
+    .gallery_eleven_boxed_wrapper{
+        display: flex;
+        gap: 30px;
+    }
+
+    .news_card_eleven_wrapper{
+        margin-bottom: 30px;
+    }
+
+    .travel_service_content p{
+        display: block;
+    }
+    .travael_serevice_twelve_wrapper {
+        margin-bottom: 30px;
+    }
+    .home_twelve_about_right{
+        margin-top: 30px;
+    }
+    .about_twelve_list_item {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+    }
+    .faq_img_twelve img{
+        position: initial;
+     }
+
+     .certification_twelve_wrapper {
+        margin-bottom: 30px;
+    }
+
+    .news_card_twelve_wrapper{
+        margin-bottom: 30px;
+    }
+
+    .section_heading_twelve h2::before {
+        left: 44%;
+    }
+
+    #home_ten_team_area {
+        padding: 100px 0;
+    }
+    .banner_thirteen_text h1 {
+        position: initial;
+        font-size: 90px;
+        line-height: 120px;
+    }
+    .banner_thirteen_text h3 {
+        margin-bottom: 0;
+    }
+    .section_heading_thirteen h2::after {
+        left: 36%;
+    }
+    .destination_card_thirteen {
+        margin-bottom: 30px;
+    }
+    .discount_timer_text h2{
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .discount_timer_text p {
+        width: 100%;
+    }
+
+    .counter_thirteen_wrapper {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .counter_thirteen_area {
+        width: 30%;
+        border-right: none;
+        margin-bottom: 30px;
+    }
+
+    .news_card_thirteen {
+        margin-bottom: 30px;
+    }
+    .banner_fourteen_text h1 {
+        font-size: 60px;
+        line-height: 80px;
+    }
+    .banner_fourteen_text h1 span::after {
+        width: 300px;
+    }
+
+    .country_card_box {
+        margin-bottom: 30px;
+    }
+
+    .home_fourteen_about_right{
+        margin-bottom: 30px;
+    }
+    .special_offer_fourteen_wrapper {
+        margin-bottom: 30px;
+    }
+
+    .news_card_ten_list li a {
+        font-size: 16px;
+    }
+
+    .hotel_booking_content .discount_tab {
+        right: 9px;
+        top: -30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cruise_content_bottom_wrapper {
+        display: inherit;
+        padding-top: 13px;
+    }
+
+    .cruise_content_bottom_right {
+        padding-top: 20px;
+    }
+
+    .section_heading_left h2 {
+        padding-bottom: 5px;
+        font-size: 30px;
+    }
+
+    .button_style_top_left.owl-theme .owl-nav {
+        margin-top: 28px;
+        position: initial;
+    }
+
+    .banner_four_text {
+        padding-right: 0px;
+    }
+
+    #home_four_banner {
+        padding: 110px 0;
+    }
+
+    .banner_four_img {
+        display: none;
+    }
+
+    #home_three_banner {
+        padding: 190px 0 200px 0;
+    }
+
+    .banner_area_three h2 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .partner_area_left {
+        padding: 0 25px;
+    }
+
+    .banner_two_slider_item {
+        padding: 155px 0 155px 0;
+    }
+
+    .banner_two_text h1 {
+        font-size: 80px;
+        padding-top: 8px;
+    }
+
+    .banner_two_text h2 {
+        padding-top: 15px;
+        font-size: 26px;
+    }
+
+    .topbar-area {
+        display: none;
+    }
+
+    .room_booking_right_side {
+        display: inherit;
+    }
+
+    .room_person_select {
+        padding-left: 0px;
+        padding-top: 15px;
+    }
+
+    .flight_search_items {
+        display: inherit;
+    }
+
+    .common_author_form {
+        padding: 50px 0px 0px 0px;
+    }
+
+    .comment_area_boxed {
+        display: initial;
+    }
+
+    .comment_img {
+        width: 100%;
+    }
+
+    .comment_text {
+        padding-left: 0;
+        padding-top: 20px;
+        padding-bottom: 24px;
+    }
+
+    .counter_item {
+        border-bottom: 1px solid #e9e9e9;
+        border-right: none;
+    }
+
+    #consultation_area {
+        padding: 100px 0 175px 0;
+    }
+
+    .multi_city_form {
+        margin-bottom: 30px;
+        border-bottom: 2px solid #8b3eea;
+    }
+
+    .range_plan {
+        display: none;
+    }
+
+    .flight_categories_search {
+        position: initial;
+    }
+
+    .theme_search_form_tabbtn .nav-tabs {
+        justify-content: center;
+    }
+
+    .copyright_right {
+        text-align: center;
+    }
+
+    .copyright_left {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    .heading_left_area h2 span {
+        display: initial;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .heading_left_area {
+        text-align: center;
+    }
+
+    .banner_one_text h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    #home_one_banner {
+        padding: 160px 0 155px 0;
+    }
+
+    .section_heading_center h2 {
+        padding-bottom: 11px;
+        font-size: 30px;
+    }
+
+    #theme_search_form {
+        margin-top: 50px;
+    }
+    #theme_search_form_eleven {
+        margin-top: 50px;
+    }
+
+    .tour_details_heading_wrapper {
+        display: inherit;
+    }
+
+    .tour_details_top_heading_right {
+        padding-top: 20px;
+    }
+
+    .toru_details_top_bottom_item {
+        display: inline-grid;
+        align-items: center;
+    }
+
+    .main_header_arae {
+        position: inherit;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    #common_banner {
+        padding: 100px 0 100px 0;
+    }
+
+    .news_two_content h2 {
+        font-size: 24px;
+        line-height: 38px;
+    }
+
+    .news_area_sidebar_area {
+        padding-top: 60px;
+    }
+
+    .news_sidebar_content {
+        padding-bottom: 25px;
+    }
+
+    #home_five_banner {
+        padding-top: 72px;
+    }
+
+    #Nearby_destination .button_style_top_left.owl-theme .owl-nav {
+        top: -27px;
+    }
+
+    .best_travel_img {
+        display: none;
+    }
+
+    .banner_five_text h1 {
+        font-size: 60px;
+        line-height: 83px;
+        padding-bottom: 16px;
+    }
+
+    .section_heading_five h2 {
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .section_heading_five h5 {
+        padding-bottom: 10px;
+    }
+
+    .home_six_service_img {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .home_six_section_heading h2 {
+        font-size: 30px;
+        line-height: 44px;
+    }
+
+    .home_six_section_heading h5 {
+        margin-bottom: 8px;
+    }
+    .phone_img {
+      display: none;
+    }
+
+    .partner_logo{
+        text-align: center;
+    }
+
+    .hotel_img, .flight_img {
+        width: 45%;
+    }
+
+    #Nearby_destination .button_style_top_left.owl-theme .owl-nav {
+        margin-top: 25px;
+        position: initial;
+       
+    }
+
+    .section_heading_seven h2 {
+        font-size: 30px;
+    }
+
+    .banner_seven_text h1 {
+        font-size: 30px;
+        line-height: 50px;
+    }
+
+   
+    #home_seven_banner {
+        padding: 100px 0px 162px 0px;
+    }
+
+    .discount_left_area h2 {
+        font-size: 30px;
+        line-height: 42px;
+        padding-bottom: 8px;
+    }
+
+    .countre_seven_item {
+        padding: 30px 22px;
+    }
+
+    .home_seven_video_area {
+        position: absolute;
+        bottom: 23%;
+        left: 48%;
+    }
+
+    .banner_eight_text h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .banner_eight_text p {
+        color: var(--black-color);
+        width: 100%;
+        margin: auto;
+    }
+
+    .section_heading_eight h2 {
+        font-size: 30px;
+    }
+    .section_heading_eight h5 {
+        padding-bottom: 10px;
+    }
+
+    #home_eight_banner {
+        height: 60vh;
+    }
+
+    .banner_nine_text h1 {
+        font-size: 90px;
+        line-height: 114px;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .news_card_nine_heading h3 {
+       font-size: 20px;
+    }
+
+    .banner_ten_slider_item {
+        padding: 128px 0px 150px 0px;
+    }
+
+    .banner_ten_button_style.owl-theme .owl-nav {
+        bottom: 17%;
+        left: 45%;
+    }
+
+    .check_form_img {
+        display: none;
+    }
+    #check_form_area {
+       padding-top: 40px;
+    }
+
+    .question_ten_text h2{
+        font-size: 30px;
+    }
+
+    .home_ten_section_heading h2{
+        font-size: 30px;
+        line-height: 44px;
+    }
+    .check_form_head {
+        width: 100%;
+    }
+
+    .about_ten_list_item {
+        display: block;
+    }
+    .banner_eleven_text h1 {
+        font-size: 36px;
+        line-height: 60px;
+    }
+    #home_eleven_banner {
+        padding: 100px 0px 101px 0px;
+    }
+    .about_mission_icon, .about_vission_icon {
+        width: 30%;
+    }
+
+    .gallery_eleven_boxed_wrapper{
+        display: block;
+    }
+    .testimonial_eleven_text p {
+        font-size: 16px;
+        line-height: 32px;
+    }
+    .slider-slide-btn .owl-carousel .owl-nav button.owl-prev {
+        position: absolute;
+        top: 64%;
+        left: 24%;
+    }
+    .slider-slide-btn .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        top: 64%;
+        right: 25%;
+    }
+    .banner_twelve_text h1 {
+        font-size: 36px;
+        line-height: 70px;
+    }
+    .banner_twelve_text h1 span{
+        font-size: 36px;
+    }
+
+    #banner_twelve {
+        padding: 120px 0px 120px 0px;
+    }
+    .about_twelve_list_item {
+        display: block;
+    }
+
+    .section_heading_twelve h2{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .banner_thirteen_text h1 {
+        font-size: 56px;
+        line-height: 90px;
+    }
+    #home_thirteen_banner {
+        padding: 131px 0px 140px 0px;
+    }
+
+    .section_heading_thirteen h2{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .section_heading_thirteen h2::after {
+        left: 30%;
+    }
+
+    .discount_timer_text h2 {
+        line-height: 46px;
+        padding: 12px 0;
+    }
+    .counter_thirteen_area {
+        width: 50%;
+    }
+
+    .testimonial_thirteen_text p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    .banner_fourteen_text h1 {
+        font-size: 42px;
+        line-height: 58px;
+    }
+
+    .banner_fourteen_text p {
+        width: 100%;
+    }
+
+    .banner_fourteen_text h1 span::after {
+        width: 180px;
+        right: 26%;
+        bottom: 19px;
+    }
+
+    #home_fourteen_banner {
+        padding: 120px 0px 120px 0px;
+    }
+
+    .about_fourteen_right_img {
+        margin-bottom: 30px;
+    }
+
+    .testimonial-text p{
+        font-size: 16px;
+    }
+
+    .home_twelve_section_heading h2 {
+        padding-bottom: 8px;
+        line-height: 44px;
+        font-size: 30px;
+    }
+
+    .home_twelve_section_heading h5 {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cruise_content_top_wrapper {
+        display: inherit;
+    }
+
+    .cruise_content_top_right {
+        padding-top: 10px;
+    }
+
+    .cruise_content_middel_wrapper {
+        display: inherit;
+    }
+
+    .cruise_content_middel_right {
+        padding-top: 12px;
+    }
+
+    .theme_nav_tab_four_item .nav-tabs {
+        justify-content: center;
+    }
+
+    .theme_nav_tab_six_item .nav-tabs {
+        justify-content: center;
+    }
+
+    .arrow_style.owl-carousel .owl-nav button.owl-next,
+    .arrow_style.owl-carousel .owl-nav button.owl-prev {
+        position: inherit;
+        margin-top: 30px;
+    }
+
+    .about_three_flex {
+        display: inherit;
+        justify-content: space-between;
+        padding-top: 30px;
+    }
+
+    .about_counter_item {
+        margin-bottom: 30px;
+    }
+
+    .arrow_style.owl-theme .owl-nav {
+        margin-top: 0px;
+        position: inherit;
+        width: 100%;
+    }
+
+    .verified_area {
+        display: none;
+    }
+
+    .local_counter_area {
+        display: inherit;
+    }
+
+    .local_counter_box {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+
+    .home_two_button a {
+        margin-right: 10px;
+    }
+
+    .banner_two_text h1 {
+        font-size: 65px;
+    }
+
+    .room_booking_heading h3 {
+        width: auto;
+    }
+
+    .flight_search_left {
+        display: inherit;
+        padding: 0;
+        text-align: center;
+    }
+
+    .flight_search_middel {
+        display: inherit;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .flight_search_destination h6 {
+        padding-top: 10px;
+        margin: 0 auto;
+        padding-bottom: 15px;
+    }
+
+    .flight_search_destination {
+        padding-left: 0;
+    }
+
+    .flight_right_arrow {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    .download_pdf_area {
+        display: inherit;
+    }
+
+    .downloads_pdf_button {
+        padding-top: 20px;
+    }
+
+    .phone_tuch_area {
+        display: inherit;
+    }
+
+    .phone_tuch_area h3 a {
+        margin-top: 10px;
+        display: block;
+    }
+
+
+    .tour_details_top_heading h2 {
+        font-size: 28px;
+    }
+
+    .accordion_flex_area {
+        display: inherit;
+    }
+
+    .theme_search_form_tabbtn .nav-item {
+        margin-right: 10px;
+    }
+
+    .theme_search_form_tabbtn .nav-tabs .nav-link {
+        padding: 5px 8px;
+        font-size: 16px;
+    }
+
+    .theme_search_form_tabbtn {
+        margin-bottom: 15px;
+    }
+
+    .flight_categories_search .nav-tabs .nav-link {
+        padding: 0 7px;
+    }
+
+    .theme_search_form_tabbtn .nav-tabs .nav-link i {
+        padding-right: 5px;
+        font-size: 14px;
+    }
+
+    .cta_left {
+        display: inherit;
+    }
+
+    .cta_content {
+        padding-left: 0px;
+    }
+
+    .cta_icon {
+        width: 35%;
+        padding-bottom: 20px;
+    }
+
+    .footer_first_area {
+        padding-bottom: 30px;
+    }
+
+    .section_padding_top {
+        padding: 60px 0 0 0;
+    }
+
+    .destinations_big_offer h1 {
+        color: var(--white-color);
+        font-size: 80px;
+        line-height: 70px;
+        padding-bottom: 0;
+    }
+
+    .destinations_content_inner h2 {
+        color: var(--white-color);
+        padding-bottom: 12px;
+        font-size: 26px;
+    }
+
+    .destinations_big_offer h6 {
+        color: var(--white-color);
+        line-height: 37px;
+        padding-top: 0px;
+    }
+
+    .destinations_content_inner {
+        width: 100%;
+        text-align: center;
+    }
+
+    .destinations_big_offer {
+        justify-content: center;
+    }
+
+    .tour_details_top_bottom {
+        display: inherit;
+    }
+
+    .toru_details_top_bottom_item {
+        display: inherit;
+    }
+
+    .banner_five_text h1 {
+        font-size: 50px;
+        line-height: 68px;
+    }
+
+    .phone_img {
+        margin-bottom: -64px;
+        margin-top: 20px;
+    }
+
+    .home_six_about_right .home_six_section_heading h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .section_heading_five h2::after,
+    #five_about_area .section_heading_five h2::after,
+    #download_area .section_heading_five h2::after,
+    #best_travel_section .section_heading_five h2::after {
+        position: absolute;
+        content: " ";
+    }
+    .about_six_list_item {
+        display: block;
+    }
+
+    .couple_tour h2, .group_tour h2 {
+        font-size: 28px;
+        padding-bottom: 12px;
+    }
+
+    .group_tour p {
+        padding-top: 6px;
+    }
+
+    .banner_nine_text h1 {
+        font-size: 60px;
+        line-height: 114px;
+        font-weight: bold;
+        padding: 0px 0;
+    }
+
+    #home_nine_banner {
+        padding: 80px 0px 80px 0px;
+    }
+
+    .banner_nine_text h3 {
+        font-size: 20px;
+    }
+
+    .banner_ten_text h1 {
+        font-size: 28px;
+        line-height: 48px;
+    }
+
+    .banner_eleven_text h1 {
+        font-size: 30px;
+        line-height: 52px;
+    }
+
+    .banner_fourteen_text h1 span::after {
+       display: none;
+    }
+.tour_category_fourteen_card{
+    margin-bottom: 30px;
+}
+
+}
+
+@media (max-width: 480px) {
+    .banner_four_text h1 {
+        font-size: 42px;
+        font-weight: 500;
+        padding-top: 9px;
+        line-height: 60px;
+    }
+
+    .booking_success_arae {
+        display: initial;
+        padding: 0px 0px;
+        text-align: center;
+    }
+
+    .booking_success_text {
+        padding-left: 0px;
+        padding-top: 20px
+    }
+
+    .room_fasa_area ul {
+        display: inherit;
+        padding-top: 0px;
+    }
+
+    .room_fasa_area ul li {
+        padding-right: 0px;
+        padding-bottom: 8px;
+    }
+
+    .recent_news_item {
+        display: block;
+    }
+
+    .recent_news_img {
+        width: 100%;
+    }
+
+    .recent_news_text {
+        padding-left: 0;
+        padding-top: 10px;
+    }
+
+    .theme_nav_tab_item .nav-tabs .nav-link {
+        padding: 4px 12px;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .d-none-phone {
+        display: none;
+    }
+
+    .date_flex_area {
+        display: inherit;
+        justify-content: space-between;
+    }
+
+    .banner_five_text h1 {
+        font-size: 38px;
+        line-height: 58px;
+    }
+
+    .theme_nav_tab_six_item .nav-tabs .nav-link {
+        margin-bottom: 8px;
+    }
+
+    .about_six_about_author {
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .home_seven_video_area {
+        left: 48%;
+    }
+
+    .banner_eight_text h1 {
+        font-size: 30px;
+        line-height: 43px;
+        padding-bottom: 8px;
+    }
+
+    .banner_nine_text h1 {
+        font-size: 42px;
+        line-height: 80px;
+        font-weight: bold;
+        padding: 0px 0;
+    }
+    .slider-slide-btn .owl-carousel .owl-nav button.owl-prev {
+        position: absolute;
+        top: 68%;
+        left: 18%;
+    }
+    .slider-slide-btn .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        top: 68%;
+        right: 19%;
+    }
+
+    .banner_twelve_text h1 {
+        font-size: 30px;
+        line-height: 70px;
+    }
+    .banner_twelve_text h1 span{
+        font-size: 30px;
+    }
+
+    #banner_twelve {
+        padding: 80px 0px 80px 0px;
+    }
+    .banner_thirteen_text h1 {
+        font-size: 44px;
+        line-height: 68px;
+    }    
+
+    .counter_thirteen_area {
+        width: 100%;
+    }
+
+    .watch_story_area_wrapper h1 {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 60px;
+        color: var(--white-color);
+        width: 60%;
+        text-align: end;
+    }
+
+    .watch_story_area_wrapper h1 span::before {
+        right: 158px;
+    }
+
+    .banner_fourteen_text h1 {
+        font-size: 36px;
+        line-height: 48px;
+    }
+
+}
+
+@media (max-width: 361px) {}

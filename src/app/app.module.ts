@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './core/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http"
 import { CoreModule } from './core/core.module';
@@ -11,6 +10,11 @@ import { FeatureModule } from './feature/feature.module';
 import { RouterModule } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { SharedModule } from './shared/shared.module';
+import { ToastModule } from 'primeng/toast';
+import { ToastService } from './shared/services/toast.service';
+import { MessageService } from 'primeng/api';
+import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
 @NgModule({
   declarations: [
     AppComponent
@@ -20,12 +24,15 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    SharedModule,
     CoreModule,
     AuthModule,
     FeatureModule,
-    RouterModule
+    RouterModule,
+    ToastModule
   ],
-  providers: [{provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true}],
+  providers: [
+    ToastService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

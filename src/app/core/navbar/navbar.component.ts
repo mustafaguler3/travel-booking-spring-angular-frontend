@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit{
         this.currentUser = user ? this.authService.getCurrentUserValue() : null
       })
       this.currentUser = this.authService.getCurrentUserValue()
-      console.log(this.currentUser.firstName)
   }
   
   getProfilePictureUrl(): string {

@@ -1,0 +1,121 @@
+$main-color: #8B3EEA;
+$white-color: #ffffff;
+$black-color: #2B2540;
+$black-color-opacity: #2b2540c4;
+$paragraph-color: #818090;
+$bg-color: #F3F6FD;
+$transition: .4s all ease-in-out;
+
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.3s ease-in-out 0.1s;
+    outline: 0 !important;
+    color: $main-color;
+}
+.footer_link_area ul li a:hover {
+    color: $main-color;
+}
+#footer_area {
+    padding: 100px 0px;
+}
+.footer_heading_area h5 {
+    border-bottom: 1px solid $main-color;
+    display: inline-flex;
+    padding-bottom: 5px;
+    font-weight: 500;
+}.footer_inquery_area {
+    padding-top: 5px;
+    border-left: 2px solid $main-color;
+    margin-top: 25px;
+    padding-left: 9px;
+}.footer_inquery_area h5 {
+    font-size: 16px;
+    font-weight: 500;
+}.footer_heading_area h5 {
+    border-bottom: 1px solid $main-color;
+    display: inline-flex;
+    padding-bottom: 5px;
+    font-weight: 500;
+}
+.footer_link_area {
+    padding-top: 20px;
+}ul {
+    padding: 0;
+    margin: 0;
+}.footer_link_area ul li {
+    padding-bottom: 15px;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+}
+.footer_link_area ul li a {
+    color: $black-color;
+    font-size: 16px;
+    font-weight: 400;
+    transition: $transition;
+}
+.footer_link_area {
+    padding-top: 20px;
+}.copyright_area {
+    background-color: $bg-color;
+    padding: 15px 0;
+}
+
+.copyright_left p {
+    color: $black-color;
+    font-size: 14px;
+    font-weight: 500;
+}
+.copyright_right {
+    text-align: right;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+img, svg {
+    vertical-align: middle;
+}
+.go-top.active {
+    top: 98%;
+    -webkit-transform: translateY(-98%);
+    transform: translateY(-98%);
+    opacity: 1;
+    visibility: visible;
+}
+.go-top {
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    right: 15px;
+    color: #fff;
+    background-color: $main-color;
+    z-index: 4;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .9s;
+    transition: .9s;
+    border-radius: 50%;
+}
+
+.go-top i {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    -webkit-transition: .6s;
+    transition: .6s;
+}.go-top i:last-child {
+    opacity: 0;
+    visibility: hidden;
+    top: 60%;
+}

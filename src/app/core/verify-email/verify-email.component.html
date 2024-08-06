@@ -1,0 +1,28 @@
+
+<div class="form-container" *ngIf="!emailSent; else successTemplate">
+    <form class="form-inline justify-content-center ms-auto my-2 py-2" [formGroup]="form" (ngSubmit)="resendVerificationEmail()" method="post">
+        <div>
+            <label for="Email">Email</label>
+            <input type="email" class="form-control" formControlName="email" name="email" id="email" placeholder="Your email address">
+    
+            <div class="text-danger" *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)">
+                <div *ngIf="f.email.errors?.required">
+                    Email is required
+                </div>
+    
+                <div *ngIf="f.email.errors?.email">
+                    Email must be valid format
+                </div>
+            </div>
+        </div>
+        <button class="btn btn_theme" [disabled]="form.invalid">Resend</button>
+    </form>
+  </div>
+
+  <ng-template #successTemplate>
+    <div class="success-message">
+      <div class="icon">&#10004;</div>
+      <h2>Başarılı!</h2>
+      <p>Doğrulama e-postası gönderildi. Lütfen e-posta kutunuzu kontrol edin.</p>
+    </div>
+  </ng-template>

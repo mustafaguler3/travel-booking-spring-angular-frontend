@@ -8,20 +8,39 @@
                       <h2>Logged in to stay in touch</h2>
                   </div>
                   <div class="common_author_form">
-                      <form [formGroup]="loginForm" id="main_author_form" (ngSubmit)="login()">
+                      <form [formGroup]="loginForm" id="main_author_form" (ngSubmit)="login()" method="post">
                           <div class="form-group">
                               <input type="email" formControlName="email" class="form-control" placeholder="Enter email">
-                          </div>
+                          
+                            <div class="text-danger" *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)">
+                                <div *ngIf="f.email.errors?.required">
+                                    Email is required
+                                </div>
+                                <div *ngIf="f.email.errors?.email">
+                                    Email must be valid format
+                                </div>
+                            </div>
+                        </div>
                           <div class="form-group">
                               <input type="password" formControlName="password" class="form-control" placeholder="Enter password">
+                              <div class="text-danger" *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+                                <div *ngIf="f.password.errors?.required">
+                                    Password is required
+                                </div>
+                                <div *ngIf="f.password.errors?.minLength">
+                                    Password must be at least 3 characters
+                                </div>
+                            </div>
+                            <a routerLink="/verify-email">Send code again</a>
                               <a href="#">Forgot password?</a>
                           </div>
                           <div class="common_form_submit">
                               <button class="btn btn_theme btn_md">Log in</button>
                           </div>
                           <div class="have_acount_area">
-                              <p>Dont have an account? <a href="#">Register now</a></p>
+                              <p>Dont have an account? <a routerLink="/register">Register now</a></p>
                           </div>
+                          <br>
                       </form>
                   </div>
               </div>

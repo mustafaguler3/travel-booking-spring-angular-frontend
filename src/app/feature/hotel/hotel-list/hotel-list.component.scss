@@ -1,0 +1,255 @@
+$main-color: #8B3EEA;
+$white-color: #ffffff;
+$black-color: #2B2540;
+$black-color-opacity: #2b2540c4;
+$paragraph-color: #818090;
+$bg-color: #F3F6FD;
+$transition: .4s all ease-in-out;
+
+
+
+.section_padding {
+    padding: 100px 0;
+}
+section {
+    position: relative;
+}
+
+.section_heading_center {
+    text-align: center;
+    padding-bottom: 30px;
+}.section_heading_center h2 {
+    position: relative;
+    padding-bottom: 15px;
+}
+h2 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.left_side_search_boxed {
+    background: #FFFFFF;
+    border: 1px solid #00000030;
+    border-radius: 6px;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}.item_searc_map_area iframe {
+    width: 100%;
+    height: 200px;
+}.name_search_form {
+    margin-top: 20px;
+    position: relative;
+}.form-control {
+    height: 55px;
+    border: 2px dashed #dddddd75;
+    padding: 10px 22px;
+    font-size: 16px;
+}.name_search_form i {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+}.left_side_search_heading h5 {
+    border-bottom: 1px solid #00000030;
+    padding-bottom: 7px;
+    font-size: 16px;
+    font-weight: 500;
+}.filter-price {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}.noUi-target {
+    background: #ebebeb;
+    border-radius: 6px;
+}
+.noUi-horizontal {
+    height: .3rem;
+}
+.noUi-target {
+    position: relative;
+    direction: ltr;
+}.noUi-base, .noUi-connects {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}.noUi-connects {
+    border-radius: 3px;
+}
+.noUi-connects {
+    overflow: hidden;
+    z-index: 0;
+}.noUi-connect {
+    background: $main-color;
+}
+.noUi-horizontal .noUi-tooltip {
+    margin-top: 13px;
+    font-size: 15px;
+}
+.apply {
+    border: none;
+    background: transparent;
+    padding: 0;
+    color: $main-color;
+    font-weight: 500;
+}
+
+.review_star {
+    padding-top: 10px;
+}.review_star .form-check {
+    margin-top: 15px;
+    margin-bottom: 0;
+}.form-check-label {
+    width: 100%;
+}
+.color_theme {
+    color: $main-color;
+}
+
+.form-check-label {
+    width: 100%;
+}.review_star {
+    padding-top: 10px;
+}
+
+.left_side_search_heading h5 {
+    border-bottom: 1px solid #00000030;
+    padding-bottom: 7px;
+    font-size: 16px;
+    font-weight: 500;
+}.tour_search_type {
+    padding-top: 10px;
+}
+
+.tour_search_type .form-check {
+    padding-top: 15px;
+}
+
+.area_flex_one {
+    display: flex;
+    justify-content: space-between;
+}
+.area_flex_one span {
+    color: $black-color;
+    font-weight: 500;
+}
+
+.area_flex_one {
+    display: flex;
+    justify-content: space-between;
+}
+.tour_search_type {
+    padding-top: 10px;
+}
+
+.theme_common_box_two {
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid #d2d2d275;
+    transition: $transition;
+    margin-bottom: 30px;
+}
+
+.theme_two_box_img {
+    position: relative;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in-out 0.1s;
+    transition: all 0.3s ease-in-out 0.1s;
+    outline: 0 !important;
+    color: $main-color;
+
+    
+}
+
+.theme_two_box_img img {
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.theme_two_box_img p i {
+    padding-right: 5px;
+}
+
+.theme_two_box_content {
+    background: #fff;
+    padding: 20px 15px;
+}
+
+.theme_two_box_content h4 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.theme_two_box_content h4 a {
+    color: $black-color;
+}
+
+.theme_two_box_content p {
+    padding: 10px 0px;
+    font-size: 14px;
+}
+.theme_two_box_content p .review_rating {
+    color: $main-color;
+}
+
+
+.theme_two_box_content p .review_count {
+    margin-left: 10px;
+}
+
+.theme_two_box_content h3 {
+    font-weight: 500;
+}
+
+.theme_two_box_content h3 span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+.pagination_area .pagination {
+    justify-content: center;
+    padding-top: 30px;
+}.pagination_area .page-item {
+    margin: 0 6px;
+}
+ul li {
+    list-style: none;
+    padding: 0;
+}
+
+.pagination_area .page-link {
+    color: $main-color;
+    border-radius: 5px;
+    padding: 2px 8px;
+    font-size: 14px;
+}
+
+.left_side_search_boxed {
+    background: #FFFFFF;
+    border: 1px solid #00000030;
+    border-radius: 6px;
+    padding: 20px 15px;
+    margin-bottom: 30px;
+}.filter-price {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}

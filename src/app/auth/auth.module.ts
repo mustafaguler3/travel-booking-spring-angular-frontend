@@ -10,7 +10,8 @@ import { LoginComponent} from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from '../core/core.module';
-
+import { ToastModule } from 'primeng/toast';
+import { FileUploadModule } from 'primeng/fileupload';
 @NgModule({
   declarations: [LoginComponent,RegisterComponent],
   imports: [
@@ -18,10 +19,10 @@ import { CoreModule } from '../core/core.module';
     AuthRoutingModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule,
     ReactiveFormsModule,
-    RouterModule
-    
+    RouterModule,
+    ToastModule,
+    FileUploadModule
   ],
   exports: [LoginComponent,RegisterComponent]
 })

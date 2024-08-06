@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Valida
 import { User } from 'src/app/shared/models/user';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastService } from 'src/app/shared/services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit{
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
-              private router: Router
+              private router: Router,
+              private toastService:ToastService
   ){
   }
 
@@ -27,6 +29,10 @@ export class LoginComponent implements OnInit{
       email: ["",[Validators.required,Validators.email]],
       password: ["",[Validators.required,Validators.minLength(3)]]
     });
+  }
+
+  get f(){
+    return this.loginForm.controls
   }
 
   login(){

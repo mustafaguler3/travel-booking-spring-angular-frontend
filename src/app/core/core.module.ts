@@ -22,8 +22,18 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardModule } from '@angular/material/card';
+import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { TestErrorComponent } from './test-error/test-error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ServerErrorComponent } from './server-error/server-error.component';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmailSentComponent } from './email-sent/email-sent.component';
 @NgModule({
-  declarations: [NavbarComponent, HomeComponent],
+  declarations: [NavbarComponent, HomeComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent,UnauthorizedComponent, ForbiddenComponent, VerifyEmailComponent, EmailSentComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -40,11 +50,15 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
-  providers:[{
+  providers:[
+    {
     provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor,multi:true
-  }],
+  },
+  {provide:HTTP_INTERCEPTORS,useClass:HttpErrorInterceptor,multi:true}],
   exports: [NavbarComponent,HomeComponent]
 })
 export class CoreModule { }

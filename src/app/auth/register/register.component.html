@@ -1,1 +1,114 @@
-<p>register works!</p>
+
+<section id="common_author_area" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="common_author_boxed">
+                    <div class="common_author_heading">
+                        <h3>Register account</h3>
+                    </div>
+                    <div class="common_author_form">
+                        <form [formGroup]="registerForm" (ngSubmit)="register()"  id="main_author_form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="text" formControlName="firstName" class="form-control" placeholder="Enter first name*">
+
+                                <div *ngIf="f.firstName.invalid && 
+                                (f.firstName.dirty || f.firstName.touched)" class="text-danger">
+                                    <div *ngIf="f.firstName.errors?.required">
+                                        First Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="lastName" class="form-control" placeholder="Enter last name*">
+
+                                <div class="text-danger" *ngIf="f.lastName.invalid && (f.lastName.dirty || f.lastName.touched)">
+                                    <div *ngIf="f.lastName.errors?.required">
+                                        Last Name is required
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" formControlName="email" class="form-control" placeholder="your email address">
+
+                                <div class="text-danger" *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)">
+                                    <div *ngIf="f.email.errors?.required">
+                                        Email is required
+                                    </div>
+
+                                    <div *ngIf="f.email.errors?.pattern">
+                                        Email is not valid.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" formControlName="username" class="form-control" placeholder="User name*">
+
+                                <div class="text-danger" *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)">
+                                    <div *ngIf="f.username.errors?.required">
+                                        Username is required
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="file" 
+                                (change)="onFileSelect($event)" 
+                                class="form-control" 
+                                formControlName="profilePicture"
+                                placeholder="Profile picture*">
+
+                                <div class="text-danger" 
+                                *ngIf="f.profilePicture.invalid && (f.profilePicture.dirty || f.profilePicture.touched)">
+                                    <div *ngIf="f.profilePicture.errors?.required">
+                                        Profile image is required
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group">
+                                <input type="password" formControlName="password" class="form-control" placeholder="Password">
+
+                                <div class="text-danger" *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+                                    <div *ngIf="f.password.errors?.required">
+                                        Password is required
+                                    </div>
+                                    
+                                    <div *ngIf="f.password.errors?.minLength">
+                                        Password must be at least 3 characters long
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input id="confirmPassword" type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm your password">
+
+                                <div class="text-danger" *ngIf="f.confirmPassword.invalid && (f.confirmPassword.dirty || f.confirmPassword.touched)">
+                                    <div *ngIf="f.confirmPassword.errors?.required">
+                                        Confirm Password is required
+                                    </div>
+
+                                    <div *ngIf="f.confirmPassword.errors?.mustMatch">
+                                        Password must match
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="common_form_submit">
+                                <button class="btn btn_theme btn_md">Register</button>
+                            </div>
+                            <div class="have_acount_area other_author_option">
+                                <div class="line_or">
+                                    <span>or</span>
+                                </div>
+                               
+                                <p>Already have an account? <a routerLink="/login">Log in now</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

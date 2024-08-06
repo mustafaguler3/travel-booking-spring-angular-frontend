@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h4>Unauthorized error - refreshing will make the error disappear</h4>
+    <ng-container>
+        <h5>Error : {{ error.message }}</h5>
+        <p class="font-weight-bold">This error comes from the server - not angular</p>
+        <p>What to do next?</p>
+        <ol>
+            <li>Check the network tab in chrome dev tools</li>
+        </ol>
+
+        <h5>Stack trace</h5>
+        <code class="mt-5" style="background-color: wheat;">{{error.details}}</code>
+    </ng-container>
+</div>

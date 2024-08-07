@@ -10,17 +10,21 @@ import { UnauthorizedComponent } from './core/unauthorized/unauthorized.componen
 import { ForbiddenComponent } from './core/forbidden/forbidden.component';
 import { VerifyEmailComponent } from './core/verify-email/verify-email.component';
 import { EmailSentComponent } from './core/email-sent/email-sent.component';
+import { ProfileComponent } from './auth/profile/profile.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 
 
 const routes: Routes = [
   {path:"",redirectTo:"'home",pathMatch: "full"},
-  {path:"home",component: HomeComponent},
+  {path:"home",component: HomeComponent,data:{breadcrumd:"Home"}},
   {path:"hotels",component:HotelListComponent},
   {path:"server-error",component:ServerErrorComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
   {path:"forbidden",component:ForbiddenComponent},
   {path:"not-found",component:NotFoundComponent},
   {path:"email-sent",component:EmailSentComponent},
+  {path:"forgot-password",component:ForgotPasswordComponent},
+  {path:"profile",component:ProfileComponent},
   {path:"test-error",component:TestErrorComponent},
   {path:"verify-email",component:VerifyEmailComponent},
   {path:"contact",component:ContactComponent},

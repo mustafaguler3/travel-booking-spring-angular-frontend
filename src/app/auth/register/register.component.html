@@ -42,6 +42,19 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <input type="tel" formControlName="phoneNumber" class="form-control" placeholder="your phone number">
+
+                                <div class="text-danger" *ngIf="f.phoneNumber.invalid && (f.phoneNumber.dirty || f.phoneNumber.touched)">
+                                    <div *ngIf="f.phoneNumber.errors?.required">
+                                        Phone number is required
+                                    </div>
+
+                                    <div *ngIf="f.phoneNumber.errors?.pattern">
+                                        Phone number is not valid.Phone number must be 11 digits
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <input type="text" formControlName="username" class="form-control" placeholder="User name*">
 
                                 <div class="text-danger" *ngIf="f.username.invalid && (f.username.dirty || f.username.touched)">

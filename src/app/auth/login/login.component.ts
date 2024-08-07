@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit{
   loginForm: any;
   user!: User
   error = "";
+  loading = false;
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
@@ -37,15 +38,15 @@ export class LoginComponent implements OnInit{
 
   login(){
     if(this.loginForm.valid){
+      this.loading = true;
       console.log("Form Values: ", this.loginForm.value);
       this.authService.login(this.loginForm.value).subscribe({
         next: (res) => {
-          console.log(res)
+          this.loading = false;
           this.router.navigate(["/home"])
         },
         error : err => {
-          this.error = err
-          console.log(err)
+          this.loading = false;
         }
       }
       )

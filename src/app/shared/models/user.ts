@@ -8,6 +8,7 @@ export interface User {
     password: string,
     confirmPassword: string,
     profilePictureUrl: string,
+    phoneNumber: string,
     roles: Role[]
 }
 

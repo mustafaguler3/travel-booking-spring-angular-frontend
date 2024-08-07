@@ -13,6 +13,7 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:8080/api/auth';
   private fileUrl = "http://localhost:8080/api/auth/uploads"
+  private profileUrl = 'http://localhost:8080/api/user'
 
   storedUser = localStorage.getItem("currentUser");
   parsedUser = this.storedUser ? JSON.parse(this.storedUser) : null
@@ -44,7 +45,8 @@ export class AuthService {
       formData.append('profilePicture', profilePicture);
     }
 
-    return this.http.post<any>(`${this.apiUrl}/register`, formData).pipe(
+    return this.http.post<any>(`${this.apiUrl}/register`, formData)
+    .pipe(
       catchError(this.handleError.bind(this))
     );
   }
@@ -67,6 +69,10 @@ export class AuthService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     return throwError(errorMessage);
+  }
+
+  profile(): Observable<User>{
+    return this.http.get<any>(this.profileUrl + "/profile")
   }
 
   getCurrentUserValue(){

@@ -19,7 +19,7 @@
   <div class="navbar-user" *ngIf="currentUser; else loggedOut">
     <img [src]="getProfilePictureUrl()" alt="User Avatar" class="avatar" (click)="toggleDropdown()" />
     <div class="dropdown" *ngIf="dropdownOpen">
-      <a href="#">Profile</a>
+      <a routerLink="/profile">Profile</a>
       <a (click)="logout()">Logout</a>
     </div>
   </div>

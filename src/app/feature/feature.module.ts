@@ -7,20 +7,25 @@ import { ContactComponent } from './contact/contact.component';
 import { CoreModule } from "../core/core.module";
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { SectionHeaderComponent } from './section-header/section-header.component';
+import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
+
 
 @NgModule({
   declarations: [
     HotelListComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    SectionHeaderComponent
   ],
   imports: [
     CommonModule,
     CardModule,
     ButtonModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    BreadcrumbComponent,BreadcrumbItemDirective
 ],
-  exports: [HotelListComponent,FooterComponent]
+  exports: [HotelListComponent,FooterComponent,SectionHeaderComponent]
 })
 export class FeatureModule { }

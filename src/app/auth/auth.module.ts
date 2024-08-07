@@ -12,8 +12,10 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from '../core/core.module';
 import { ToastModule } from 'primeng/toast';
 import { FileUploadModule } from 'primeng/fileupload';
+import { ProfileComponent } from './profile/profile.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 @NgModule({
-  declarations: [LoginComponent,RegisterComponent],
+  declarations: [LoginComponent,RegisterComponent, ProfileComponent, ForgotPasswordComponent],
   imports: [
     CommonModule,FormsModule,
     AuthRoutingModule,
@@ -24,6 +26,6 @@ import { FileUploadModule } from 'primeng/fileupload';
     ToastModule,
     FileUploadModule
   ],
-  exports: [LoginComponent,RegisterComponent]
+  exports: [LoginComponent,RegisterComponent,ProfileComponent]
 })
 export class AuthModule { }

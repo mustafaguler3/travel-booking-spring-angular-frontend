@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,7 +14,8 @@ import { SharedModule } from './shared/shared.module';
 import { ToastModule } from 'primeng/toast';
 import { ToastService } from './shared/services/toast.service';
 import { MessageService } from 'primeng/api';
-import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,11 +27,13 @@ import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor
     HttpClientModule,
     SharedModule,
     CoreModule,
+    NgxSpinnerModule.forRoot({}),
     AuthModule,
     FeatureModule,
     RouterModule,
-    ToastModule
+    ToastModule,
   ],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     ToastService,MessageService],
   bootstrap: [AppComponent]

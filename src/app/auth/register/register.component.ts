@@ -28,6 +28,7 @@ export class RegisterComponent {
       email: ["",[Validators.required,Validators.email,Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]],
       password: ["",[Validators.required,Validators.minLength(3)]],
       profilePicture: [null,[Validators.required]],
+      phoneNumber:["",[Validators.required,Validators.pattern("^[0-9]{11}$")]],
       isEnabled: [false,[Validators.required]],
       confirmPassword:["",[Validators.required]]
     },{
@@ -48,7 +49,7 @@ export class RegisterComponent {
     this.authService.register(user, this.uploadedFile).subscribe({
       next: () => {
         this.toastService.showSuccess('Success', 'You have registered successfully. Please check your email to verify your account.');
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/login');
       },
       error: (error) => {
         this.toastService.showError('Error', `An error occurred during registration: ${error}`);

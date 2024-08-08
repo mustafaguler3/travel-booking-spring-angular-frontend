@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './core/home/home.component';
+import { HomeComponent } from './feature/home/home.component';
 import { HotelListComponent } from './feature/hotel/hotel-list/hotel-list.component';
 import { ContactComponent } from './feature/contact/contact.component';
 import { ServerErrorComponent } from './core/server-error/server-error.component';
@@ -24,7 +24,6 @@ const routes: Routes = [
   {path:"not-found",component:NotFoundComponent},
   {path:"email-sent",component:EmailSentComponent},
   {path:"forgot-password",component:ForgotPasswordComponent},
-  {path:"profile",component:ProfileComponent},
   {path:"test-error",component:TestErrorComponent},
   {path:"verify-email",component:VerifyEmailComponent},
   {path:"contact",component:ContactComponent},

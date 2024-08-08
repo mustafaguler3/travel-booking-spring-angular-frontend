@@ -14,3 +14,8 @@ Profile Screen
 
 Spinner Service
 ![alt text](image-2.png)
+
+Hotels 
+![alt text](image-6.png)
+
+![alt text](image-7.png)

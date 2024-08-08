@@ -9,22 +9,30 @@ import { Hotel } from 'src/app/shared/models/hotel';
 })
 export class HotelListComponent implements OnInit{
 
-  hotels!: Hotel[]
+  hotels: Hotel[] = []
+  errorMessage: string[] = []
 
-  constructor(private hotelService: HotelService){}
+  constructor(private hotelService: HotelService){
+    
+  }
 
   ngOnInit(): void {
-      this.getHotels()
+    this.getHotels()
+  }
+
+  getHotelImageUrl(hotelPicture: string): string {
+    return `http://localhost:8080/uploads/hotels/${hotelPicture}`;
   }
 
   getHotels(){
-    this.hotelService
-    .getHotels()
-    .subscribe(response => {
+    this.hotelService.getHotels().subscribe(
+      (response: Hotel[]) => {
+        console.log("Response => "+response)
       this.hotels = response;
     },
     err => {
-    console.log(err)
+      console.log("Error : "+err)
+      this.errorMessage.push(err)
     })
   }
 }

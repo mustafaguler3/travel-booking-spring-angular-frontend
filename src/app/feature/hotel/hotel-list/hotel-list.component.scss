@@ -145,18 +145,6 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 10px;
 }
 
-.theme_common_box_two {
-    border-radius: 11px;
-    overflow: hidden;
-    border: 1px solid #d2d2d275;
-    transition: $transition;
-    margin-bottom: 30px;
-}
-
-.theme_two_box_img {
-    position: relative;
-    overflow: hidden;
-}
 a {
     text-decoration: none;
     -webkit-transition: all 0.3s ease-in-out 0.1s;
@@ -167,28 +155,12 @@ a {
     
 }
 
-.theme_two_box_img img {
-    width: 100%;
-}
+
 img {
     max-width: 100%;
     height: auto;
 }
 
-.theme_two_box_img p i {
-    padding-right: 5px;
-}
-
-.theme_two_box_content {
-    background: #fff;
-    padding: 20px 15px;
-}
-
-.theme_two_box_content h4 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-}
 h4 {
     font-size: 20px;
     font-weight: 500;
@@ -198,31 +170,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.theme_two_box_content h4 a {
-    color: $black-color;
-}
 
-.theme_two_box_content p {
-    padding: 10px 0px;
-    font-size: 14px;
-}
-.theme_two_box_content p .review_rating {
-    color: $main-color;
-}
-
-
-.theme_two_box_content p .review_count {
-    margin-left: 10px;
-}
-
-.theme_two_box_content h3 {
-    font-weight: 500;
-}
-
-.theme_two_box_content h3 span {
-    font-weight: 400;
-    font-size: 14px;
-}
 
 
 .pagination_area .pagination {
@@ -252,4 +200,72 @@ ul li {
 }.filter-price {
     padding-top: 30px;
     padding-bottom: 50px;
+}
+
+/* Genel ayarlar */
+#explore_area .theme_common_box_two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+#explore_area .theme_two_box_img {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+#explore_area .theme_two_box_content {
+    text-align: center;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+#explore_area .theme_two_box_content h4,
+#explore_area .theme_two_box_content p,
+#explore_area .theme_two_box_content ul {
+    width: 100%;
+}
+
+#explore_area .theme_two_box_content h3 {
+    margin-top: auto;
+}
+
+/* Kartların aynı boyutta olmasını sağlamak için */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-lg-4, .col-md-6, .col-sm-6, .col-12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.theme_common_box_two {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hotel-img {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+    width: 100%;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 300;
+}
+.theme_two_box_content h3 span {
+    font-weight: 400;
+    font-size: 14px;
+}
+.theme_two_box_content h3 {
+    font-weight: 500;
 }

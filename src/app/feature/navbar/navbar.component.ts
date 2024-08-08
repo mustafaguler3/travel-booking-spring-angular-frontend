@@ -30,14 +30,13 @@ export class NavbarComponent implements OnInit{
     if (this.currentUser && this.currentUser.profilePictureUrl) {
       return this.authService.getProfilePicture(this.currentUser,"users");
     }
-    return '/assets/images/nouser.png'; // or a default avatar image path
+    return '/assets/images/nouser.png'; 
   }
   logout(){
     this.authService.logout()
     this.router.navigate(["/login"])
   }
   onSearch() {
-    // Arama işlemlerini burada uygulayın
     alert('Search button clicked!');
   }
 }

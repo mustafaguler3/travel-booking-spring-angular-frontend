@@ -13,7 +13,6 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:8080/api/auth';
   private fileUrl = "http://localhost:8080/api/auth/uploads"
-  private profileUrl = 'http://localhost:8080/api/user'
 
   storedUser = localStorage.getItem("currentUser");
   parsedUser = this.storedUser ? JSON.parse(this.storedUser) : null
@@ -72,7 +71,7 @@ export class AuthService {
   }
 
   profile(): Observable<User>{
-    return this.http.get<any>(this.profileUrl + "/profile")
+    return this.http.get<any>(this.apiUrl + "/profile")
   }
 
   getCurrentUserValue(){

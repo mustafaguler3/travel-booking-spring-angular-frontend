@@ -41,11 +41,6 @@ export class HttpErrorInterceptor implements HttpInterceptor {
         if(error.status === 401){
           this.toastService.showError(error.error,"")
 
-          const navigationExtras: NavigationExtras = {
-            state: {
-              error: error.error.message
-            }
-          }
           //this.router.navigateByUrl("/unauthorized",navigationExtras)
         }
         if(error.status === 404){

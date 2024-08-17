@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit{
 
-  currentUser!: User
+  currentUser!: any
 
   constructor(private authService: AuthService,
               private router:Router

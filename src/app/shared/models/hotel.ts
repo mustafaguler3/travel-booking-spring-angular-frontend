@@ -1,20 +1,30 @@
+import { User } from "./user"
+
 export interface Hotel {
     id:number,
     name:string,
-    images: string[],
-    amenities: string[],
+    images: any[],
+    amenities: any[],
     city: string,
     description: string,
     location: string,
     country: string,
     pricePerPerson: number,
-    rating: string,
-    totalRooms: number,
+    roomNumber: number,
     reviews: Review[]
 }
 
+export interface Amenity {
+    name:any,
+    iconUrl: any
+}
 export interface Review {
-    id?:number
-    comment: string
-    rating: string
+    id: any,
+    hotelId: any,
+    userId: any
+    publishedDate: Date
+    comment: any
+    rating: any
+    profilePicture: any,
+    username: any
 }

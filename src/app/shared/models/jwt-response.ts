@@ -1,10 +1,8 @@
 import { Role } from "./user";
 
 export interface JwtResponse {
-    token: string
-    firstName: string
-    email:string,
-    isEnabled: boolean,
-    type: string
-    role: Role[]
+    token: string;
+    userId?: string;
+    username?: string;
+    profilePictureUrl?: string;
 }

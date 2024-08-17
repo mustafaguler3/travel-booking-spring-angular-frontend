@@ -13,10 +13,5 @@ export class AppComponent implements OnInit{
   constructor(private spinner: NgxSpinnerService){}
 
   ngOnInit(): void {
-      this.spinner.show()
-
-      setTimeout(() => {
-        this.spinner.hide();
-      },5000)
   }
 }

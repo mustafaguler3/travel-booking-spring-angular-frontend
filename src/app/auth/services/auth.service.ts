@@ -4,37 +4,81 @@ import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { JwtResponse } from 'src/app/shared/models/jwt-response';
 import { User } from 'src/app/shared/models/user';
 import { jwtDecode } from "jwt-decode";
+import { MyJwtPayload } from 'src/app/shared/models/my-jwt-payload';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   
-
   private apiUrl = 'http://localhost:8080/api/auth';
   private fileUrl = "http://localhost:8080/api/auth/uploads"
 
-  storedUser = localStorage.getItem("currentUser");
-  parsedUser = this.storedUser ? JSON.parse(this.storedUser) : null
+  private currentUserSubject: BehaviorSubject<any>;
+  public currentUser: Observable<any>;
 
-  currentUserSubject = new BehaviorSubject<any>(this.parsedUser)
-  currentUser = this.currentUserSubject.asObservable();
+  constructor(private http: HttpClient) {
+    const storedUser = localStorage.getItem("currentUser");
+    this.currentUserSubject = new BehaviorSubject<any>(storedUser ? JSON.parse(storedUser) : null);
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
 
-  constructor(private http: HttpClient) {}
+  /*getCurrentUserValue(){
+    return this.currentUserSubject.value;
+  }*/
 
+  getCurrentUserValue(){
+    const currentUser = this.currentUserSubject.value;
+    console.log('Current user in getCurrentUserValue:', currentUser);
+    return {
+      token: currentUser?.token,
+      userId: currentUser?.userId,
+      username: currentUser?.username,
+      profilePictureUrl: currentUser?.profilePictureUrl
+    }
+  }
 
-  login(user: User): Observable<JwtResponse> {
+  login(user: any): Observable<JwtResponse> {
+    console.log("User => "+JSON.stringify(user))
     return this.http.post<JwtResponse>(this.apiUrl + "/login",user)
     .pipe(
       map(response => {
-      if(response.token){
-        localStorage.setItem("currentUser",JSON.stringify(response));
-        this.currentUserSubject.next(response);
+      if(response.token && response){
+        const decodedToken = jwtDecode<MyJwtPayload>(response.token)
+        const userId = decodedToken.userId;
+        const username = decodedToken.username;
+        const profilePictureUrl = decodedToken.profilePictureUrl
+
+        const currentUser = {
+          token: response.token,
+          userId: userId,
+          username: username,
+          profilePictureUrl:profilePictureUrl
+        };
+
+        // Store the current user in localStorage
+        localStorage.setItem("currentUser", JSON.stringify(currentUser));
+        this.currentUserSubject.next(currentUser)
+
+        /*localStorage.setItem("currentUser",JSON.stringify({
+          token: response.token,
+          userId,
+          username,
+          profilePictureUrl
+        }));
+
+        this.currentUserSubject.next({
+          token: response.token,
+          userId,
+          username,
+          profilePictureUrl
+        });*/
+
+        console.log('Stored user:', localStorage.getItem('currentUser'));
       }
     
       return response;  
     }))
-    
   }
 
   register(user: User,profilePicture: File): Observable<any> {
@@ -74,9 +118,7 @@ export class AuthService {
     return this.http.get<any>(this.apiUrl + "/profile")
   }
 
-  getCurrentUserValue(){
-    return this.currentUserSubject.value;
-  }
+  
 
   logout(){
     localStorage.removeItem("currentUser")

@@ -12,6 +12,7 @@ import { VerifyEmailComponent } from './core/verify-email/verify-email.component
 import { EmailSentComponent } from './core/email-sent/email-sent.component';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { HotelDetailComponent } from './feature/hotel/hotel-detail/hotel-detail.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path:"hotels",component:HotelListComponent},
   {path:"server-error",component:ServerErrorComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
+  {path:"hotel-detail/:hotelId",component:HotelDetailComponent},
   {path:"forbidden",component:ForbiddenComponent},
   {path:"not-found",component:NotFoundComponent},
   {path:"email-sent",component:EmailSentComponent},

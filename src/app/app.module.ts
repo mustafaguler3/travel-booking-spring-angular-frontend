@@ -15,6 +15,7 @@ import { ToastModule } from 'primeng/toast';
 import { ToastService } from './shared/services/toast.service';
 import { MessageService } from 'primeng/api';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptor,multi:true},
+    {provide:HTTP_INTERCEPTORS,useClass:HttpErrorInterceptor,multi:true},
+    
     ToastService,MessageService],
   bootstrap: [AppComponent]
 })

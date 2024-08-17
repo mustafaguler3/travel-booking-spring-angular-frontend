@@ -9,28 +9,29 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit{
-  currentUser!: User;
+  currentUser: any
   dropdownOpen = false;
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
+
   constructor(private authService: AuthService,
               private router: Router
   ){
   }
   ngOnInit(): void {
-      this.authService.currentUser.subscribe(user => {
-        this.currentUser = user ? this.authService.getCurrentUserValue() : null
-      })
-      this.currentUser = this.authService.getCurrentUserValue()
+    /*this.authService.currentUser.subscribe(user => {
+      this.currentUser = user ? this.authService.getCurrentUserValue() : null
+    })
+    this.currentUser = this.authService.getCurrentUserValue() */
   }
   
   getProfilePictureUrl(): string {
     if (this.currentUser && this.currentUser.profilePictureUrl) {
       return this.authService.getProfilePicture(this.currentUser,"users");
     }
-    return '/assets/images/nouser.png'; 
+    return '/assets/img/nouser.png'; 
   }
   logout(){
     this.authService.logout()

@@ -1,10 +1,13 @@
 <section id="explore_area" class="section_padding">
+    <div *ngIf="errorMessage != null">
+        <p>{{errorMessage}}</p>
+    </div>
     <div class="container">
         <!-- Section Heading -->
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="section_heading_center">
-                    <h2>{{hotels.length}} hotel found</h2>
+                    <h2>{{ hotels.length }} hotel found</h2>
                 </div>
             </div>
         </div>
@@ -260,23 +263,23 @@
             </div>
             <div class="col-lg-9">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let hotel of hotels;let index">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" *ngFor="let hotel of hotels">
                       <div class="theme_common_box_two">
                         <div class="theme_two_box_img">
-                          <a routerLink="/hotel-detail">
-                            <img class="hotel-img" [src]="getHotelImageUrl(hotel.images[0])" alt="img" />
+                          <a routerLink="/hotel-detail/{{hotel.id}}">
+                            <img class="hotel-img" [src]="hotel.images && hotel.images.length > 0 ? getHotelImageUrl(hotel.images[0]) : '/assets/img/no.png'" alt="img" />
                           </a>
                           <p><i class="fas fa-map-marker-alt"></i>{{ hotel.location }}, {{ hotel.country }}</p>
                         </div>
                         <div class="theme_two_box_content">
                           <h4>
-                            <a routerLink="/hotel-detail">{{ hotel.name }}</a>
+                            <a routerLink="/hotel-detail/{{hotel.id}}">{{ hotel.name }}</a>
                           </h4>
                           <p>
-                            <span class="review_rating">{{ hotel.rating }}</span>
-                            <span class="review_count">(1214 reviews)</span>
+                            <span class="review_rating">Rev</span>
+                            <span class="review_count">review count</span>
                           </p>
-                          <h3>{{ hotel.pricePerPerson| currency }} <span>Price starts from </span></h3>
+                          <h3>{{ hotel.pricePerPerson | currency }} <span>Price starts from </span></h3>
                         </div>
                       </div>
                     </div>

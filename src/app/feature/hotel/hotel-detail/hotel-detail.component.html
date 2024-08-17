@@ -1,0 +1,368 @@
+<section id="tour_details_main" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="tour_details_leftside_wrapper">
+                    <div class="tour_details_heading_wrapper">
+                        <div class="tour_details_top_heading">
+                            <h2>{{hotel.name}}</h2>
+                            <h5><i class="fas fa-map-marker-alt"></i>{{hotel.location}}</h5>
+                        </div>
+                        <div class="tour_details_top_heading_right" *ngIf="hotel.reviews; else noRating">
+                            <div class="all_review_star" *ngFor="let review of hotel.reviews">
+                                <h5 *ngIf="review.rating >= 4.5">Excellent</h5>
+                                <h5 *ngIf="review.rating >= 3 && review.rating < 4.5">Good</h5>
+                                <h5 *ngIf="review.rating >= 2 && review.rating < 3">Average</h5>
+                                <h5 *ngIf="review.rating < 2">Poor</h5>
+                        
+                                <div class="review_star_all">
+                                    <ng-container *ngFor="let star of [].constructor(5); let i = index">
+                                        <i class="fas" [ngClass]="i < review.rating ? 'fa-star' : 'fa-star-half-alt'"></i>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #noRating>
+                            <h3>No rating</h3>
+                        </ng-template>
+                    </div>
+                    <div class="tour_details_top_bottom">
+                        <div class="toru_details_top_bottom_item" 
+                        *ngFor="let amenity of hotel.amenities">
+                            <div class="tour_details_top_bottom_icon">
+                                <img [src]="getAmenityImage(amenity.iconUrl)" alt="{{amenity.name}}">
+                            </div>
+                            <div class="tour_details_top_bottom_text">
+                                <p>{{amenity.name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour_details_img_wrapper">
+                        <div class="card">
+                            <gallery [items]="hotelImages"></gallery>
+                          </div>
+                          
+                    </div>
+                    <div class="tour_details_boxed">
+                        <h3 class="heading_theme">Overview</h3>
+                        <div class="tour_details_boxed_inner">
+                            <p>{{hotel.description}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tour_details_boxed">
+                        <h3 class="heading_theme">Select your room</h3>
+                        <div class="room_select_area">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Book</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Enquiry</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <div class="room_booking_area">
+                                        <div class="tour_search_form">
+                                            <form action="!#">
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-md-6 col-sm-12 col-12">
+                                                        <div class="form_search_date">
+                                                            <div class="flight_Search_boxed date_flex_area">
+                                                                <div class="Journey_date">
+                                                                    <p>Check In date</p>
+                                                                    <input type="date" value="2022-05-03">
+                                                                    <span>Thursday</span>
+                                                                </div>
+                                                                <div class="Journey_date">
+                                                                    <p>Check Out date</p>
+                                                                    <input type="date" value="2022-05-05">
+                                                                    <span>Thursday</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                                        <div class="flight_Search_boxed dropdown_passenger_area">
+                                                            <p>Guests</p>
+                                                            <div class="dropdown">
+                                                                <button class="dropdown-toggle" data-toggle="dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    1 Guests
+                                                                </button>
+                                                                <div class="dropdown-menu dropdown_passenger_info" aria-labelledby="dropdownMenuButton1">
+                                                                    <div class="traveller-calulate-persons">
+                                                                        <div class="passengers">
+                                                                            <h6>Passengers</h6>
+                                                                            <div class="passengers-types">
+                                                                                <div class="passengers-type">
+                                                                                    <div class="text"><span class="count">2</span>
+                                                                                        <div class="type-label">
+                                                                                            <p>Adult</p>
+                                                                                            <span>12+
+                                                                                                yrs</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="button-set">
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-plus"></i>
+                                                                                        </button>
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-minus"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="passengers-type">
+                                                                                    <div class="text"><span class="count">0</span>
+                                                                                        <div class="type-label">
+                                                                                            <p class="fz14 mb-xs-0">
+                                                                                                Children
+                                                                                            </p><span>2
+                                                                                                - Less than 12
+                                                                                                yrs</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="button-set">
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-plus"></i>
+                                                                                        </button>
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-minus"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="passengers-type">
+                                                                                    <div class="text"><span class="count">0</span>
+                                                                                        <div class="type-label">
+                                                                                            <p class="fz14 mb-xs-0">
+                                                                                                Infant
+                                                                                            </p><span>Less
+                                                                                                than 2
+                                                                                                yrs</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="button-set">
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-plus"></i>
+                                                                                        </button>
+                                                                                        <button type="button">
+                                                                                            <i class="fas fa-minus"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <span>Adult</span>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="top_form_search_button text-right">
+                                                        <button class="btn btn_theme btn_md" type="button">Check
+                                                            availability</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                        <div class="room_book_item">
+                                            <div class="room_book_img">
+                                                <img src="assets/img/hotel/room-1.png" alt="img">
+                                            </div>
+                                            <div class="room_booking_right_side">
+                                                <div class="room_booking_heading">
+                                                    <h3><a href="room-booking.html">Culpa cupidatat laborum eiusmod
+                                                            amet</a></h3>
+                                                    <div class="room_fasa_area">
+                                                        <ul>
+                                                            <li><img src="assets/img/icon/ac.png" alt="icon">Air
+                                                                condition</li>
+                                                            <li><img src="assets/img/icon/gym.png" alt="icon">Fitness
+                                                                center</li>
+                                                        </ul>
+                                                        <ul>
+                                                            <li><img src="assets/img/icon/tv.png" alt="icon">Flat
+                                                                television</li>
+                                                            <li><img src="assets/img/icon/wifi.png" alt="icon">Free
+                                                                Wi-fi</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="room_person_select">
+                                                    <h3>$1200.00/ <sub>Per night</sub></h3>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected="">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="write_review_inner_boxed">
+                                        <form action="!#" id="news_comment_form">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-froup">
+                                                        <input type="text" class="form-control bg_input" placeholder="Enter full name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-froup">
+                                                        <input type="text" class="form-control bg_input" placeholder="Enter email address">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="form-froup">
+                                                        <textarea rows="6" placeholder="Write your comments" class="form-control bg_input"></textarea>
+                                                    </div>
+                                                    <div class="comment_form_submit">
+                                                        <button class="btn btn_theme btn_md">Enquiry</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tour_details_boxed">
+                        <h3 class="heading_theme">Hotel location</h3>
+                        <div class="map_area">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.6962663570607!2d89.56355961427838!3d22.813715829827952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff901efac79b59%3A0x5be01a1bc0dc7eba!2sAnd+IT!5e0!3m2!1sen!2sbd!4v1557901943656!5m2!1sen!2sbd"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="tour_details_right_sidebar_wrapper">
+                    <div class="tour_detail_right_sidebar">
+                        <div class="tour_details_right_boxed">
+                            <div class="tour_details_right_box_heading">
+                                <h3>Price</h3>
+                            </div>
+                            <div class="tour_package_bar_price">
+                                <h6><del>$ 35,500</del></h6>
+                                <h3>{{hotel.pricePerPerson | currency}} <sub>/Per person</sub> </h3>
+                            </div>
+
+                            <div class="tour_package_details_bar_list" >
+                                <h5>Hotel facilities</h5>
+                                <ul *ngFor="let amenity of hotel.amenities">
+                                    <li>
+                                        <i class="fa-solid fa-window-minimize"></i>{{ amenity.name }}</li>
+                                    <li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tour_detail_right_sidebar">
+                        <div class="tour_details_right_boxed">
+                            <div class="tour_details_right_box_heading">
+                                <h3>Why choose us</h3>
+                            </div>
+
+                            <div class="tour_package_details_bar_list first_child_padding_none">
+                                <ul>
+                                    <li><i class="fas fa-circle"></i>Buffet breakfast as per the Itinerary</li>
+                                    <li><i class="fas fa-circle"></i>Visit eight villages showcasing Polynesian
+                                        culture
+                                    </li>
+                                    <li><i class="fas fa-circle"></i>Complimentary Camel safari, Bonfire,</li>
+                                    <li><i class="fas fa-circle"></i>All toll tax, parking, fuel, and driver
+                                        allowances
+                                    </li>
+                                    <li><i class="fas fa-circle"></i>Comfortable and hygienic vehicle</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="write_your_review_wrapper">
+                    <div class="write_review_inner_boxed">
+                        <form [formGroup]="reviewForm" (ngSubmit)="addReview()" 
+                        id="news_comment_form" method="post">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3 class="heading_theme">Write your review</h3>
+                            <div class="star-rating">
+                                <input type="radio" id="star5"  formControlName="rating" name="rating" [value]="5"><label for="star5" title="5 stars" class="fas fa-star"></label>
+                                <input type="radio" id="star4" formControlName="rating" name="rating" [value]="4"><label for="star4" title="4 stars" class="fas fa-star"></label>
+                                <input type="radio" id="star3" formControlName="rating" name="rating" [value]="3"><label for="star3" title="3 stars" class="fas fa-star"></label>
+                                <input type="radio" id="star2" formControlName="rating" name="rating" [value]="2"><label for="star2" title="2 stars" class="fas fa-star"></label>
+                                <input type="radio" id="star1" formControlName="rating" name="rating" [value]="1"><label for="star1" title="1 star" class="fas fa-star"></label>
+
+                            </div>
+                        </div>
+
+
+                            <div class="row">
+
+                                <div class="col-lg-12">
+                                    <div class="form-froup">
+                                        <textarea rows="6" formControlName="comment" placeholder="Write your comments" class="form-control bg_input"></textarea>
+
+                                    </div>
+                                    <div class="comment_form_submit">
+                                        <button class="btn btn_theme btn_md" [disabled]="reviewForm.invalid">Post comment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Review -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="all_review_wrapper">
+                    <h3 class="heading_theme">All review</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="all_review_box" *ngFor="let review of reviews">
+                    <div class="all_review_date_area">
+                        <div class="all_review_date">
+                            <h5>{{review.publishedDate | date}}</h5>
+                        </div>
+                        <div class="all_review_star">
+                            <h5 *ngIf="review.rating === 5">Excellent</h5>
+                            <div class="review_star_all">
+                                <i class="fas fa-star" *ngIf="review.rating == 5"></i>
+                                <i class="fas fa-star" *ngIf="review.rating >= 4"></i>
+                                <i class="fas fa-star" *ngIf="review.rating >= 3"></i>
+                                <i class="fas fa-star" *ngIf="review.rating >= 2"></i>
+                                <i class="fas fa-star" *ngIf="review.rating >= 1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="all_review_text">
+                        <img src="http://localhost:8080/uploads/users/{{review.profilePicture}}" alt="img">
+                        <h4>{{review.username}}</h4>
+                        <p>" {{review.comment }}"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

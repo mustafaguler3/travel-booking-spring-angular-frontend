@@ -8,19 +8,13 @@
                             <h2>{{hotel.name}}</h2>
                             <h5><i class="fas fa-map-marker-alt"></i>{{hotel.location}}</h5>
                         </div>
-                        <div class="tour_details_top_heading_right" *ngIf="hotel.reviews; else noRating">
-                            <div class="all_review_star" *ngFor="let review of hotel.reviews">
-                                <h5 *ngIf="review.rating >= 4.5">Excellent</h5>
-                                <h5 *ngIf="review.rating >= 3 && review.rating < 4.5">Good</h5>
-                                <h5 *ngIf="review.rating >= 2 && review.rating < 3">Average</h5>
-                                <h5 *ngIf="review.rating < 2">Poor</h5>
-                        
-                                <div class="review_star_all">
-                                    <ng-container *ngFor="let star of [].constructor(5); let i = index">
-                                        <i class="fas" [ngClass]="i < review.rating ? 'fa-star' : 'fa-star-half-alt'"></i>
-                                    </ng-container>
-                                </div>
-                            </div>
+                        <div class="tour_details_top_heading_right" *ngIf="reviews; else noRating">
+                            <div class="average-rating">
+                                <ng-container *ngFor="let star of [].constructor(5); let i = index">
+                                  <i class="fas" [ngClass]="i < averageRating ? 'fa-star' : 'fa-star-half-alt'"></i>
+                                </ng-container>
+                                <span>({{ reviews.length }} reviews)</span>
+                              </div>
                         </div>
                         <ng-template #noRating>
                             <h3>No rating</h3>
@@ -40,8 +34,7 @@
                     <div class="tour_details_img_wrapper">
                         <div class="card">
                             <gallery [items]="hotelImages"></gallery>
-                          </div>
-                          
+                        </div>
                     </div>
                     <div class="tour_details_boxed">
                         <h3 class="heading_theme">Overview</h3>
@@ -339,6 +332,7 @@
                     <h3 class="heading_theme">All review</h3>
                 </div>
             </div>
+
             <div class="col-lg-4 col-md-6">
                 <div class="all_review_box" *ngFor="let review of reviews">
                     <div class="all_review_date_area">

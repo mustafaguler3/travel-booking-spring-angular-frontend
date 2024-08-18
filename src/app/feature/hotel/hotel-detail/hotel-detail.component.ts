@@ -23,6 +23,7 @@ export class HotelDetailComponent implements OnInit{
   reviews: Review[]
   currentUser: any
   userId: any
+  averageRating = 0;
 
   constructor(private hotelService: HotelService,
               private activatedRoute : ActivatedRoute,
@@ -33,6 +34,8 @@ export class HotelDetailComponent implements OnInit{
     
   }
 
+  
+
   get f(){
     return this.reviewForm.controls
   }
@@ -41,7 +44,6 @@ export class HotelDetailComponent implements OnInit{
     this.hotelId = this.activatedRoute.snapshot.paramMap.get("hotelId")
     this.getHotel()
     this.getReviewsForHotel()
-
     this.reviewForm = this.fb.group({
       comment: ["",[Validators.required]],
       rating: [null,[Validators.required]]
@@ -52,7 +54,14 @@ export class HotelDetailComponent implements OnInit{
     });
     
   }
-
+  calculateAverageRating(){
+    if(this.reviews.length === 0){
+      this.averageRating = 0;
+    }else {
+      const totalRating = this.reviews.reduce((sum,review) => sum + review.rating,0)
+      this.averageRating = totalRating / this.reviews.length;
+    }
+  }
   addReview() {
       const reviewData = {
         userId: this.userId,
@@ -95,6 +104,7 @@ export class HotelDetailComponent implements OnInit{
       next: (response) => {
         console.log("Response ->"+response)
         this.reviews = response
+        this.calculateAverageRating()
       },
       error: (err) => {
         console.log("Error in review -> "+err)

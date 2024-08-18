@@ -51,7 +51,7 @@ gallery{
 }
 
 .review_star_all i {
-    color: gold;
+    color: #8B3EEA;
     font-size: 1.2em;
     margin-right: 2px;
 }
@@ -96,7 +96,7 @@ gallery{
 
 .star-rating input[type="radio"]:checked + label,
 .star-rating input[type="radio"]:checked + label ~ label {
-    color: #6f42c1; /* Purple color for selected stars */
+    color: #8B3EEA; /* Purple color for selected stars */
 }
 
 

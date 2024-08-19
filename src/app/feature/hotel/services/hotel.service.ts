@@ -42,6 +42,9 @@ export class HotelService {
     return this.http.get<Hotel>(`${this.apiUrl}/hotels/${hotelId}`)
   }
 
+  getRoomImage(image:any): any{
+    return `http://localhost:8080/images/rooms/${image}`;
+  }
 
   getAmenityImage(image:any): any{
     return `http://localhost:8080/images${image}`;

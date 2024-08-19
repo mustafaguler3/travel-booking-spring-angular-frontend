@@ -8,6 +8,7 @@ export interface Hotel {
     city: string,
     description: string,
     location: string,
+    rooms: Room[]
     country: string,
     pricePerPerson: number,
     roomNumber: number,
@@ -27,4 +28,16 @@ export interface Review {
     rating: any
     profilePicture: any,
     username: any
+}
+
+export interface Room {
+    id:number,
+    roomType: string,
+    capasity: number,
+    pricePerNight: number,
+    roomNumber: number,
+    description: string,
+    images: any[],
+    hotelId: any,
+    amenities: Amenity[]
 }

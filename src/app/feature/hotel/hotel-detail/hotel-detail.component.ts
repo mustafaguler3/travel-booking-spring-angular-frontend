@@ -19,6 +19,7 @@ export class HotelDetailComponent implements OnInit{
   hotel!: Hotel
   hotelId: any
   hotelImages: GalleryItem[] = [];
+  rooms: any[]
 
   reviews: Review[]
   currentUser: any
@@ -94,6 +95,9 @@ export class HotelDetailComponent implements OnInit{
     return this.hotelService.getHotelImageUrl(hotelImage)
   }
 
+  getRoomImage(roomImage:any){
+    return this.hotelService.getRoomImage(roomImage)
+  }
 
   getAmenityImage(amenityImage:any){
     return this.hotelService.getAmenityImage(amenityImage)
@@ -117,6 +121,9 @@ export class HotelDetailComponent implements OnInit{
       this.hotelService.getHotel(this.hotelId).subscribe({
         next: (res) => {
           this.hotel = res
+          this.rooms = res.rooms
+          
+
           if(this.hotel.images && Array.isArray(this.hotel.images)){
             this.hotelImages = res.images.map(image => 
               new ImageItem({

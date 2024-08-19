@@ -70,7 +70,7 @@ gallery{
 .star-rating {
     display: flex;
     font-size: 24px;
-    direction: rtl; /* Ensure the direction is left-to-right */
+    direction: rtl; 
 }
 
 .star-rating input[type="radio"] {
@@ -83,34 +83,150 @@ gallery{
     transition: color 0.3s;
 }
 
-/* Hover effect - fill from left to right */
+
 .star-rating label:hover,
 .star-rating label:hover ~ label {
-    color: #6f42c1; /* Purple color */
+    color: #6f42c1; 
 }
 
-/* Checked stars - fill from left to right */
+
 .star-rating input[type="radio"]:checked ~ label {
     color: #ccc;
 }
 
 .star-rating input[type="radio"]:checked + label,
 .star-rating input[type="radio"]:checked + label ~ label {
-    color: #8B3EEA; /* Purple color for selected stars */
+    color: #8B3EEA; 
 }
 
 
-/* hotel-detail.component.css */
 
-/* Style for the star icons */
 .average-rating i {
-    font-size: 24px; /* Adjust the size of the stars */
-    color: #8B3EEA; /* Change star color to purple */
-    margin-right: 2px; /* Optional: space between stars */
+    font-size: 24px;
+    color: #8B3EEA; 
+    margin-right: 2px; 
   }
   
-  /* Optional: style for half stars if needed */
+  
   .average-rating i.fa-star-half-alt {
-    color: #8B3EEA; /* Ensure half stars are the same color */
+    color: #8B3EEA; 
+  }
+  
+
+
+  
+  .room_book_item {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+    }
+  
+    .room_book_img {
+      flex: 1;
+      margin-right: 20px;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  
+    .room_booking_right_side {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%; 
+  
+      .room_booking_heading {
+        margin-bottom: 10px; 
+  
+        h3 {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 5px;
+          
+          a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+  
+            &:hover {
+              color: #6200ea;
+            }
+          }
+        }
+  
+        .room_fasa_area {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0; 
+  
+            li {
+              display: flex;
+              align-items: center;
+              margin-right: 10px; 
+              margin-bottom: 5px;
+  
+              img {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+  
+      .room_person_select {
+        margin-top: auto; 
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+  
+        h3 {
+          font-size: 22px;
+          color: #6200ea;
+          margin-right: 15px;
+  
+          sub {
+            font-size: 16px;
+            color: #888;
+          }
+        }
+  
+        select {
+          width: 60px;
+          padding: 5px;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+          transition: border-color 0.3s ease;
+  
+          &:hover, &:focus {
+            border-color: #6200ea;
+            outline: none;
+          }
+        }
+      }
+    }
   }
   

@@ -26,5 +26,8 @@ Hotel Detail
 ![alt text](image-9.png)
 ![alt text](image-12.png)
 
+Hotel rooms
+![alt text](image-14.png) 
+
 Pagination
 ![alt text](image-13.png)

@@ -179,17 +179,18 @@ h1, h2, h3, h4, h5, h6 {
 }.pagination_area .page-item {
     margin: 0 6px;
 }
+
+.pagination_area .page-link {
+    color: var(--main-color);
+    border-radius: 5px;
+    /* padding: 2px 8px; */
+    /* font-size: 14px; */
+}
 ul li {
     list-style: none;
     padding: 0;
 }
 
-.pagination_area .page-link {
-    color: $main-color;
-    border-radius: 5px;
-    padding: 2px 8px;
-    font-size: 14px;
-}
 
 .left_side_search_boxed {
     background: #FFFFFF;
@@ -202,7 +203,7 @@ ul li {
     padding-bottom: 50px;
 }
 
-/* Genel ayarlar */
+
 #explore_area .theme_common_box_two {
     display: flex;
     flex-direction: column;
@@ -235,7 +236,7 @@ ul li {
     margin-top: auto;
 }
 
-/* Kartların aynı boyutta olmasını sağlamak için */
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -254,7 +255,7 @@ ul li {
     justify-content: space-between;
 }
 .hotel-img {
-    height: 200px; /* Adjust the height as needed */
+    height: 200px; 
     object-fit: cover;
     width: 100%;
 }

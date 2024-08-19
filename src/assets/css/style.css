@@ -11,7 +11,12 @@
     --bg-color: #F3F6FD;
     --transition: .4s all ease-in-out;
 }
-
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #8B3EEA;
+    border-color: #8B3EEA;
+}
 html,
 body {
     height: 100%;
@@ -3262,8 +3267,6 @@ section {
 .pagination_area .page-link {
     color: var(--main-color);
     border-radius: 5px;
-    padding: 2px 8px;
-    font-size: 14px;
 }
 
 .pagination_area .page-link:hover {

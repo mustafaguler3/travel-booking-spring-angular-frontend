@@ -14,10 +14,7 @@ import { GalleryModule, Gallery, GalleryItem } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReviewComponent } from './hotel/review/review.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpErrorInterceptor } from '../core/interceptors/http-error.interceptor';
-import { JwtInterceptor } from '../core/interceptors/jwt.interceptor';
-
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @NgModule({
   declarations: [
     HotelListComponent,
@@ -28,10 +25,10 @@ import { JwtInterceptor } from '../core/interceptors/jwt.interceptor';
     ReviewComponent
   ],
   imports: [
-    
     CommonModule,
     CardModule,
     ButtonModule,
+    PaginationModule.forRoot(),
     CoreModule,
     GalleryModule,
     LightboxModule,

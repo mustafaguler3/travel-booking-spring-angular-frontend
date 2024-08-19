@@ -16,7 +16,8 @@ import { ToastService } from './shared/services/toast.service';
 import { MessageService } from 'primeng/api';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 @NgModule({
   declarations: [
     AppComponent
@@ -29,10 +30,12 @@ import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor
     SharedModule,
     CoreModule,
     NgxSpinnerModule.forRoot({}),
+    PaginationModule.forRoot(),
     AuthModule,
     FeatureModule,
     RouterModule,
     ToastModule,
+    MatPaginatorModule
   ],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
   providers: [

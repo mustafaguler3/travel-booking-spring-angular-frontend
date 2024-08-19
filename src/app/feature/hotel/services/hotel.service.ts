@@ -4,6 +4,7 @@ import { Hotel, Review } from '../../../shared/models/hotel';
 import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { environment } from 'src/environments/environment.prod';
+import { Pagination } from 'src/app/shared/models/pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,17 @@ export class HotelService {
     return this.http.post(`${this.apiUrl}/hotels/${review.hotelId}/addReview`,review)
   }
 
-  getHotels() : Observable<Hotel[]>{
-    return this.http.get<Hotel[]>(this.apiUrl + "/hotels");
+  getHotels(pageNumber:any,pageSize:any) : Observable<Pagination<Hotel[]>>{
+    let params = new HttpParams()
+    
+    if (pageNumber != null && pageSize != null) {
+      params = params.set("pageNumber", pageNumber);
+      params = params.set("pageSize", pageSize.toString());
+    }
+    console.log("Params "+params.get("pageNumber"))
+    console.log("Params "+params.get("pageSize"))
+
+    return this.http.get<Pagination<Hotel[]>>(this.apiUrl + "/hotels",{params});
   }
   
   getReviews(hotelId: any):Observable<Review[]>{

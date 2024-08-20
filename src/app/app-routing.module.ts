@@ -13,6 +13,8 @@ import { EmailSentComponent } from './core/email-sent/email-sent.component';
 import { ProfileComponent } from './auth/profile/profile.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { HotelDetailComponent } from './feature/hotel/hotel-detail/hotel-detail.component';
+import { RoomDetailComponent } from './feature/room/room-detail/room-detail.component';
+import { HotelSearchComponent } from './feature/hotel/hotel-search/hotel-search.component';
 
 
 const routes: Routes = [
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path:"hotels",component:HotelListComponent},
   {path:"server-error",component:ServerErrorComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
+  {path:"hotel-search",component:HotelSearchComponent},
   {path:"hotel-detail/:hotelId",component:HotelDetailComponent},
+  {path:"hotel-detail/:hotelId/room-detail",component:RoomDetailComponent},
   {path:"forbidden",component:ForbiddenComponent},
   {path:"not-found",component:NotFoundComponent},
   {path:"email-sent",component:EmailSentComponent},

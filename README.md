@@ -20,6 +20,11 @@ Hotels
 
 ![alt text](image-7.png)
 
+Hotel Search
+![alt text](image-15.png)
+
+![alt text](image-16.png)
+
 Hotel Detail
 
 ![alt text](image-11.png)

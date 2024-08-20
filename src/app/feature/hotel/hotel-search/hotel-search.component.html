@@ -1,0 +1,81 @@
+<section id="explore_area" class="section_padding">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="section_heading_center">
+                    <h2>{{hotels.length}} hotel found</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="side_map_wrapper">
+                        
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cruise_search_result_wrapper" *ngIf="hotels.length >= 1">
+                            <div class="cruise_search_item" *ngFor="let hotel of hotels">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="cruise_item_img">
+                                            <img [src]="getHotelImage(hotel.images[0])" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8">
+                                        <div class="cruise_item_inner_content">
+                                            <div class="cruise_content_top_wrapper">
+                                                <div class="cruise_content_top_left">
+                                                    <h4>{{ hotel.name }}</h4>
+                                                    <p><i class="fas fa-map-marker-alt"></i> {{ hotel.location }} - {{ hotel.country }}</p>
+                                                </div>
+                                                <div class="cruise_content_top_right">
+                                                    <h5>4.5/5 Excellent</h5>
+                                                </div>
+                                            </div>
+                                            <div class="cruise_content_middel_wrapper">
+                                                <div class="cruise_content_middel_left">
+                                                    <h5>Deluxe room</h5>
+                                                    <p>1 extra large double bed</p>
+                                                </div>
+                                                <div class="cruise_content_middel_right">
+                                                    <p>2 nights, 1 adult</p>
+                                                </div>
+                                            </div>
+                                            <div class="cruise_content_middel_wrapper">
+                                                <div class="cruise_content_middel_left">
+                                                    <h5>Free cancellation</h5>
+                                                    <p>Cancel your booking at any time</p>
+                                                </div>
+                                                <div class="cruise_content_middel_right">
+                                                    <h3>{{ hotel.pricePerPerson | currency }} <sub>/Per person</sub></h3>
+                                                    <p>+ $20.00 tax and vat</p>
+                                                </div>
+                                            </div>
+                                            <div class="cruise_content_bottom_wrapper">
+                                                <div class="cruise_content_bottom_left">
+                                                    <ul>
+                                                        <li *ngFor="let amenity of hotel.amenities" class="amenity-item">
+                                                            {{ amenity.name }}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="cruise_content_bottom_right">
+                                                    <a routerLink="hotel-detail/{{hotel.id}}" class="btn btn_theme btn_md">Check availability</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -33,7 +33,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmailSentComponent } from './email-sent/email-sent.component';
 @NgModule({
-  declarations: [NavbarComponent, HomeComponent, TestErrorComponent, NotFoundComponent, ServerErrorComponent,UnauthorizedComponent, ForbiddenComponent, VerifyEmailComponent, EmailSentComponent],
+  declarations: [NavbarComponent,TestErrorComponent, NotFoundComponent, ServerErrorComponent,UnauthorizedComponent, ForbiddenComponent, VerifyEmailComponent, EmailSentComponent],
   imports: [
     CommonModule,
     MatButtonModule,
@@ -59,6 +59,6 @@ import { EmailSentComponent } from './email-sent/email-sent.component';
     provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor,multi:true
   },
   {provide:HTTP_INTERCEPTORS,useClass:HttpErrorInterceptor,multi:true}],
-  exports: [NavbarComponent,HomeComponent]
+  exports: [NavbarComponent]
 })
 export class CoreModule { }

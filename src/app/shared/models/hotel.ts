@@ -4,13 +4,13 @@ export interface Hotel {
     id:number,
     name:string,
     images: any[],
-    amenities: any[],
+    amenities: Amenity[],
     city: string,
     description: string,
     location: string,
     rooms: Room[]
     country: string,
-    pricePerPerson: number,
+    pricePerPerson: any,
     roomNumber: number,
     reviews: Review[]
 }

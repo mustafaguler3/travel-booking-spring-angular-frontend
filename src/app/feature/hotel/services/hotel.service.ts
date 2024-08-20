@@ -5,6 +5,7 @@ import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { environment } from 'src/environments/environment.prod';
 import { Pagination } from 'src/app/shared/models/pagination';
+import { HotelSearchParams } from '../../../shared/models/hotel-search-params';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,10 @@ export class HotelService {
 
   getHotel(hotelId: any):Observable<Hotel> {
     return this.http.get<Hotel>(`${this.apiUrl}/hotels/${hotelId}`)
+  }
+
+  searchHotels(params: HotelSearchParams) : Observable<Hotel[]>{
+    return this.http.post<Hotel[]>(this.apiUrl + "/hotels/search-hotels",params)
   }
 
   getRoomImage(image:any): any{

@@ -10,11 +10,14 @@ import { RouterModule } from '@angular/router';
 import { SectionHeaderComponent } from './section-header/section-header.component';
 import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 import { HotelDetailComponent } from './hotel/hotel-detail/hotel-detail.component';
-import { GalleryModule, Gallery, GalleryItem } from 'ng-gallery';
+import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReviewComponent } from './hotel/review/review.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { RoomDetailComponent } from './room/room-detail/room-detail.component';
+import { HotelSearchComponent } from './hotel/hotel-search/hotel-search.component';
+import { HomeComponent } from './home/home.component';
 @NgModule({
   declarations: [
     HotelListComponent,
@@ -22,7 +25,10 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     FooterComponent,
     SectionHeaderComponent,
     HotelDetailComponent,
-    ReviewComponent
+    ReviewComponent,
+    RoomDetailComponent,
+    HotelSearchComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +37,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     PaginationModule.forRoot(),
     CoreModule,
     GalleryModule,
+    FormsModule,
     LightboxModule,
     ReactiveFormsModule,
     RouterModule,

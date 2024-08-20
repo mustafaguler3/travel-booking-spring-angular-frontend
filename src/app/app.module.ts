@@ -18,6 +18,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent
@@ -25,6 +26,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,

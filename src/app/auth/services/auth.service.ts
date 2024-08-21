@@ -27,6 +27,7 @@ export class AuthService {
     return this.currentUserSubject.value;
   }*/
 
+
   getCurrentUserValue(){
     const currentUser = this.currentUserSubject.value;
     console.log('Current user in getCurrentUserValue:', currentUser);
@@ -120,6 +121,17 @@ export class AuthService {
 
   sentResetCode(email:any):Observable<any>{
     return this.http.post<any>(this.apiUrl + "/send-reset-code",{email:email})
+  }
+
+  verifyResetCode(email:any,resetCode: any){
+    let params = new HttpParams().append("email", email);
+    return this.http.post(this.apiUrl + "/verify-reset-code",resetCode,{params:params})
+  }
+
+  resetPassword(email:any,resetPassword: {newPassword:any,confirmPassword:any}){
+    let params = new HttpParams().set("email",email);
+
+    return this.http.post(this.apiUrl + "/reset-password",resetPassword,{params:params})
   }
   
 

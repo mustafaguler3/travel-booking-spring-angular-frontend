@@ -14,8 +14,9 @@ import { ToastModule } from 'primeng/toast';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ProfileComponent } from './profile/profile.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
-  declarations: [LoginComponent,RegisterComponent, ProfileComponent, ForgotPasswordComponent],
+  declarations: [LoginComponent,RegisterComponent, ProfileComponent, ForgotPasswordComponent, ResetPasswordComponent],
   imports: [
     CommonModule,FormsModule,
     AuthRoutingModule,

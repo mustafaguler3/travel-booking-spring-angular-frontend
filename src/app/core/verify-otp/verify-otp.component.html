@@ -4,22 +4,23 @@
             <div class="col-lg-8 offset-lg-2">
                 <div class="common_author_boxed">
                     <div class="common_author_heading">
-                        <h3>Verify OTP</h3>
-                        <h2>Verify your OTP</h2>
+                        <h3>Verify Code</h3>
+                        <h3 class="text-muted text-danger">{{timeLeft}}</h3>
                     </div>
                     <div class="common_author_form">
-                        <form action="#" id="main_author_form">
+                        <form [formGroup]="codeForm" id="main_author_form" (ngSubmit)="verifyResetCode()" [autofocus]="true">
                             <div class="form-group">
                                 <div class="otpCont flex spaceBetween">
-                                    <input class="otSc form-control" type="text" maxlength="1">
-                                    <input class="otSc form-control" type="text" maxlength="1">
-                                    <input class="otSc form-control" type="text" maxlength="1">
-                                    <input class="otSc form-control" type="text" maxlength="1">
-                                    <input class="otSc form-control" type="text" maxlength="1">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 0)">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 1)">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 2)">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 3)">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 4)">
+                                    <input class="otSc form-control" type="text" maxlength="1" (input)="moveFocus($event, 5)">
                                 </div>
                             </div>
                             <div class="common_form_submit">
-                                <button class="btn btn_theme btn_md">Verify OTP</button>
+                                <button class="btn btn_theme btn_md">Verify Code</button>
                             </div>
                         </form>
                     </div>

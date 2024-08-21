@@ -25,9 +25,15 @@ Hotel Search
 
 ![alt text](image-16.png)
 
-Reset Password
+Forgot Password
 ![alt text](image-18.png)
 ![alt text](image-19.png)
+Verify Code
+![alt text](image-21.png)
+Reset Password
+![alt text](image-22.png)
+![alt text](image-23.png)
+
 
 Hotel Detail
 

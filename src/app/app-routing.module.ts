@@ -16,6 +16,7 @@ import { HotelDetailComponent } from './feature/hotel/hotel-detail/hotel-detail.
 import { RoomDetailComponent } from './feature/room/room-detail/room-detail.component';
 import { HotelSearchComponent } from './feature/hotel/hotel-search/hotel-search.component';
 import { VerifyOtpComponent } from './core/verify-otp/verify-otp.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path:"email-sent",component:EmailSentComponent},
   {path:"forgot-password",component:ForgotPasswordComponent},
   {path:"test-error",component:TestErrorComponent},
+  {path:"reset-password",component: ResetPasswordComponent},
   {path:"verify-email",component:VerifyEmailComponent},
   {path:"contact",component:ContactComponent},
   {path:"auth",loadChildren: () => import("./auth/auth.module").then(m => m.AuthModule)}

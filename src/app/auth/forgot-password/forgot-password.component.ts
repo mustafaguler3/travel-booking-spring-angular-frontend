@@ -37,7 +37,7 @@ export class ForgotPasswordComponent implements OnInit{
     .subscribe({
       next: response => {
         console.log(response);
-          this.router.navigateByUrl("/verify-otp"); 
+          this.router.navigate(["/verify-otp"],{ queryParams: { email: this.resetForm.value.email } }); 
           this.toastService.showSuccess("Success", "Reset code has been sent to your email address.")
       },
       error: err => {

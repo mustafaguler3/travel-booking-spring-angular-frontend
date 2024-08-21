@@ -14,7 +14,6 @@ export class HotelSearchComponent implements OnInit{
 
   searchParams: HotelSearchParams
   hotels: any[]
-  amenities:any[]
 
   constructor(private hotelService: HotelService,
               private activatedRoute: ActivatedRoute
@@ -43,9 +42,6 @@ export class HotelSearchComponent implements OnInit{
       next: (response: Hotel[]) => {
         console.log("Res => "+ JSON.stringify(response))
         this.hotels = response
-        console.log("Amenities -> "+ this.amenities)
-
-      
       },
       error: (err) => {
         console.log("Error => " + err)

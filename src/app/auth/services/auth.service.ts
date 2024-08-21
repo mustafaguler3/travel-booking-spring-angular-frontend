@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, throwError } from 'rxjs';
 import { JwtResponse } from 'src/app/shared/models/jwt-response';
-import { User } from 'src/app/shared/models/user';
+import { SendResetCode, User } from 'src/app/shared/models/user';
 import { jwtDecode } from "jwt-decode";
 import { MyJwtPayload } from 'src/app/shared/models/my-jwt-payload';
 
@@ -118,6 +118,9 @@ export class AuthService {
     return this.http.get<any>(this.apiUrl + "/profile")
   }
 
+  sentResetCode(email:any):Observable<any>{
+    return this.http.post<any>(this.apiUrl + "/send-reset-code",{email:email})
+  }
   
 
   logout(){

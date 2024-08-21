@@ -16,3 +16,7 @@ export interface Role {
     id: number,
     roleName: string
 }
+
+export interface SendResetCode {
+    email:any
+}

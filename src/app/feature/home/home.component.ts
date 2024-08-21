@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit{
     location: '',
     checkInDate: new Date(),
     checkOutDate: new Date(),
-    adults: 1,
+    adults: 0,
     children: 0,
     infant: 0
   };

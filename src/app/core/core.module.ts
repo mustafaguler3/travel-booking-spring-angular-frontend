@@ -32,8 +32,9 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmailSentComponent } from './email-sent/email-sent.component';
+import { VerifyOtpComponent } from './verify-otp/verify-otp.component';
 @NgModule({
-  declarations: [NavbarComponent,TestErrorComponent, NotFoundComponent, ServerErrorComponent,UnauthorizedComponent, ForbiddenComponent, VerifyEmailComponent, EmailSentComponent],
+  declarations: [NavbarComponent,TestErrorComponent, NotFoundComponent, ServerErrorComponent,UnauthorizedComponent, ForbiddenComponent, VerifyEmailComponent, EmailSentComponent, VerifyOtpComponent],
   imports: [
     CommonModule,
     MatButtonModule,

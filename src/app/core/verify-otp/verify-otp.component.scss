@@ -1,0 +1,26 @@
+.otSc {
+    margin: 0;
+    margin-right: 34px;
+    border: 1px solid var(--main-color);
+    padding: 5px 0px;
+    font-size: 22px;
+    text-align: center;
+    width: 7%;
+    outline: none;
+}
+
+.btn_md {
+    padding: 12px 35px;
+    font-size: 18px;
+}
+.btn_theme {
+    color: var(--white-color);
+    background-color: var(--main-color);
+    transition: var(--transition);
+    box-shadow: none;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 0;
+    border: none;
+}

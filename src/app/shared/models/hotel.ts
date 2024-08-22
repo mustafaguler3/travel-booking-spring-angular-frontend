@@ -36,6 +36,7 @@ export interface Room {
     capasity: number,
     pricePerNight: number,
     roomNumber: number,
+    roomStatus:any
     description: string,
     images: any[],
     hotelId: any,

@@ -5,7 +5,7 @@
         <div class="tour_details_leftside_wrapper">
           <div class="tour_details_heading_wrapper">
             <div class="tour_details_top_heading">
-              <h2>{{ hotel.name }}</h2>
+              <h2>{{ hotel.name | uppercase }}</h2>
               <h5><i class="fas fa-map-marker-alt"></i>{{ hotel.location }}</h5>
             </div>
             <div
@@ -18,9 +18,7 @@
                 >
                   <i
                     class="fas"
-                    [ngClass]="
-                      i < averageRating ? 'fa-star' : 'fa-star-half-alt'
-                    "
+                    [ngClass]="i < averageRating ? 'fa-star' : 'fa fa-star-o'"
                   ></i>
                 </ng-container>
                 <span>({{ reviews.length }} reviews)</span>
@@ -99,19 +97,27 @@
                 >
                   <div class="room_booking_area">
                     <div class="tour_search_form">
-                      <form action="!#">
+                      <form [formGroup]="checkForm"  (ngSubmit)="checkRoom()" method="post">
                         <div class="row">
                           <div class="col-lg-8 col-md-6 col-sm-12 col-12">
                             <div class="form_search_date">
                               <div class="flight_Search_boxed date_flex_area">
                                 <div class="Journey_date">
                                   <p>Check In date</p>
-                                  <input type="date" value="2022-05-03" />
+                                  <input
+                                    type="date"
+                                    formControlName="checkInDate"
+                                    name="checkInDate"
+                                  />
                                   <span>Thursday</span>
                                 </div>
                                 <div class="Journey_date">
                                   <p>Check Out date</p>
-                                  <input type="date" value="2022-05-05" />
+                                  <input
+                                    type="date"
+                                    formControlName="checkOutDate"
+                                    name="checkOutDate"
+                                  />
                                   <span>Thursday</span>
                                 </div>
                               </div>
@@ -131,7 +137,10 @@
                                   data-bs-toggle="dropdown"
                                   aria-expanded="false"
                                 >
-                                  1 Guests
+                                  {{
+                                    adultCount + infantCount + childCount
+                                  }}
+                                  Guests
                                 </button>
                                 <div
                                   class="dropdown-menu dropdown_passenger_info"
@@ -139,11 +148,13 @@
                                 >
                                   <div class="traveller-calulate-persons">
                                     <div class="passengers">
-                                      <h6>Passengers</h6>
+                                      <h6>Visitors</h6>
                                       <div class="passengers-types">
                                         <div class="passengers-type">
                                           <div class="text">
-                                            <span class="count">2</span>
+                                            <span class="count">{{
+                                              adultCount
+                                            }}</span>
                                             <div class="type-label">
                                               <p>Adult</p>
                                               <span>12+ yrs</span>
@@ -151,16 +162,24 @@
                                           </div>
                                           <div class="button-set">
                                             <button type="button">
-                                              <i class="fas fa-plus"></i>
+                                              <i
+                                                class="fas fa-plus"
+                                                (click)="increaseCount('adults')"
+                                              ></i>
                                             </button>
                                             <button type="button">
-                                              <i class="fas fa-minus"></i>
+                                              <i
+                                                class="fas fa-minus"
+                                                (click)="decreaseCount('adults')"
+                                              ></i>
                                             </button>
                                           </div>
                                         </div>
                                         <div class="passengers-type">
                                           <div class="text">
-                                            <span class="count">0</span>
+                                            <span class="count">{{
+                                              childCount
+                                            }}</span>
                                             <div class="type-label">
                                               <p class="fz14 mb-xs-0">
                                                 Children
@@ -170,27 +189,45 @@
                                           </div>
                                           <div class="button-set">
                                             <button type="button">
-                                              <i class="fas fa-plus"></i>
+                                              <i
+                                                class="fas fa-plus"
+                                                (click)="increaseCount('child')"
+                                              ></i>
                                             </button>
                                             <button type="button">
-                                              <i class="fas fa-minus"></i>
+                                              <i
+                                                class="fas fa-minus"
+                                                (click)="decreaseCount('child')"
+                                              ></i>
                                             </button>
                                           </div>
                                         </div>
                                         <div class="passengers-type">
                                           <div class="text">
-                                            <span class="count">0</span>
+                                            <span class="count">{{
+                                              infantCount
+                                            }}</span>
                                             <div class="type-label">
                                               <p class="fz14 mb-xs-0">Infant</p>
                                               <span>Less than 2 yrs</span>
                                             </div>
                                           </div>
                                           <div class="button-set">
-                                            <button type="button">
-                                              <i class="fas fa-plus"></i>
+                                            <button type="button" >
+                                              <i
+                                                class="fas fa-plus"
+                                                (click)="
+                                                  increaseCount('infant')
+                                                "
+                                              ></i>
                                             </button>
-                                            <button type="button">
-                                              <i class="fas fa-minus"></i>
+                                            <button type="button" >
+                                              <i
+                                                class="fas fa-minus"
+                                                (click)="
+                                                  decreaseCount('infant')
+                                                "
+                                              ></i>
                                             </button>
                                           </div>
                                         </div>
@@ -203,7 +240,7 @@
                             </div>
                           </div>
                           <div class="top_form_search_button text-right">
-                            <button class="btn btn_theme btn_md" type="button">
+                            <button (click)="checkRoom()" class="btn btn_theme btn_md" type="submit">
                               Check availability
                             </button>
                           </div>
@@ -213,9 +250,9 @@
 
                     <div
                       class="room_book_item"
-                      *ngFor="let room of rooms"
+                      *ngFor="let room of rooms; else noRoom"
                       style="
-                        display: flex;
+                        display: inline-block;
                         margin-bottom: 20px;
                         padding: 15px;
                         border: 1px solid #ddd;
@@ -238,6 +275,8 @@
                         />
                       </div>
                       <div class="room_booking_right_side" style="flex: 2">
+
+
                         <div
                           class="room_booking_heading"
                           style="margin-bottom: 15px"
@@ -252,7 +291,7 @@
                             <a
                               href="room-booking.html"
                               style="text-decoration: none; color: #333"
-                              >{{ room.roomNumber }}</a
+                              >Room Number : {{ room.roomNumber }}</a
                             >
                           </h3>
                           <div
@@ -286,8 +325,9 @@
                               </li>
                             </ul>
                           </div>
-                        </div>
-                        <div
+
+
+                          <div
                           class="room_person_select"
                           style="
                             display: flex;
@@ -295,29 +335,33 @@
                             justify-content: space-between;
                           "
                         >
-                          <h3 style="font-size: 22px; color: #6200ea">
+                          <h3 style="font-size: 34px; color: #6200ea">
                             {{ room.pricePerNight | currency }}
-                            <sub style="font-size: 16px; color: #888"
-                              >Per night</sub
+                            <sub style="font-size: 25px; color: #888"
+                              >/Per night</sub
                             >
                           </h3>
-                          <select
-                            class="form-select"
-                            aria-label="Default select example"
-                            style="
-                              width: 60px;
-                              padding: 5px;
-                              border-radius: 5px;
-                            "
-                          >
-                            <option selected="">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                          </select>
                         </div>
+                        </div>
+
+                        
+                        <h5>{{room.description}}</h5>
+                        <h5>Room Type : {{room.roomType}}</h5>
+                        <h5>Room Capasity : {{ room.capacity }}</h5>
+                        
+                        <h5 [ngStyle]="{
+                          'color': room.roomStatus === 'AVAILABLE' ? 'green' : 
+                                   room.roomStatus === 'OCCUPIED' ? 'red' : 
+                                   room.roomStatus === 'RESERVED' ? 'orange' : 'black'
+                        }">Status : {{room.roomStatus}}</h5>
                       </div>
+
+                      
                     </div>
+
+                    <ng-template #noRoom>
+                      <p>Not found room with your criteria</p>
+                  </ng-template>
                   </div>
                 </div>
                 <div

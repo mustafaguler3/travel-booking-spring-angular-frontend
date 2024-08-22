@@ -19,12 +19,14 @@ export class NavbarComponent implements OnInit{
   constructor(private authService: AuthService,
               private router: Router
   ){
+    
   }
   ngOnInit(): void {
-    this.authService.currentUser.subscribe(user => {
+
+    /*this.authService.currentUser.subscribe(user => {
       this.currentUser = user ? this.authService.getCurrentUserValue() : null
     })
-    this.currentUser = this.authService.getCurrentUserValue()
+    this.currentUser = this.authService.getCurrentUserValue()*/
   }
   
   getProfilePictureUrl(): string {

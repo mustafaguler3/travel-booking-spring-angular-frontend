@@ -25,14 +25,7 @@ export class HomeComponent implements OnInit{
   constructor(private router: Router,
               private fb: FormBuilder
   ){
-    /*this.hotelSearchForm = this.fb.group({
-      location: [""],
-      checkInDate: [""],
-      checkOutDate: [""],
-      adults: [0],
-      children: [0],
-      infant: [0]
-    }) */
+    
   }
 
   ngOnInit(): void {
@@ -61,7 +54,6 @@ export class HomeComponent implements OnInit{
   childCount: number = 0;
   infantCount: number = 0;
 
-  // Method to increase the count
   increaseCount(type: string) {
     if (type === 'adult') {
       this.adultCount++;
@@ -72,7 +64,6 @@ export class HomeComponent implements OnInit{
     }
   }
 
-  // Method to decrease the count
   decreaseCount(type: string) {
     if (type === 'adult' && this.adultCount > 0) {
       this.adultCount--;

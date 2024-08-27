@@ -149,8 +149,7 @@ gallery{
   
     .room_booking_right_side {
       flex: 2;
-      display: flex;
-      flex-direction: column-reverse;
+      display: inline-block;
       justify-content: space-between;
       height: 100%; 
   

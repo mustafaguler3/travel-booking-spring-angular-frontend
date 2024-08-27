@@ -1,0 +1,58 @@
+$main-color: #8B3EEA;
+$white-color: #ffffff;
+$black-color: #2B2540;
+$black-color-opacity: #2b2540c4;
+$paragraph-color: #818090;
+$bg-color: #F3F6FD;
+$transition: .4s all ease-in-out;
+.btn_md {
+    padding: 12px 35px;
+    font-size: 18px;
+}
+
+
+.btn_theme {
+    color: $white-color;
+    background-color: $main-color;
+    transition: $transition;
+    box-shadow: none;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 0;
+    border: none;
+}
+.select_offer_modal.offcanvas {
+    position: fixed;
+    bottom: 0;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    visibility: hidden;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    transition: transform .3s ease-in-out;
+    z-index: 999999;
+}
+.offcanvas.show {
+    visibility: visible;
+    transform: none;
+}
+
+.form-control[_ngcontent-ng-c3000654231]:focus {
+    color: var(--heading-color);
+    background-color: #fff;
+    border: 2px dashed var(--main-color);
+    outline: none;
+    box-shadow: none;
+}
+.offcanvas-off {
+    visibility: hidden;
+    transform: translateX(100%);
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }

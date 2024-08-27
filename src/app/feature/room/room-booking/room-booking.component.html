@@ -1,0 +1,675 @@
+<form
+  [formGroup]="bookingForm"
+  (ngSubmit)="booking()"
+  id="tour_bookking_form_item"
+  method="post"
+>
+  <section id="tour_booking_submission" class="section_padding">
+    <div class="container">
+      <div class="row">
+        <div class="tour_detail_right_sidebar" *ngIf="room && room.id; else noRoomData">
+          
+          <div class="col-5">
+
+          </div>
+          
+          <div class="tour_details_right_boxedd">
+              <div class="col-5">
+                <div class="tour_details_img_wrapper">
+                  <gallery [items]="roomImages"></gallery>
+                </div>
+              </div>
+            
+              <div class="col-7">
+                <div class="tour_details_right_box_heading">
+                  <h3>{{ room.roomNumber | number }} - {{ room.roomType }}</h3>
+                </div>
+                <div class="valid_date_area">
+                  <div class="valid_date_area_one">
+                    <h5>Valid from</h5>
+                    <p>{{ room.availableFrom | date }}</p>
+                  </div>
+                  <div class="valid_date_area_one">
+                    <h5>Valid till</h5>
+                    <p>{{ room.availableUntil | date }}</p>
+                  </div>
+                </div>
+                <div class="tour_package_details_bar_list">
+                  <h5>Room facilities</h5>
+                  <ul *ngFor="let amenity of room.amenities">
+                    <li><i class="fas fa-circle"></i>{{ amenity.name }}</li>
+                  </ul>
+                </div>
+                <div class="tour_package_details_bar_price">
+                  <h5>Price</h5>
+                  <div class="tour_package_bar_price">
+                    <h6><del>$ 200,000</del></h6>
+                    <h3>
+                      {{ room.pricePerNight | currency }} <sub>/Per serson</sub>
+                    </h3>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+          
+        </div>
+
+
+        <ng-template #noRoomData> No room data </ng-template>
+
+        <div class="col-lg-8">
+          <div class="tou_booking_form_Wrapper">
+            <div class="booking_tour_form">
+              <h3 class="heading_theme">Booking submission</h3>
+              <div class="tour_booking_form_box">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="firstName"
+                        class="form-control bg_input"
+                        placeholder="First name"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['firstName'].invalid &&
+                          (f['firstName'].dirty || f['firstName'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['firstName'].errors?.['required']"
+                        >
+                          First Name is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="lastName"
+                        class="form-control bg_input"
+                        placeholder="Last name*"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['lastName'].invalid &&
+                          (f['lastName'].dirty || f['lastName'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['lastName'].errors?.['required']"
+                        >
+                          Last Name is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="email"
+                        class="form-control bg_input"
+                        placeholder="Email address"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['email'].invalid &&
+                          (f['email'].dirty || f['email'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['email'].errors?.['required']"
+                        >
+                          Email is required
+                        </div>
+                      </div>
+                      <div
+                        class="text-danger"
+                        *ngIf="f['email'].errors?.['email']"
+                      >
+                        Email must be valid format
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="phoneNumber"
+                        class="form-control bg_input"
+                        placeholder="Mobile number*"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['phoneNumber'].invalid &&
+                          (f['phoneNumber'].dirty || f['phoneNumber'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['phoneNumber'].errors?.['required']"
+                        >
+                          Phone Number is required
+                        </div>
+
+                        <div
+                          class="text-danger"
+                          *ngIf="f['phoneNumber'].errors?.['pattern']"
+                        >
+                          Phone Number must be 11 digits
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="state"
+                        class="form-control bg_input"
+                        placeholder="State"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['state'].invalid &&
+                          (f['state'].dirty || f['state'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['state'].errors?.['required']"
+                        >
+                          State is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="address"
+                        class="form-control bg_input"
+                        placeholder="Street address"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['address'].invalid &&
+                          (f['address'].dirty || f['address'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['address'].errors?.['required']"
+                        >
+                          Address is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="city"
+                        class="form-control bg_input"
+                        placeholder="City"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['city'].invalid &&
+                          (f['city'].dirty || f['city'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['city'].errors?.['required']"
+                        >
+                          City is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        formControlName="country"
+                        class="form-control bg_input"
+                        placeholder="Country"
+                      />
+
+                      <div
+                        *ngIf="
+                          f['country'].invalid &&
+                          (f['country'].dirty || f['country'].touched)
+                        "
+                      >
+                        <div
+                          class="text-danger"
+                          *ngIf="f['country'].errors?.['required']"
+                        >
+                          Country is required
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--payment form-->
+                  <div class="booking_tour_form">
+                    <div class="container">
+                      <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                          <a
+                            class="nav-link active"
+                            (click)="setPaymentValidators('CREDIT_CARD')"
+                            data-bs-toggle="tab"
+                            href="#credit-card"
+                            >Credit Card</a
+                          >
+                        </li>
+                        <li class="nav-item">
+                          <a
+                            (click)="setPaymentValidators('PAYPAL')"
+                            class="nav-link"
+                            data-bs-toggle="tab"
+                            href="#paypal"
+                            >PayPal</a
+                          >
+                        </li>
+                      </ul>
+
+                      <div class="tab-content mt-3">
+                        <!-- Credit Card Tab -->
+                        <div id="credit-card" class="tab-pane active">
+                          <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="cardNumber" class="form-label"
+                                >Card Number</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                formControlName="cardNumber"
+                              />
+
+                              <div
+                                *ngIf="
+                                  f['cardNumber'].invalid &&
+                                  (f['cardNumber'].dirty ||
+                                    f['cardNumber'].touched)
+                                "
+                              >
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardNumber'].errors?.['required']"
+                                >
+                                  Card Number is required
+                                </div>
+
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardNumber'].errors?.['invalidCardNumber']"
+                                >
+                                  Card Number must be between 13 and 16 digits
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <label for="cardHolderName" class="form-label"
+                                >Name on card</label
+                              >
+                              <input
+                                type="text"
+                                class="form-control"
+                                formControlName="cardHolderName"
+                              />
+
+                              <div
+                                *ngIf="
+                                  f['cardHolderName'].invalid &&
+                                  (f['cardHolderName'].dirty ||
+                                    f['cardHolderName'].touched)
+                                "
+                              >
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardHolderName'].errors?.['required']"
+                                >
+                                  Name on card is required
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="cardExpiryDate" class="form-label"
+                                >Date of Expiry</label
+                              >
+                              <input
+                                type="text"
+                                placeholder="MM/YY"
+                                class="form-control"
+                                formControlName="cardExpiryDate"
+                              />
+
+                              <div
+                                *ngIf="
+                                  f['cardExpiryDate'].invalid &&
+                                  (f['cardExpiryDate'].dirty ||
+                                    f['cardExpiryDate'].touched)
+                                "
+                              >
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardExpiryDate'].errors?.['required']"
+                                >
+                                  Card Expiry Date is required
+                                </div>
+
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardExpiryDate'].errors?.['invalidExpiryDate']"
+                                >
+                                  Expiry Date must be in MM/YY format (e.g.,
+                                  12/24)
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                              <label for="cardSecurityCode" class="form-label"
+                                >Security Code</label
+                              >
+                              <input
+                                width="50%"
+                                type="text"
+                                class="form-control"
+                                formControlName="cardSecurityCode"
+                              />
+
+                              <div
+                                *ngIf="
+                                  f['cardSecurityCode'].invalid &&
+                                  (f['cardSecurityCode'].dirty ||
+                                    f['cardSecurityCode'].touched)
+                                "
+                              >
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardSecurityCode'].errors?.['required']"
+                                >
+                                  Cvv is required
+                                </div>
+                                <div
+                                  class="text-danger"
+                                  *ngIf="f['cardSecurityCode'].errors?.['invalidSecurityCode']"
+                                >
+                                  Cvv must be 3 digits
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- PayPal Tab -->
+                        <div id="paypal" class="tab-pane fade">
+                          <div class="mb-3">
+                            <label for="paypalEmail" class="form-label"
+                              >PayPal Email</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control"
+                              formControlName="paypalEmail"
+                            />
+
+                            <div
+                              *ngIf="
+                                f['paypalEmail'].invalid &&
+                                (f['paypalEmail'].dirty ||
+                                  f['paypalEmail'].touched)
+                              "
+                            >
+                              <div
+                                class="text-danger"
+                                *ngIf="f['paypalEmail'].errors?.['required']"
+                              >
+                                Email is required
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <div class="booking_tour_form_submit">
+                  <div class="form-check write_spical_check">
+                    <input class="form-check-input" type="checkbox" />
+                    <label class="form-check-label" for="flexCheckDefaultf1">
+                      <span class="main_spical_check">
+                        <span
+                          >I read and accept all
+                          <a>Terms and conditios</a></span
+                        >
+                      </span>
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn_theme btn_md">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="tour_details_right_sidebar_wrapper">
+            <!-- CheckInDate ou adult -->
+            <div class="tour_detail_right_sidebar">
+              <div class="tour_details_right_boxed">
+                <div class="tour_details_right_box_heading">
+                  <h3>Travel date</h3>
+                </div>
+                <div class="edit_date_form">
+                  <div class="form-group">
+                    <label for="dates">Select CheckIn Date</label>
+                    <input
+                      type="date"
+                      id="dates"
+                      formControlName="checkInDate"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="dates">Select CheckOut Date</label>
+                    <input
+                      type="date"
+                      id="dates"
+                      formControlName="checkOutDate"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+                <div class="tour_package_details_bar_list">
+                  <h5>Tourist</h5>
+                  <div class="select_person_item">
+                    <div class="select_person_left">
+                      <h6>Adult</h6>
+                      <p>12y+</p>
+                    </div>
+
+                    <div class="button-set">
+                      <div class="select_person_right">
+                        <button
+                          type="button"
+                          (click)="increaseCount('adults')"
+                          class="btn-add"
+                        >
+                          <i class="fas fa-plus"></i>
+                        </button>
+                        <h6>{{ adultCount }}</h6>
+
+                        <button
+                          type="button"
+                          (click)="decreaseCount('adults')"
+                          class="btn-subtract"
+                        >
+                          <i class="fas fa-minus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="select_person_item">
+                    <div class="select_person_left">
+                      <h6>Children</h6>
+                      <p>2 - 12 years</p>
+                    </div>
+                    <div class="select_person_right">
+                      <button
+                        type="button"
+                        (click)="increaseCount('child')"
+                        class="btn-add"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                      <h6>{{ childCount }}</h6>
+
+                      <button
+                        type="button"
+                        (click)="decreaseCount('child')"
+                        class="btn-subtract"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="select_person_item">
+                    <div class="select_person_left">
+                      <h6>Infant</h6>
+                      <p>Below 2 years</p>
+                    </div>
+                    <div class="select_person_right">
+                      <button
+                        type="button"
+                        (click)="increaseCount('infant')"
+                        class="btn-add"
+                      >
+                        <i class="fas fa-plus"></i>
+                      </button>
+                      <h6>{{ infantCount }}</h6>
+
+                      <button
+                        type="button"
+                        (click)="decreaseCount('infant')"
+                        class="btn-subtract"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="write_spical_not">
+                <label for="texts">Write any special note</label>
+                <textarea
+                  rows="5"
+                  formControlName="note"
+                  class="form-control"
+                  placeholder="Write any special note"
+                  id="texts"
+                ></textarea>
+              </div>
+            </div>
+
+            <!--Coupon-->
+            <div class="tour_detail_right_sidebar">
+              <div class="tour_details_right_boxed">
+                <div class="tour_details_right_box_heading">
+                  <h3>Coupon code</h3>
+                </div>
+                <div class="coupon_code_area_booking">
+                  <form action="#!">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control bg_input"
+                        placeholder="Enter coupon code"
+                      />
+                    </div>
+                    <div class="coupon_code_submit">
+                      <button class="btn btn_theme btn_md">
+                        Apply voucher
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!--Booking amount-->
+            <div class="tour_detail_right_sidebar">
+              <div class="tour_details_right_boxed">
+                <div class="tour_details_right_box_heading">
+                  <h3>Booking amount</h3>
+                </div>
+
+                <div class="tour_booking_amount_area">
+                  <ul>
+                    <li>
+                      {{ room.pricePerNight }} x
+                      {{ calculateDaysStayed() }} days
+                      <span>{{ totalPrice | currency }}</span>
+                    </li>
+                  </ul>
+                  <div class="tour_bokking_subtotal_area">
+                    <h6>
+                      <!-- Subtotal <span>{{ subtotal | currency }}</span> -->
+                    </h6>
+                  </div>
+                  <div class="coupon_add_area">
+                    <h6>
+                      <span class="remove_coupon_tour">Remove</span> Coupon code
+
+                      <span>will be applied</span>
+                    </h6>
+                  </div>
+                  <div class="total_subtotal_booking">
+                    <h6>
+                      Total Amount <span>{{ totalPrice | currency }}</span>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+<div class="go-top active">
+  <i class="fas fa-chevron-up"></i>
+  <i class="fas fa-chevron-up"></i>
+</div>

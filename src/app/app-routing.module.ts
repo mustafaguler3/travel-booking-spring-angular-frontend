@@ -17,6 +17,8 @@ import { RoomDetailComponent } from './feature/room/room-detail/room-detail.comp
 import { HotelSearchComponent } from './feature/hotel/hotel-search/hotel-search.component';
 import { VerifyOtpComponent } from './core/verify-otp/verify-otp.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { RoomBookingComponent } from './feature/room/room-booking/room-booking.component';
+import { BookingReceivedComponent } from './feature/booking/booking-received/booking-received.component';
 
 
 const routes: Routes = [
@@ -26,8 +28,10 @@ const routes: Routes = [
   {path:"server-error",component:ServerErrorComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
   {path:"hotel-search",component:HotelSearchComponent},
+  {path:"booking-received",component: BookingReceivedComponent},
   {path:"hotel-detail/:hotelId",component:HotelDetailComponent},
-  {path:"hotel-detail/:hotelId/room-detail",component:RoomDetailComponent},
+  {path:"room-detail/:roomId",component:RoomDetailComponent},
+  {path:"room-booking",component:RoomBookingComponent},
   {path:"forbidden",component:ForbiddenComponent},
   {path:"verify-otp",component: VerifyOtpComponent},
   {path:"not-found",component:NotFoundComponent},

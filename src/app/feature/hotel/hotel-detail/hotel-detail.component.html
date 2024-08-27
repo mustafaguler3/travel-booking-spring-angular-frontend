@@ -263,7 +263,8 @@
                         class="room_book_img"
                         style="flex: 1; margin-right: 20px"
                       >
-                        <img
+                        <a routerLink="/room-detail/{{room.id}}">
+                          <img
                           [src]="getRoomImage(room.images[0])"
                           alt="img"
                           style="
@@ -273,6 +274,7 @@
                             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
                           "
                         />
+                        </a>
                       </div>
                       <div class="room_booking_right_side" style="flex: 2">
 
@@ -345,9 +347,9 @@
                         </div>
 
                         
-                        <h5>{{room.description}}</h5>
-                        <h5>Room Type : {{room.roomType}}</h5>
-                        <h5>Room Capasity : {{ room.capacity }}</h5>
+                        <p>{{room.description}}</p>
+                        <p>Room Type : {{room.roomType}}</p>
+                        <p>Room Capasity : {{ room.capacity }}</p>
                         
                         <h5 [ngStyle]="{
                           'color': room.roomStatus === 'AVAILABLE' ? 'green' : 

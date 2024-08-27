@@ -32,13 +32,21 @@ export interface Review {
 
 export interface Room {
     id:number,
-    roomType: string,
-    capasity: number,
-    pricePerNight: number,
-    roomNumber: number,
+    roomType: any,
+    capacity: number,
+    location: string,
+    pricePerNight: any,
+    roomNumber: any,
     roomStatus:any
-    description: string,
+    description: any,
     images: any[],
+    availableFrom: any
+    availableUntil : any
     hotelId: any,
     amenities: Amenity[]
+    adultPrice:any
+    childPrice:any
+    infantPrice:any
+
+    
 }

@@ -13,10 +13,24 @@ import { HotelSearchParams } from '../../../shared/models/hotel-search-params';
 export class HotelService {
 
   apiUrl = "http://localhost:8080/api"
+  private hotelSource: BehaviorSubject<Hotel | null>;
+  public currentHotel$: Observable<Hotel | null>;
 
-  constructor(private http: HttpClient,
-    private authService: AuthService
-  ) { }
+constructor(private http: HttpClient, private authService: AuthService) {
+  // Başlangıçta otel bilgisi mevcut olmayabilir, bu yüzden null ile başlatıyoruz
+  this.hotelSource = new BehaviorSubject<Hotel | null>(null);
+  this.currentHotel$ = this.hotelSource.asObservable();
+}
+
+// Mevcut otel bilgisini almak için getValue() kullanıyoruz
+getCurrentHotel(): Hotel | null {
+  return this.hotelSource.getValue();
+}
+
+// Yeni bir otel set etmek için
+setCurrentHotel(hotel: Hotel): void {
+  this.hotelSource.next(hotel);
+}
 
   addReview(review:any){
     return this.http.post(`${this.apiUrl}/hotels/${review.hotelId}/addReview`,review)

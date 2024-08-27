@@ -1,0 +1,205 @@
+$main-color: #8B3EEA;
+$white-color: #ffffff;
+$black-color: #2B2540;
+$black-color-opacity: #2b2540c4;
+$paragraph-color: #818090;
+$bg-color: #F3F6FD;
+$transition: .4s all ease-in-out;
+.booking_tour_form_submit a {
+    margin-top: 15px;
+}
+.btn_md {
+    padding: 12px 35px;
+    font-size: 18px;
+}
+.btn_theme {
+    color: $white-color;
+    background-color: $main-color;
+    transition: $transition;
+    box-shadow: none;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    z-index: 0;
+    border: none;
+}
+
+.tour_details_right_box_heading h3 {
+    font-weight: 500;
+    font-size: 22px;
+    border-bottom: 1px solid $main-color;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.bg_input {
+    background-color: #F3F6FD;
+}
+.form-control {
+    height: 55px;
+    border: 2px dashed #dddddd75;
+    padding: 10px 22px;
+    font-size: 16px;
+}
+.form-control {
+    height: 50px;
+    border: none;
+    box-shadow: 0px 1px 13px 0px #0000000d;
+    padding: 10px 22px;
+    font-size: 16px;
+}
+
+
+.form-control:focus {
+    color: var(--heading-color);
+    background-color: #fff;
+    border: 2px dashed var(--main-color);
+    outline: none;
+    box-shadow: none;
+}
+
+.tour_booking_form_box {
+    background: #FFFFFF;
+    box-shadow: -4px -5px 14px rgb(0 0 0 / 8%), 5px 8px 16px rgb(0 0 0 / 8%);
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+}
+
+.tab-content > .tab-pane:not(.active) {
+    display: none;
+}
+
+
+$primary-color: #4a5eff;
+$secondary-color: #f0f0f5;
+$border-color: #ddd;
+$text-color: #333;
+$input-background: #f7f9fc;
+
+.container {
+
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tabs {
+  border-bottom: none;
+
+  .nav-link {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid transparent;
+    border-bottom: none;
+    background: $secondary-color;
+    margin-right: 1rem;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $input-background;
+      color: $primary-color;
+    }
+
+    &.active {
+      background: $input-background;
+      color: $primary-color;
+      border-color: $border-color $border-color transparent;
+      border-bottom: 2px solid $input-background;
+    }
+  }
+}
+
+
+.tab-content {
+  background: $input-background;
+  padding: 2rem;
+  border: 2px solid $border-color;
+  border-radius: 0 0 8px 8px;
+
+  .tab-pane {
+    &.active {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+form {
+  .form-label {
+    font-weight: 500;
+    color: $text-color;
+  }
+
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 6px rgba($primary-color, 0.2);
+    }
+  }
+
+  
+#credit-card {
+  .form-control {
+    margin-bottom: 1.5rem;
+  }
+}
+
+#paypal,
+#online-banking {
+  .form-control {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-tabs {
+    .nav-link {
+      font-size: 1rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+
+  form {
+    .form-control {
+      font-size: 0.9rem;
+    }
+
+    button[type="submit"] {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.5rem;
+    }
+  }
+}
+
+
+.select_person_right {
+  display: flex;
+}
+.select_person_right h6 {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.tour_details_right_boxedd {
+  background: #FFFFFF;
+  box-shadow: -4px -5px 14px rgba(0, 0, 0, 0.08), 5px 8px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 25px 20px 35px 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}

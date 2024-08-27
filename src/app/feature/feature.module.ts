@@ -18,6 +18,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { RoomDetailComponent } from './room/room-detail/room-detail.component';
 import { HotelSearchComponent } from './hotel/hotel-search/hotel-search.component';
 import { HomeComponent } from './home/home.component';
+import { RoomBookingComponent } from './room/room-booking/room-booking.component';
+import { TestComponent } from './test/test.component';
+import { BookingReceivedComponent } from './booking/booking-received/booking-received.component';
 @NgModule({
   declarations: [
     HotelListComponent,
@@ -28,7 +31,10 @@ import { HomeComponent } from './home/home.component';
     ReviewComponent,
     RoomDetailComponent,
     HotelSearchComponent,
-    HomeComponent
+    HomeComponent,
+    RoomBookingComponent,
+    TestComponent,
+    BookingReceivedComponent
   ],
   imports: [
     CommonModule,

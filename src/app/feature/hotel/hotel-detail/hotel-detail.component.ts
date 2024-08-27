@@ -33,11 +33,11 @@ export class HotelDetailComponent implements OnInit{
   currentUser: any
   userId: any
   averageRating = 0;
-
-  searchedParams: RoomSearchRequest
+  locationForRoom:any;
 
   constructor(private hotelService: HotelService,
               private activatedRoute : ActivatedRoute,
+              private router:Router,
               private fb: FormBuilder,
               private toastService: ToastService,
               private authService: AuthService,
@@ -56,7 +56,7 @@ export class HotelDetailComponent implements OnInit{
       children: [0,[Validators.required]],
       infant: [0,[Validators.required]]
     })
-
+    
     this.hotelId = this.activatedRoute.snapshot.paramMap.get("hotelId")
     this.getHotel()
     this.getReviewsForHotel()
@@ -153,12 +153,13 @@ export class HotelDetailComponent implements OnInit{
   
   }
 
+
   getHotel(){
       this.hotelService.getHotel(this.hotelId).subscribe({
         next: (res) => {
           this.hotel = res
           this.rooms = res.rooms
-          
+
           if(this.hotel.images && Array.isArray(this.hotel.images)){
             this.hotelImages = res.images.map(image => 
               new ImageItem({
@@ -188,10 +189,6 @@ export class HotelDetailComponent implements OnInit{
       totalGuests: Number(this.adultCount) + Number(this.childCount) + Number(this.infantCount)
     }
 
-    console.log(checkData.totalGuests)
-    console.log(this.totalGuest);
-
-    console.log("Data -> "+JSON.stringify(checkData))
 
     this.roomService.checkRoom(this.hotelId,checkData)
     .subscribe({

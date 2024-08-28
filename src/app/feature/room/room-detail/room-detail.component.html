@@ -115,6 +115,7 @@
             <div class="tour_select_offer_bar_bottom">
                 <button (click)="submit()"
                 class="btn btn_theme btn_md w-100"
+                [disabled]="isRoomReserved()"
                 >
                 Book Now
                 </button> 

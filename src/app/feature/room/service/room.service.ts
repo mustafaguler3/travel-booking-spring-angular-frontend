@@ -21,14 +21,6 @@ export class RoomService {
   constructor(private http: HttpClient) {
     this.roomSource = new BehaviorSubject<Room | null>(null)
     this.room$ = this.roomSource.asObservable()
-
-    this.priceSource = new BehaviorSubject<any>({
-      subtotal: 0,
-      discount: 0,
-      tax: 0,
-      finalTotal: 0
-    });
-    this.price$ = this.priceSource.asObservable();
   }
 
   getRoomValue(){

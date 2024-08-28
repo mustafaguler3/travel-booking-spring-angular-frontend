@@ -1,6 +1,74 @@
-<div class="confirmation-container">
-    <h1>Your Booking Has Been Received!</h1>
-    <p>Thank you for your reservation. We look forward to hosting you.</p>
-    <p>We've sent a confirmation email with your booking details.</p>
-    <a routerLink="/home" class="button">Return to Home</a>
-</div>
+<section id="tour_booking_submission" class="section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="tou_booking_form_Wrapper">
+                    <div class="tour_booking_form_box mb-4">
+                        <div class="booking_success_arae">
+                            <div class="booking_success_img">
+                                <img src="assets/img/icon/right.png" alt="img">
+                            </div>
+                            <div class="booking_success_text">
+                                <h3>{{response.firstName}}, your order was submitted successfully!</h3>
+                                <h6>Your booking details has been sent to: {{response.email}} </h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking_tour_form">
+                        <h3 class="heading_theme">Your information</h3>
+                        <div class="tour_booking_form_box">
+                            <div class="your_info_arae">
+                                <ul>
+                                    <li><span class="name_first">First name:</span>{{response.firstName}} <span class="last_name"></span></li>
+                                    <li><span class="name_first">Last name:</span>{{response.lastName}} <span class="last_name"></span></li>
+                                    <li><span class="name_first">Email address:</span>{{response.email}} <span class="last_name"></span></li>
+                                    <li><span class="name_first">Address:</span> {{response.address}}<span class="last_name"></span></li>
+                                    <li><span class="name_first">City:</span>{{response.city}} <span class="last_name"></span></li>
+                                    <li><span class="name_first">State:</span>{{response.state}} <span class="last_name"></span>
+                                    </li>
+                                    <li><span class="name_first">Country:</span>{{response.country}} <span class="last_name"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="tour_details_right_sidebar_wrapper">
+                    <div class="tour_detail_right_sidebar">
+                        <div class="tour_details_right_boxed">
+                            <div class="tour_details_right_box_heading">
+                                <h3>Booking details</h3>
+                            </div>
+                            <div class="tour_booking_amount_area">
+                                <ul>
+                                    <li>Booking ID: <span class="text-warning">{{response.bookingReferenceNumber}}</span></li>
+                                    <li>Booking date: <span></span>{{response.createdDate}}</li>
+                                    <li>Payment method: <span></span>{{response.paymentType}}</li>
+                                    <li>Booking status: <span class="text-success">{{response.bookingStatus}}</span></li>
+                                </ul>
+                                <!-- <ul>
+                                    <li> x <span></span></li>
+                                    <li class="remove_coupon_tour">Discount <span>10%</span></li>
+                                    <li>Tax <span>5%</span></li>
+                                </ul>
+                                <div class="tour_bokking_subtotal_area">
+                                    <h6 class="remove_coupon_tour">Subtotal <span>$38,000.00</span></h6>
+                                </div> -->
+                                <!-- <div class="coupon_add_area">
+                                    <h6><span class="remove_coupon_tour">Remove</span> Coupon code (OFF 5000)
+                                        <span>$5,000.00</span>
+                                    </h6>
+                                </div> -->
+                                <div class="total_subtotal_booking">
+                                    <h6 class="remove_coupon_tour">Total Amount <span></span>{{response.totalPrice | currency}} </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

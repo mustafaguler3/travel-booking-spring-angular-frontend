@@ -2,7 +2,7 @@ export interface BookingRequest {
     bookingId: number;
     userId: number;
     roomId: number;
-  
+    bookingStatus: any
     firstName: string;
     lastName: string;
     email: string;
@@ -11,7 +11,7 @@ export interface BookingRequest {
     state: string;
     city: string;
     country: string;
-  
+    bookingReferenceNumber : string
     children: number;
     adults: number;
     infant: number;
@@ -20,7 +20,16 @@ export interface BookingRequest {
     note: string;
     createdDate: string;
     lastUpdatedDate: string;
-    payment: Payment;
+    
+    paymentAmount:number
+    paymentType:any
+    paymentStatus:any
+    paymentDate:Date
+    cardNumber:any;
+    cardHolderName:any;
+    cardExpiryDate:any;
+    cardSecurityCode:any;
+    paypalEmail:any;
 }
 
 export interface Payment {
@@ -36,3 +45,20 @@ export interface Payment {
     paypalEmail:any;
 }
 
+export interface RoomBookingResponse {
+    bookingId:any
+    firstName:any
+    lastName:any
+    email:any
+    phoneNumber:any
+    address:any
+    state:any
+    city:any
+    country:any
+    bookingStatus:any
+    createdDate:any
+    lastUpdatedDate:any
+    bookingReferenceNumber:any
+    paymentType:any
+    totalPrice:any
+}

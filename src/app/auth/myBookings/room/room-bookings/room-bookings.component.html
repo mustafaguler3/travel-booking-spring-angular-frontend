@@ -1,0 +1,46 @@
+
+    <div class="dashboard_common_table">
+        <h3>Room bookings</h3>
+        <div class="table-responsive-lg table_common_area">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sl no.</th>
+                        <th>Booking ID</th>
+                        <th>Booking type</th>
+                        <th>Booking amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let roomBooking of roomBooking">
+                        <td>{{roomBooking.bookingId}}</td>
+                        <td>{{roomBooking.bookingReferenceNumber}}</td>
+                        <td>{{roomBooking.bookingType}}</td>
+                        <td>{{roomBooking.totalPrice | currency}}</td>
+                        <td class="complete">{{roomBooking.bookingStatus}}</td>
+                        <td><i class="fas fa-eye"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination_area page-link">
+                <pagination 
+                  [boundaryLinks]="false"
+                  [totalItems]="this.totalElements"
+                  [maxSize]="3"
+                  [itemsPerPage]="this.pageSize"
+                  (pageChanged)="pageChanged($event)"
+                  previousText="&lsaquo;"
+                  nextText="&rsaquo;"
+                  firstText="&laquo;"
+                  lastText="&raquo;"
+                >
+                </pagination>
+              </div>
+        </div>
+    </div>
+    
+        
+

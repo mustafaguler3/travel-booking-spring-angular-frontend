@@ -5,6 +5,8 @@ import { JwtResponse } from 'src/app/shared/models/jwt-response';
 import { SendResetCode, User } from 'src/app/shared/models/user';
 import { jwtDecode } from "jwt-decode";
 import { MyJwtPayload } from 'src/app/shared/models/my-jwt-payload';
+import { RoomBookingResponse } from 'src/app/shared/models/booking-request';
+import { Pagination } from 'src/app/shared/models/pagination';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +37,11 @@ export class AuthService {
       token: currentUser?.token,
       userId: currentUser?.userId,
       username: currentUser?.username,
-      profilePictureUrl: currentUser?.profilePictureUrl
+      profilePictureUrl: currentUser?.profilePictureUrl,
+      firstName: currentUser?.firstName,
+      lastName: currentUser?.lastName,
+      phoneNumber: currentUser?.phoneNumber,
+      email: currentUser?.email
     }
   }
 
@@ -48,13 +54,21 @@ export class AuthService {
         const decodedToken = jwtDecode<MyJwtPayload>(response.token)
         const userId = decodedToken.userId;
         const username = decodedToken.username;
-        const profilePictureUrl = decodedToken.profilePictureUrl
+        const profilePictureUrl = decodedToken.profilePictureUrl;
+        const firstName = decodedToken.firstName;
+        const lastName = decodedToken.lastName;
+        const phoneNumber = decodedToken.phoneNumber;
+        const email = decodedToken.email;
 
         const currentUser = {
           token: response.token,
           userId: userId,
           username: username,
-          profilePictureUrl:profilePictureUrl
+          profilePictureUrl:profilePictureUrl,
+          fistName: firstName,
+          lastName: lastName,
+          email: email,
+          phoneNumber: phoneNumber
         };
 
         // Store the current user in localStorage
@@ -117,6 +131,17 @@ export class AuthService {
 
   profile(): Observable<User>{
     return this.http.get<any>(this.apiUrl + "/profile")
+  }
+
+  getMyBookings(pageNumber:any,pageSize:any):Observable<Pagination<any[]>>{
+    let params = new HttpParams()
+    .set("page",pageNumber)
+    .set("size",pageSize);
+
+    console.log("Page : "+params.get("page"))
+    console.log("Size : "+params.get("size"))
+
+    return this.http.get<Pagination<any[]>>(this.apiUrl +"/profile/my-booking",{params})
   }
 
   sentResetCode(email:any):Observable<any>{

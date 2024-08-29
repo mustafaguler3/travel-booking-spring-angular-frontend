@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit{
 
-  currentUser!: any
+  currentUser: any
+  firstName: any
 
   constructor(private authService: AuthService,
               private router:Router
@@ -18,10 +19,9 @@ export class ProfileComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.authService.currentUser.subscribe(user => {
-      this.currentUser = user ? this.authService.getCurrentUserValue() : null
-    })
     this.currentUser = this.authService.getCurrentUserValue()
+
+    console.log("FirstName : "+this.currentUser.firstName)
   }
 
   getProfilePictureUrl(): string {
@@ -47,4 +47,6 @@ export class ProfileComponent implements OnInit{
       }
     })
   }
+
+  
 }

@@ -176,31 +176,6 @@ export class RoomBookingComponent implements OnInit {
     console.log('Final Total (with discount and tax):', this.finalTotal);
   }
 
-  submit(){
-    const info = {
-      user: this.currentUser,
-      room: this.room,
-      firstName: this.bookingForm.get('firstName').value,
-      lastName:this.bookingForm.get('lastName').value,
-      paymentType: this.bookingForm.get('paymentType').value,
-      country: this.bookingForm.get('country').value,
-      city: this.bookingForm.get('city').value,
-      address: this.bookingForm.get('address').value,
-      state: this.bookingForm.get('state').value,
-      email: this.bookingForm.get('email').value,
-      totalPrice: this.totalPrice,
-      dayStayed: this.calculateDaysStayed()
-    }
-
-    console.log("Reference Number : ")
-    console.log("State : "+ JSON.stringify(info))
-    console.log("User in state : "+JSON.stringify(info.user))
-    console.log("Room in state : "+JSON.stringify(info.room))
-    console.log("Update total : " + this.updateTotalPrice())
-    console.log("Payment Type : " + info.paymentType)
-    //user,payment info,booking info
-    this.router.navigate(['/booking-received'],{state: { info }});
-  }
 
   get f() {
     return this.bookingForm.controls;

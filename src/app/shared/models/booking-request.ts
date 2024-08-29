@@ -61,4 +61,5 @@ export interface RoomBookingResponse {
     bookingReferenceNumber:any
     paymentType:any
     totalPrice:any
+    bookingType:any
 }

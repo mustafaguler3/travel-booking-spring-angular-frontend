@@ -19,6 +19,7 @@ import { VerifyOtpComponent } from './core/verify-otp/verify-otp.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { RoomBookingComponent } from './feature/room/room-booking/room-booking.component';
 import { BookingReceivedComponent } from './feature/booking/booking-received/booking-received.component';
+import { RoomBookingsComponent } from './auth/myBookings/room/room-bookings/room-bookings.component';
 
 
 const routes: Routes = [

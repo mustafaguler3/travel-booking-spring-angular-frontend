@@ -1,9 +1,5 @@
 backend -> https://github.com/mustafaguler3/travel-booking-spring-angular-backend.git
 
-![alt text](image.png)
-
-![alt text](image-1.png)
-
 Login & Register Screen
 ![alt text](image-3.png)
 
@@ -53,3 +49,6 @@ Room Booking
 ![alt text](image-26.png)
 ![alt text](image-27.png)
 ![alt text](image-29.png)
+
+User Bookings
+![alt text](image-30.png)

@@ -21,6 +21,10 @@ import { HomeComponent } from './home/home.component';
 import { RoomBookingComponent } from './room/room-booking/room-booking.component';
 import { TestComponent } from './test/test.component';
 import { BookingReceivedComponent } from './booking/booking-received/booking-received.component';
+import { RecomendedHotelsComponent } from './hotel/recomended-hotels/recomended-hotels.component';
+import { HotelReservationComponent } from './hotel/hotel-reservation/hotel-reservation.component';
+import { FlightListComponent } from './flights/flight-list/flight-list.component';
+
 @NgModule({
   declarations: [
     HotelListComponent,
@@ -34,7 +38,10 @@ import { BookingReceivedComponent } from './booking/booking-received/booking-rec
     HomeComponent,
     RoomBookingComponent,
     TestComponent,
-    BookingReceivedComponent
+    BookingReceivedComponent,
+    RecomendedHotelsComponent,
+    HotelReservationComponent,
+    FlightListComponent
   ],
   imports: [
     CommonModule,

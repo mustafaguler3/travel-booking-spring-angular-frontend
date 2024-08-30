@@ -381,7 +381,7 @@ section {
 
 .btn_theme_transparent {
     color: $white-color;
-    background-color: transparent;
+    background-color: $main-color;
     transition: $transition;
     box-shadow: none;
     overflow: hidden;

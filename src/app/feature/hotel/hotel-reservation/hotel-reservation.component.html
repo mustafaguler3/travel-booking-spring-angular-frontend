@@ -1,0 +1,86 @@
+<div class="booking-form-container">
+    <h2>Hotel & Room Booking</h2>
+  
+    <!-- Booking Details Form -->
+    <form (ngSubmit)="submitBooking()">
+  
+      <!-- Hotel Selection -->
+      <div class="form-group">
+        <label for="hotel">Select Hotel:</label>
+        <select id="hotel" [(ngModel)]="booking.hotelId" name="hotelId" required>
+          <option *ngFor="let hotel of hotels" [value]="hotel.id">{{ hotel.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Room Selection (Optional, if room booking is required) -->
+      <div class="form-group">
+        <label for="room">Select Room:</label>
+        <select id="room" [(ngModel)]="booking.roomId" name="roomId" required>
+          <option *ngFor="let room of rooms" [value]="room.id">{{ room.roomType }} - {{ room.pricePerNight }}$</option>
+        </select>
+      </div>
+  
+      <!-- Guest Information -->
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" [(ngModel)]="booking.firstName" name="firstName" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" [(ngModel)]="booking.lastName" name="lastName" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="booking.email" name="email" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" [(ngModel)]="booking.phoneNumber" name="phoneNumber" required>
+      </div>
+  
+      <!-- Dates -->
+      <div class="form-group">
+        <label for="checkInDate">Check-In Date:</label>
+        <input type="date" id="checkInDate" [(ngModel)]="booking.checkInDate" name="checkInDate" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="checkOutDate">Check-Out Date:</label>
+        <input type="date" id="checkOutDate" [(ngModel)]="booking.checkOutDate" name="checkOutDate" required>
+      </div>
+  
+      <!-- Payment Options -->
+      <div class="form-group">
+        <label for="paymentMethod">Select Payment Method:</label>
+        <select id="paymentMethod" [(ngModel)]="booking.paymentMethod" name="paymentMethod" required>
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bankTransfer">Bank Transfer</option>
+        </select>
+      </div>
+  
+      <!-- Payment Details (Show conditionally based on payment method) -->
+      <div *ngIf="booking.paymentMethod === 'creditCard'">
+        <div class="form-group">
+          <label for="cardNumber">Credit Card Number:</label>
+          <input type="text" id="cardNumber" [(ngModel)]="booking.cardNumber" name="cardNumber" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date:</label>
+          <input type="text" id="expiryDate" [(ngModel)]="booking.expiryDate" name="expiryDate" placeholder="MM/YY" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="cvv">CVV:</label>
+          <input type="text" id="cvv" [(ngModel)]="booking.cvv" name="cvv" required>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit Booking</button>
+    </form>
+  </div>

@@ -20,6 +20,8 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { RoomBookingComponent } from './feature/room/room-booking/room-booking.component';
 import { BookingReceivedComponent } from './feature/booking/booking-received/booking-received.component';
 import { RoomBookingsComponent } from './auth/myBookings/room/room-bookings/room-bookings.component';
+import { HotelReservationComponent } from './feature/hotel/hotel-reservation/hotel-reservation.component';
+import { FlightListComponent } from './feature/flights/flight-list/flight-list.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,8 @@ const routes: Routes = [
   {path:"unauthorized",component:UnauthorizedComponent},
   {path:"hotel-search",component:HotelSearchComponent},
   {path:"booking-received",component: BookingReceivedComponent},
+  {path:"hotel-reservation",component:HotelReservationComponent},
+  {path:"flights",component:FlightListComponent},
   {path:"hotel-detail/:hotelId",component:HotelDetailComponent},
   {path:"room-detail/:roomId",component:RoomDetailComponent},
   {path:"room-booking",component:RoomBookingComponent},

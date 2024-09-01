@@ -1,5 +1,10 @@
 backend -> https://github.com/mustafaguler3/travel-booking-spring-angular-backend.git
 
+Flights
+![alt text](image-33.png)
+![alt text](image-34.png)
+![alt text](image-35.png)
+
 Login & Register Screen
 ![alt text](image-3.png)
 

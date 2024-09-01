@@ -1,285 +1,1663 @@
-<section id="explore_area" class="section_padding">
+<main class="my-5">
+  <section class="pt-0">
     <div class="container">
-        <!-- Section Heading -->
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="left_side_search_area">
-                    <div class="left_side_search_boxed">
-                        <div class="left_side_search_heading">
-                            <h5>Filter by price</h5>
+      <div class="row">
+        <div class="col-12">
+          <form
+            class="bg-mode border rounded position-relative px-4 pt-4 mb-4 mb-sm-0"
+          >
+            <div class="g-4 row">
+              <div class="col-lg-6">
+                <ul
+                  class="nav nav-pills nav-pills-dark"
+                  id="pills-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link rounded-start rounded-0 mb-0 active"
+                      id="pills-one-way-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-one-way"
+                      type="button"
+                      role="tab"
+                      aria-selected="true"
+                    >
+                      One Way
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link rounded-end rounded-0 mb-0"
+                      id="pills-round-trip-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-round-trip"
+                      type="button"
+                      role="tab"
+                      aria-selected="false"
+                    >
+                      Round Trip
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="ms-auto col-lg-3">
+                <div class="form-control-bg-light form-fs-md">
+                  <div
+                    class="choices"
+                    data-type="select-one"
+                    tabindex="0"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="choices__inner">
+                      <select
+                        class="form-select js-choice choices__input"
+                        hidden=""
+                        tabindex="-1"
+                        data-choice="active"
+                      >
+                        <option value="Premium Economy">Premium Economy</option>
+                        <option value="Basic">Basic</option>
+                      </select>
+                      <div class="choices__list choices__list--single">
+                        <div
+                          class="choices__item choices__item--selectable"
+                          data-item=""
+                          data-id="1"
+                          data-value="Premium Economy"
+                          data-custom-properties="[object Object]"
+                          aria-selected="true"
+                        >
+                          Premium Economy
                         </div>
-                        <div class="filter-price">
-                            <div id="price-slider" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(0.75, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="550.0" aria-valuenow="0.0" aria-valuetext="$0"><div class="noUi-touch-area"></div><div class="noUi-tooltip">$0</div></div></div><div class="noUi-origin" style="transform: translate(-25%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="200.0" aria-valuemax="1000.0" aria-valuenow="750.0" aria-valuetext="$750"><div class="noUi-touch-area"></div><div class="noUi-tooltip">$750</div></div></div></div></div>
-                        </div>
-                        <button class="apply" type="button">Apply</button>
+                      </div>
                     </div>
-                    <div class="left_side_search_boxed">
-                        <div class="left_side_search_heading">
-                            <h5>Number of stops</h5>
+                    <div
+                      class="choices__list choices__list--dropdown"
+                      aria-expanded="false"
+                    >
+                      <input
+                        type="search"
+                        name="search_terms"
+                        class="choices__input choices__input--cloned"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        role="textbox"
+                        aria-autocomplete="list"
+                        aria-label="Type and hit enter"
+                        placeholder=""
+                      />
+                      <div class="choices__list" role="listbox">
+                        <div
+                          id="choices--ui0s-item-choice-1"
+                          class="choices__item choices__item--choice choices__item--selectable is-highlighted"
+                          role="option"
+                          data-choice=""
+                          data-id="1"
+                          data-value="-1"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                          aria-selected="true"
+                        >
+                          Select Class
                         </div>
-                        <div class="tour_search_type">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf1">
-                                <label class="form-check-label" for="flexCheckDefaultf1">
-                                    <span class="area_flex_one">
-                                        <span>1 stop</span>
-                                        <span>20</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf2">
-                                <label class="form-check-label" for="flexCheckDefaultf2">
-                                    <span class="area_flex_one">
-                                        <span>2 stop</span>
-                                        <span>16</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf3">
-                                <label class="form-check-label" for="flexCheckDefaultf3">
-                                    <span class="area_flex_one">
-                                        <span>3 stop</span>
-                                        <span>30</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultf4">
-                                <label class="form-check-label" for="flexCheckDefaultf4">
-                                    <span class="area_flex_one">
-                                        <span>Non-stop</span>
-                                        <span>22</span>
-                                    </span>
-                                </label>
-                            </div>
+                        <div
+                          id="choices--ui0s-item-choice-2"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="2"
+                          data-value="Economy"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          Economy
                         </div>
+                        <div
+                          id="choices--ui0s-item-choice-3"
+                          class="choices__item choices__item--choice is-selected choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="3"
+                          data-value="Premium Economy"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          Premium Economy
+                        </div>
+                        <div
+                          id="choices--ui0s-item-choice-4"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="4"
+                          data-value="Business"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          Business
+                        </div>
+                        <div
+                          id="choices--ui0s-item-choice-5"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="5"
+                          data-value="First Class"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          First Class
+                        </div>
+                      </div>
                     </div>
-                    <div class="left_side_search_boxed">
-                        <div class="left_side_search_heading">
-                            <h5>Flight class</h5>
-                        </div>
-                        <div class="tour_search_type">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultt1">
-                                <label class="form-check-label" for="flexCheckDefaultt1">
-                                    <span class="area_flex_one">
-                                        <span>Economy</span>
-                                        <span>20</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultt2">
-                                <label class="form-check-label" for="flexCheckDefaultt2">
-                                    <span class="area_flex_one">
-                                        <span>Business</span>
-                                        <span>26</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="left_side_search_boxed">
-                        <div class="left_side_search_heading">
-                            <h5>Airlines</h5>
-                        </div>
-                        <div class="tour_search_type">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults1">
-                                <label class="form-check-label" for="flexCheckDefaults1">
-                                    <span class="area_flex_one">
-                                        <span>Quatar Airways</span>
-                                        <span>17</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults2">
-                                <label class="form-check-label" for="flexCheckDefaults2">
-                                    <span class="area_flex_one">
-                                        <span>Fly Amirates </span>
-                                        <span>14</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults3">
-                                <label class="form-check-label" for="flexCheckDefaults3">
-                                    <span class="area_flex_one">
-                                        <span>Novo Air </span>
-                                        <span>62</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults4">
-                                <label class="form-check-label" for="flexCheckDefaults4">
-                                    <span class="area_flex_one">
-                                        <span>Air Asia </span>
-                                        <span>08</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaults5">
-                                <label class="form-check-label" for="flexCheckDefaults5">
-                                    <span class="area_flex_one">
-                                        <span>Singapore Airlines </span>
-                                        <span>12</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="left_side_search_boxed">
-                        <div class="left_side_search_heading">
-                            <h5>Refundable</h5>
-                        </div>
-                        <div class="tour_search_type">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp1">
-                                <label class="form-check-label" for="flexCheckDefaultp1">
-                                    <span class="area_flex_one">
-                                        <span>Yes</span>
-                                        <span>17</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp2">
-                                <label class="form-check-label" for="flexCheckDefaultp2">
-                                    <span class="area_flex_one">
-                                        <span>No</span>
-                                        <span>14</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefaultp3">
-                                <label class="form-check-label" for="flexCheckDefaultp3">
-                                    <span class="area_flex_one">
-                                        <span>As per rules</span>
-                                        <span>62</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-lg-9">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="flight_search_result_wrapper">
-
-                            <div class="flight_search_item_wrappper" *ngFor="let flight of flights">
-                                <div class="flight_search_items">
-                                    <div class="multi_city_flight_lists">
-                                        <div class="flight_multis_area_wrapper">
-                                            <div class="flight_search_left">
-                                                <div class="flight_logo">
-                                                    <img [src]="getFlightImage(flight.airlineLogo)" alt="img">
-                                                </div>
-                                                <div class="flight_search_destination">
-                                                    <p>From</p>
-                                                    <h3>{{flight.fromCity}}</h3>
-                                                    <h6>{{flight.fromAirport}}</h6>
-                                                </div>
-                                            </div>
-                                            <div class="flight_search_middel">
-                                                <div class="flight_right_arrow">
-                                                    <img src="assets/img/right_arrow.png" alt="icon">
-                                                    <h6>Non-stop</h6>
-                                                    <p>{{flight.flightDuration}}</p>
-                                                </div>
-                                                <div class="flight_search_destination">
-                                                    <p>To</p>
-                                                    <h3>{{flight.toCity}}</h3>
-                                                    <h6>{{flight.toAirport}} </h6>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="flight_search_right">
-                                        <h5><del>{{flight.originalPrice | currency}}</del></h5>
-                                        <h2>{{flight.discountedPrice | currency}}<sup>{{flight.discountPercentage}}% OFF</sup></h2>
-                                        <a routerLink="flight-booking" class="btn btn_theme btn_sm">Book
-                                            now</a>
-                                        <p>*Discount applicable on some conditions</p>
-                                        <h6 data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Show more <i class="fas fa-chevron-down"></i></h6>
-                                    </div>
-                                </div>
-                                <div class="flight_policy_refund collapse" id="collapseExample">
-                                    <div class="flight_show_down_wrapper">
-                                        <div class="flight-shoe_dow_item">
-                                            <div class="airline-details">
-                                                <div class="img"><img src="assets/img/a.png" alt="img"></div>
-                                                <span class="airlineName fw-500">{{flight.airlineName}} &nbsp;
-                                                    {{flight.airplaneType}}</span>
-                                                <span class="flightNumber">{{flight.flightNumber}}</span>
-                                            </div>
-                                            <div class="flight_inner_show_component">
-                                                <div class="flight_det_wrapper">
-                                                    <div class="flight_det">
-                                                        <div class="code_time">
-                                                            <span class="code">{{flight.flightNumber}}</span>
-                                                            <span class="time">{{flight.departureTime | date : 'hh:mm'}}</span>
-                                                        </div>
-                                                        <p class="airport">{{flight.fromAirport}}
-                                                        </p>
-                                                        <p class="date">{{flight.departureTime | date : 'medium'}}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flight_duration">
-                                                    <div class="arrow_right"></div>
-                                                    <span>{{flight.flightDuration}}</span>
-                                                </div>
-                                                <div class="flight_det_wrapper">
-                                                    <div class="flight_det">
-                                                        <div class="code_time">
-                                                            <span class="code">{{flight.toAirport}}</span>
-                                                            <span class="time">{{flight.arrivalTime | date : 'hh:mm'}}</span>
-                                                        </div>
-                                                        <p class="airport">{{flight.toAirport}}
-                                                        </p>
-                                                        <p class="date">{{flight.arrivalTime | date : 'medium'}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="flight_refund_policy">
-                                            <div class="TabPanelInner flex_widht_less">
-                                                <h4>Refund Policy</h4>
-                                                <p class="fz12">1. Refund and Date Change are done as per the
-                                                    following policies.</p>
-                                                <p class="fz12">2. Refund Amount= Refund Charge (as per airline
-                                                    policy + ShareTrip Convenience Fee). </p>
-                                                <p class="fz12">3. Date Change Amount= Date Change Fee (as per
-                                                    Airline Policy + ShareTrip Convenience Fee).</p>
-                                            </div>
-                                            <div class="TabPanelInner">
-                                                <h4>Baggage</h4>
-                                                <div class="flight_info_taable">
-                                                    <h3>{{flight.flightNumber}}</h3>
-                                                    <p><span>{{flight.baggageInfo}} /</span> person</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
+              </div>
+              <div class="ms-auto col-lg-3">
+                <div class="form-control-bg-light form-fs-md">
+                  <div
+                    class="choices"
+                    data-type="select-one"
+                    tabindex="0"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    <div class="choices__inner">
+                      <select
+                        class="form-select js-choice choices__input"
+                        hidden=""
+                        tabindex="-1"
+                        data-choice="active"
+                      >
+                        <option
+                          value="2"
+                          data-custom-properties="[object Object]"
+                        >
+                          2
+                        </option>
+                      </select>
+                      <div class="choices__list choices__list--single">
+                        <div
+                          class="choices__item choices__item--selectable"
+                          data-item=""
+                          data-id="1"
+                          data-value="2"
+                          data-custom-properties="[object Object]"
+                          aria-selected="true"
+                        >
+                          2
                         </div>
-                        <div class="load_more_flight">
-                            <button class="btn btn_md"><i class="fas fa-spinner"></i> Load more..</button>
-                        </div>
+                      </div>
                     </div>
+                    <div
+                      class="choices__list choices__list--dropdown"
+                      aria-expanded="false"
+                    >
+                      <input
+                        type="search"
+                        name="search_terms"
+                        class="choices__input choices__input--cloned"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        role="textbox"
+                        aria-autocomplete="list"
+                        aria-label="Type and hit enter"
+                        placeholder=""
+                      />
+                      <div class="choices__list" role="listbox">
+                        <div
+                          id="choices--4la8-item-choice-1"
+                          class="choices__item choices__item--choice choices__item--selectable is-highlighted"
+                          role="option"
+                          data-choice=""
+                          data-id="1"
+                          data-value="-1"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                          aria-selected="true"
+                        >
+                          Select Travelers
+                        </div>
+                        <div
+                          id="choices--4la8-item-choice-2"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="2"
+                          data-value="1"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          1
+                        </div>
+                        <div
+                          id="choices--4la8-item-choice-3"
+                          class="choices__item choices__item--choice is-selected choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="3"
+                          data-value="2"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          2
+                        </div>
+                        <div
+                          id="choices--4la8-item-choice-4"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="4"
+                          data-value="3"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          3
+                        </div>
+                        <div
+                          id="choices--4la8-item-choice-5"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="5"
+                          data-value="4"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                        >
+                          4
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+
+            <div class="mt-4 tab-content" id="pills-tabContent">
+              <div
+                id="pills-one-way"
+                aria-labelledby="pills-one-way-tab"
+                role="tabpanel"
+                class="fade fade show active tab-pane"
+              >
+                <div class="g-4 row">
+                  <div class="position-relative col-lg-4 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                          ></path>
+                          <path
+                            d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                          ></path></svg
+                        >From</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Where"
+                      />
+                    </div>
+
+                    <div class="btn-flip-icon mt-3 mt-md-0">
+                      <button
+                        type="button"
+                        class="btn btn-white shadow btn-round mb-0 flex-centered"
+                      >
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M32 96l320 0V32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l96 96c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-96 96c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6V160L32 160c-17.7 0-32-14.3-32-32s14.3-32 32-32zM480 352c17.7 0 32 14.3 32 32s-14.3 32-32 32H160v64c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-96-96c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6l96-96c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 64H480z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-lg-4 col-lg-4 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+                          ></path></svg
+                        >To</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="To"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                          ></path></svg
+                        >Departure</label
+                      ><input
+                        class="form-control flatpickr flatpickr-input"
+                        value="01.09.2024"
+                        type="date"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="text-end pt-0 col-12">
+                    <a class="btn btn-primary mb-n4" href="/flights/list"
+                      >Find ticket
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        class="ms-3"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        ></path></svg
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="pills-round-trip"
+                aria-labelledby="pills-round-trip-tab"
+                role="tabpanel"
+                class="fade fade tab-pane"
+              >
+                <div class="g-4 row">
+                  <div class="position-relative col-xl-3 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                          ></path>
+                          <path
+                            d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                          ></path></svg
+                        >From</label
+                      >
+                      <div
+                        class="choices"
+                        data-type="select-one"
+                        tabindex="0"
+                        role="combobox"
+                        aria-autocomplete="list"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <div class="choices__inner">
+                          <select
+                            class="form-select js-choice choices__input"
+                            hidden=""
+                            tabindex="-1"
+                            data-choice="active"
+                          >
+                            <option
+                              value="-1"
+                              data-custom-properties="[object Object]"
+                            >
+                              Select location
+                            </option>
+                          </select>
+                          <div class="choices__list choices__list--single">
+                            <div
+                              class="choices__item choices__item--selectable"
+                              data-item=""
+                              data-id="1"
+                              data-value="-1"
+                              data-custom-properties="[object Object]"
+                              aria-selected="true"
+                            >
+                              Select location
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="choices__list choices__list--dropdown"
+                          aria-expanded="false"
+                        >
+                          <input
+                            type="search"
+                            name="search_terms"
+                            class="choices__input choices__input--cloned"
+                            autocomplete="off"
+                            autocapitalize="off"
+                            spellcheck="false"
+                            role="textbox"
+                            aria-autocomplete="list"
+                            aria-label="Type and hit enter"
+                            placeholder=""
+                          />
+                          <div class="choices__list" role="listbox">
+                            <div
+                              id="choices--hw7i-item-choice-1"
+                              class="choices__item choices__item--choice is-selected choices__item--selectable is-highlighted"
+                              role="option"
+                              data-choice=""
+                              data-id="1"
+                              data-value="-1"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                              aria-selected="true"
+                            >
+                              Select location
+                            </div>
+                            <div
+                              id="choices--hw7i-item-choice-2"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="2"
+                              data-value="San Jacinto, USA"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              San Jacinto, USA
+                            </div>
+                            <div
+                              id="choices--hw7i-item-choice-3"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="3"
+                              data-value="North Dakota, Canada"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              North Dakota, Canada
+                            </div>
+                            <div
+                              id="choices--hw7i-item-choice-4"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="4"
+                              data-value="West Virginia, Paris"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              West Virginia, Paris
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn-flip-icon mt-3 mt-md-0">
+                      <button
+                        class="btn btn-white shadow btn-round mb-0 flex-centered"
+                      >
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 512 512"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M32 96l320 0V32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l96 96c6 6 9.4 14.1 9.4 22.6s-3.4 16.6-9.4 22.6l-96 96c-9.2 9.2-22.9 11.9-34.9 6.9s-19.8-16.6-19.8-29.6V160L32 160c-17.7 0-32-14.3-32-32s14.3-32 32-32zM480 352c17.7 0 32 14.3 32 32s-14.3 32-32 32H160v64c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-96-96c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6l96-96c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 64H480z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+                          ></path></svg
+                        >To</label
+                      >
+                      <div
+                        class="choices"
+                        data-type="select-one"
+                        tabindex="0"
+                        role="combobox"
+                        aria-autocomplete="list"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <div class="choices__inner">
+                          <select
+                            class="form-select js-choice choices__input"
+                            hidden=""
+                            tabindex="-1"
+                            data-choice="active"
+                          >
+                            <option
+                              value="-1"
+                              data-custom-properties="[object Object]"
+                            >
+                              Select location
+                            </option>
+                          </select>
+                          <div class="choices__list choices__list--single">
+                            <div
+                              class="choices__item choices__item--selectable"
+                              data-item=""
+                              data-id="1"
+                              data-value="-1"
+                              data-custom-properties="[object Object]"
+                              aria-selected="true"
+                            >
+                              Select location
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="choices__list choices__list--dropdown"
+                          aria-expanded="false"
+                        >
+                          <input
+                            type="search"
+                            name="search_terms"
+                            class="choices__input choices__input--cloned"
+                            autocomplete="off"
+                            autocapitalize="off"
+                            spellcheck="false"
+                            role="textbox"
+                            aria-autocomplete="list"
+                            aria-label="Type and hit enter"
+                            placeholder=""
+                          />
+                          <div class="choices__list" role="listbox">
+                            <div
+                              id="choices--9dqm-item-choice-1"
+                              class="choices__item choices__item--choice is-selected choices__item--selectable is-highlighted"
+                              role="option"
+                              data-choice=""
+                              data-id="1"
+                              data-value="-1"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                              aria-selected="true"
+                            >
+                              Select location
+                            </div>
+                            <div
+                              id="choices--9dqm-item-choice-2"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="2"
+                              data-value="San Jacinto, USA"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              San Jacinto, USA
+                            </div>
+                            <div
+                              id="choices--9dqm-item-choice-3"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="3"
+                              data-value="North Dakota, Canada"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              North Dakota, Canada
+                            </div>
+                            <div
+                              id="choices--9dqm-item-choice-4"
+                              class="choices__item choices__item--choice choices__item--selectable"
+                              role="option"
+                              data-choice=""
+                              data-id="4"
+                              data-value="West Virginia, Paris"
+                              data-select-text="Press to select"
+                              data-choice-selectable=""
+                            >
+                              West Virginia, Paris
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                          ></path></svg
+                        >Departure</label
+                      ><input
+                        class="form-control flatpickr flatpickr-input"
+                        value="Sat Aug 31 2024"
+                        type="text"
+                        readonly="readonly"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-md-6">
+                    <div
+                      class="form-border-transparent form-fs-lg bg-light rounded-3 h-100 p-3"
+                    >
+                      <label class="mb-1"
+                        ><svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          class="me-2"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                          ></path></svg
+                        >Return</label
+                      ><input
+                        class="form-control flatpickr flatpickr-input"
+                        value="Thu Sep 05 2024"
+                        type="text"
+                        readonly="readonly"
+                      />
+                    </div>
+                  </div>
+                  <div class="text-end pt-0 col-12">
+                    <a class="btn btn-primary mb-n4" href="/flights/list"
+                      >Find ticket
+                      <svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        class="ms-3"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                        ></path></svg
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-0">
+    <div class="position-relative container">
+      <div class="row">
+        <div class="col-12">
+          <div class="d-sm-flex justify-content-sm-between align-items-center">
+            <div class="mb-3 mb-sm-0">
+              <h1 class="fs-3">{{ flights.length }} Flight Available</h1>
+              <ul class="nav nav-divider h6 mb-0">
+                <li class="nav-item">25 Jan</li>
+                <li class="nav-item">1 Stop</li>
+              </ul>
+            </div>
+            <button type="button" class="d-xl-none mb-0 btn btn-primary">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                class="me-1"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"
+                ></path>
+              </svg>
+              Show filters
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary bg-opacity-10 rounded-3 overflow-hidden mt-4 p-4">
+        <div class="g-4 align-items-center row">
+          <div class="text-center order-1 col-md-3 col-6">
+            <img src="/assets/11-Ggcdd9eD.svg" class="mb-n5" />
+          </div>
+          <div class="order-md-2 col-md-6">
+            <h4>International Guideline</h4>
+            <p class="mb-2">
+              COVID safety measures adopted by various countries including VISA
+              restrictions, quarantine rules, etc.
+            </p>
+            <button type="button" class="mb-0 btn btn-primary btn-sm">
+              View Guidelines
+            </button>
+          </div>
+          <div class="text-center order-3 col-md-3 col-6">
+            <img src="/assets/10-Qh-JVL5Z.svg" class="mb-n5" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-3 col-xl-4">
+          <div class="d-none d-xl-block">
+            <form class="rounded-3 shadow">
+              <div class="card-body rounded-0 rounded-top p-4 card">
+                <h6 class="mb-2">Popular Filters</h6>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="popolarType1"
+                      /><label class="form-check-label" for="popolarType1"
+                        >Refundable Fare</label
+                      >
+                    </div>
+                    <span class="small">(41)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="popolarType2"
+                      /><label class="form-check-label" for="popolarType2"
+                        >1 Stop</label
+                      >
+                    </div>
+                    <span class="small">(20)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="popolarType3"
+                      /><label class="form-check-label" for="popolarType3"
+                        >Late Departure</label
+                      >
+                    </div>
+                    <span class="small">(4)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="popolarType4"
+                      /><label class="form-check-label" for="popolarType4"
+                        >Non-Stop</label
+                      >
+                    </div>
+                    <span class="small">(2)</span>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-0" />
+              <div class="card-body rounded-0 p-4 card">
+                <h6 class="mb-2">Price</h6>
+                <div class="position-relative">
+                  <div class="noui-wrapper">
+                    <div class="d-flex justify-content-between">
+                      <input
+                        type="text"
+                        class="text-body input-with-range-min"
+                        readonly=""
+                        value="700"
+                      /><input
+                        type="text"
+                        class="text-body input-with-range-max"
+                        readonly=""
+                        value="1500"
+                      />
+                    </div>
+                    <div
+                      class="noui-slider-range mt-2 noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+                    >
+                      <div class="noUi-base">
+                        <div class="noUi-connects">
+                          <div
+                            class="noUi-connect"
+                            style="
+                              transform: translate(13.3333%, 0px)
+                                scale(0.533333, 1);
+                            "
+                          ></div>
+                        </div>
+                        <div
+                          class="noUi-origin"
+                          style="
+                            transform: translate(-866.667%, 0px);
+                            z-index: 5;
+                          "
+                        >
+                          <div
+                            class="noUi-handle noUi-handle-lower"
+                            data-handle="0"
+                            tabindex="0"
+                            role="slider"
+                            aria-orientation="horizontal"
+                            aria-valuemin="500.0"
+                            aria-valuemax="1500.0"
+                            aria-valuenow="700.0"
+                            aria-valuetext="700.00"
+                          >
+                            <div class="noUi-touch-area"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="noUi-origin"
+                          style="
+                            transform: translate(-333.333%, 0px);
+                            z-index: 4;
+                          "
+                        >
+                          <div
+                            class="noUi-handle noUi-handle-upper"
+                            data-handle="1"
+                            tabindex="0"
+                            role="slider"
+                            aria-orientation="horizontal"
+                            aria-valuemin="700.0"
+                            aria-valuemax="2000.0"
+                            aria-valuenow="1500.0"
+                            aria-valuetext="1500.00"
+                          >
+                            <div class="noUi-touch-area"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="my-0" />
+              <div class="card-body rounded-0 p-4 card">
+                <h6 class="mb-2">Onward Stops</h6>
+                <ul class="list-inline mb-0 g-3">
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c1"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c1"
+                      >Direct</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c2"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c2"
+                      >1 Stop</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c3"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c3"
+                      >2+ Stops</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <hr class="my-0" />
+              <div class="card-body rounded-0 p-4 card">
+                <h6 class="mb-2">Return Stops</h6>
+                <ul class="list-inline mb-0 g-3">
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-6"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-6"
+                      >Direct</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-7"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-7"
+                      >1 Stop</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-8"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-8"
+                      >2+ Stops</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <hr class="my-0" />
+              <div class="card-body rounded-0 p-4 card">
+                <h6 class="mb-2">Preferred Airline</h6>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="airlineType1"
+                    /><label class="form-check-label" for="airlineType1"
+                      ><img
+                        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='226.88'%20height='257.81'%20viewBox='0%200%20226.88%20257.81'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%239c2020;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M1265,3215.18s90.58,34.21,88.66,83.71h0.03v83.71s-90.58-34.21-88.66-83.71H1265v-83.71Zm169.35,147.83a123.887,123.887,0,0,1,57.53-21.21v-26.21A117.976,117.976,0,0,0,1434.35,3363.01Zm-10.29,7.89a123.042,123.042,0,0,1,67.82-60.81v-75.51s-128.98,48.72-126.25,119.21h-0.04v119.2s5.76-2.17,14.79-6.26c-0.03-3.82.09-7.67,0.41-11.53A123.83,123.83,0,0,1,1424.06,3370.9Zm-12.26,44.29a123.849,123.849,0,0,1,4.5-24.41,115.089,115.089,0,0,0-26.96,65.13c-0.19,2.27-.29,4.54-0.35,6.8,7.33-3.53,15.86-7.92,24.81-13.08A123.283,123.283,0,0,1,1411.8,3415.19Zm5.13,0.42a118.028,118.028,0,0,0,1.59,31.25c35.24-21.09,74.85-53.68,73.32-93.07h0.04v-3.36a115.62,115.62,0,0,0-67.05,31.33A117.575,117.575,0,0,0,1416.93,3415.61Z'%20transform='translate(-1265%20-3215.19)'/%3e%3c/svg%3e"
+                        class="h-15px fa-fw me-2"
+                      />&nbsp;Blogzine</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="airlineType2"
+                    /><label class="form-check-label" for="airlineType2"
+                      ><img
+                        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='176'%20height='142'%20viewBox='0%200%20176%20142'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%233d4fd5;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M2230,3455l-56.25-100.33-35.21,62.82,21.03,37.51H2230Zm-77.83,0-17.33-30.91L2117.51,3455h34.66Zm-19.11-142L2054,3455h55.33l51.39-92.66Z'%20transform='translate(-2054%20-3313)'/%3e%3c/svg%3e"
+                        class="h-15px fa-fw me-2"
+                      />Wizixo</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="airlineType3"
+                    /><label class="form-check-label" for="airlineType3"
+                      ><img
+                        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='182'%20height='182'%20viewBox='0%200%20182%20182'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%2311774d;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M1970.4,2554.4l-36.4,36.4v72.8l36.4,36.4V2554.4h109.2v36.4h-72.8v36.4h72.8v36.4h-72.8V2700h36.4l36.4-36.4,36.4-36.4h-36.4v-36.4l36.4-36.4h-36.4V2518h-72.8l-31.74,31.74Z'%20transform='translate(-1934%20-2518)'/%3e%3c/svg%3e"
+                        class="h-15px fa-fw me-2"
+                      />Folio airline</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="airlineType4"
+                    /><label class="form-check-label" for="airlineType4"
+                      ><img
+                        src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='157'%20height='176'%20viewBox='0%200%20157%20176'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23e03333;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M1826.84,2122.99q-60.255-34.755-120.49-69.51a18.211,18.211,0,0,0-27.35,15.78v140.29a18.206,18.206,0,0,0,27.33,14.96q29.13-16.8,58.25-33.6v-84.08l16.73,9.64v64.34l17.1-9.86v-44.61l17.1,9.86v24.89l11.33-6.54a18.189,18.189,0,0,0,0-31.56m-113.62,11.95,34.25,19.76v26.34q-25.7,14.8-51.37,29.63,0-23.8.02-47.6l17.13,9.88v8.08l17.11-9.88v-6.57q-17.115-9.885-34.24-19.76c-0.04-.02,0-70.97,0-77.49q25.665,14.8,51.35,29.62,0,19.77.01,39.51l-17.15-9.9v-19.74l-17.11-9.88v38Z'%20transform='translate(-1679%20-2050.97)'/%3e%3c/svg%3e"
+                        class="h-15px fa-fw me-2"
+                      />Booking</label
+                    >
+                  </div>
+                  <div class="collapse">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="airlineType7"
+                      /><label class="form-check-label" for="airlineType7"
+                        ><img
+                          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='157'%20height='176'%20viewBox='0%200%20157%20176'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23e03333;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M1826.84,2122.99q-60.255-34.755-120.49-69.51a18.211,18.211,0,0,0-27.35,15.78v140.29a18.206,18.206,0,0,0,27.33,14.96q29.13-16.8,58.25-33.6v-84.08l16.73,9.64v64.34l17.1-9.86v-44.61l17.1,9.86v24.89l11.33-6.54a18.189,18.189,0,0,0,0-31.56m-113.62,11.95,34.25,19.76v26.34q-25.7,14.8-51.37,29.63,0-23.8.02-47.6l17.13,9.88v8.08l17.11-9.88v-6.57q-17.115-9.885-34.24-19.76c-0.04-.02,0-70.97,0-77.49q25.665,14.8,51.35,29.62,0,19.77.01,39.51l-17.15-9.9v-19.74l-17.11-9.88v38Z'%20transform='translate(-1679%20-2050.97)'/%3e%3c/svg%3e"
+                          class="h-15px fa-fw me-2"
+                        />Formex</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="airlineType8"
+                      /><label class="form-check-label" for="airlineType8"
+                        ><img
+                          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='176'%20height='142'%20viewBox='0%200%20176%20142'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%233d4fd5;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M2230,3455l-56.25-100.33-35.21,62.82,21.03,37.51H2230Zm-77.83,0-17.33-30.91L2117.51,3455h34.66Zm-19.11-142L2054,3455h55.33l51.39-92.66Z'%20transform='translate(-2054%20-3313)'/%3e%3c/svg%3e"
+                          class="h-15px fa-fw me-2"
+                        />Realty</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="airlineType9"
+                      /><label class="form-check-label" for="airlineType9"
+                        ><img
+                          src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='226.88'%20height='257.81'%20viewBox='0%200%20226.88%20257.81'%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%239c2020;%20fill-rule:%20evenodd;%20}%20%3c/style%3e%3c/defs%3e%3cpath%20class='cls-1'%20d='M1265,3215.18s90.58,34.21,88.66,83.71h0.03v83.71s-90.58-34.21-88.66-83.71H1265v-83.71Zm169.35,147.83a123.887,123.887,0,0,1,57.53-21.21v-26.21A117.976,117.976,0,0,0,1434.35,3363.01Zm-10.29,7.89a123.042,123.042,0,0,1,67.82-60.81v-75.51s-128.98,48.72-126.25,119.21h-0.04v119.2s5.76-2.17,14.79-6.26c-0.03-3.82.09-7.67,0.41-11.53A123.83,123.83,0,0,1,1424.06,3370.9Zm-12.26,44.29a123.849,123.849,0,0,1,4.5-24.41,115.089,115.089,0,0,0-26.96,65.13c-0.19,2.27-.29,4.54-0.35,6.8,7.33-3.53,15.86-7.92,24.81-13.08A123.283,123.283,0,0,1,1411.8,3415.19Zm5.13,0.42a118.028,118.028,0,0,0,1.59,31.25c35.24-21.09,74.85-53.68,73.32-93.07h0.04v-3.36a115.62,115.62,0,0,0-67.05,31.33A117.575,117.575,0,0,0,1416.93,3415.61Z'%20transform='translate(-1265%20-3215.19)'/%3e%3c/svg%3e"
+                          class="h-15px fa-fw me-2"
+                        />rocyon</label
+                      >
+                    </div>
+                  </div>
+                  <a
+                    class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed"
+                    ><span role="button" class="see-more">See more</span
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      class="ms-2"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                      ></path></svg
+                  ></a>
+                </div>
+              </div>
+              <hr class="my-0" />
+              <div class="card-body rounded-0 rounded-bottom p-4 card">
+                <h6 class="mb-2">Layover Airport</h6>
+                <div class="col-12">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lauoverType1"
+                      /><label class="form-check-label" for="lauoverType1"
+                        >Abu Dhabi</label
+                      >
+                    </div>
+                    <span class="small">(01)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lauoverType2"
+                      /><label class="form-check-label" for="lauoverType2"
+                        >Amsterdam</label
+                      >
+                    </div>
+                    <span class="small">(02)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lauoverType3"
+                      /><label class="form-check-label" for="lauoverType3"
+                        >Chicago</label
+                      >
+                    </div>
+                    <span class="small">(02)</span>
+                  </div>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="lauoverType4"
+                      /><label class="form-check-label" for="lauoverType4"
+                        >Doha</label
+                      >
+                    </div>
+                    <span class="small">(03)</span>
+                  </div>
+                  <div class="collapse">
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="lauoverType7"
+                        /><label class="form-check-label" for="lauoverType7"
+                          >Dubai</label
+                        >
+                      </div>
+                      <span class="small">(04)</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="lauoverType8"
+                        /><label class="form-check-label" for="lauoverType8"
+                          >New Delhi</label
+                        >
+                      </div>
+                      <span class="small">(15)</span>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="lauoverType9"
+                        /><label class="form-check-label" for="lauoverType9"
+                          >Paris</label
+                        >
+                      </div>
+                      <span class="small">(04)</span>
+                    </div>
+                  </div>
+                  <a
+                    class="btn-more d-flex align-items-center collapsed p-0 mb-0 mt-2"
+                    ><span role="button" class="see-more">See more</span
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      class="ms-2"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                      ></path></svg
+                  ></a>
+                </div>
+              </div>
+            </form>
+            <div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
+              <button type="button" class="p-0 mb-0 btn btn-link">
+                Clear all</button
+              ><button type="button" class="mb-0 btn btn-primary">
+                Filter Result
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-9 col-xl-8">
+          <div
+            class="bg-success bg-opacity-10 p-3 rounded-2 d-sm-flex justify-content-sm-between align-items-center my-3 py-2"
+          >
+            <div class="d-flex align-items-center mb-3 mb-sm-0">
+              <div class="position-relative z-index-1 me-2">
+                <img
+                  src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2023.0.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20width='410px'%20height='410px'%20viewBox='0%200%20410%20410'%20style='enable-background:new%200%200%20410%20410;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill:%23A31616;}%20%3c/style%3e%3cg%3e%3cpath%20class='st0'%20d='M254.4,0c1.6,0,3.2,0,4.8,0c5.1,0.5,8.5,3.5,11.7,7.4c8.1,10.1,16.4,20,24.3,30.2c2.5,3.2,5.6,4.6,9.4,5.2%20c13.5,2.1,27.1,4.2,40.6,6.4c9.1,1.5,13.6,5.9,15.1,15.1c2.2,13.5,4.5,27.1,6.4,40.6c0.6,4.2,2.5,7.3,5.9,9.9%20c10.5,8.1,20.6,16.8,31.2,25c5.4,4.2,6.7,9.6,6.1,15.9c-0.7,9-4.8,16.8-7.9,25.1c-2.4,6.6-4.9,13.3-7.5,19.8%20c-1.1,2.8-1.1,5.3-0.1,8.1c4.3,11.5,8.8,22.9,13.1,34.3c1.5,3.9,2.1,8,2.4,12.1c0.5,6-1.4,10.8-6.4,14.6%20c-10.4,8.1-20.4,16.7-30.8,24.8c-3.5,2.7-5.4,5.9-6,10.3c-2,13.4-4.2,26.8-6.4,40.3c-1.5,9.5-5.8,13.7-15.3,15.3%20c-13.4,2.2-26.8,4.3-40.3,6.4c-4.4,0.7-7.5,2.5-10.2,6.1c-8,10.5-16.7,20.4-24.8,30.8c-4.3,5.5-9.7,6.8-16.2,6.2%20c-9.1-0.8-17-5.1-25.4-8c-6.5-2.3-12.9-5-19.4-7.4c-2.6-1-5.1-1-7.7,0c-11.7,4.4-23.3,9.1-35.1,13.4c-3.9,1.4-8,1.9-12.1,2.2%20c-5.7,0.5-10.2-1.7-13.9-6.2c-8.3-10.4-16.8-20.7-25-31.1c-2.6-3.3-5.7-5.2-9.9-5.9c-13.6-2.1-27.1-4.2-40.6-6.4%20c-9.1-1.5-13.6-6-15-15.1c-2.1-13.8-4.5-27.6-6.5-41.4c-0.5-3.4-1.9-6-4.6-8.1c-10.2-8.1-20.3-16.5-30.5-24.6%20c-3.8-3-6.9-6.2-7.7-11.1c0-2.1,0-4.3,0-6.4c1.9-13.9,8.2-26.3,13.2-39.1c2.4-6.3,3.4-11.8,0.4-18.3c-3.8-8.3-6.6-17.1-10-25.6%20c-1.9-4.7-2.5-9.7-3.5-14.6c0-2.1,0-4.3,0-6.4c0.8-4.9,4-8.1,7.7-11.1c10.1-8.2,20.3-16.4,30.4-24.6c2.6-2.1,4.2-4.7,4.7-8%20c2-14,4.4-27.8,6.5-41.8c1.3-8.7,6.1-13.5,14.8-14.8c13.9-2.1,27.8-4.6,41.8-6.5c3.4-0.5,5.9-2,8-4.7c8.2-10.1,16.4-20.3,24.6-30.4%20c3-3.7,6.2-6.9,11.1-7.7c2.1,0,4.3,0,6.4,0c14.1,2,26.8,8.4,39.8,13.5c6.2,2.4,11.8,2.8,17.9,0c8.6-3.9,17.6-6.8,26.4-10.3%20C244.7,1.3,249.6,0.8,254.4,0z'/%3e%3c/g%3e%3c/svg%3e"
+                  class="position-relative h-40px"
+                /><span
+                  class="smaller text-white position-absolute top-50 start-50 translate-middle"
+                  >New
+                  </span>
+                
+              </div>
+              <h6 class="mb-0 fw-normal">
+                Get <strong class="text-success">20% Off</strong> On Your First
+                Flight
+              </h6>
+            </div>
+            <button type="button" class="mb-0 btn btn-success btn-sm">
+              Login / Signup
+            </button>
+          </div>
+
+          <div class="vstack gap-4 my-2" *ngFor="let flight of flights">
+            <div class="border card">
+              <div class="p-4 pb-0 card-body">
+                <div class="g-4 row">
+                  <div class="col-md-3">
+                    <img [src]="getFlightImage(flight.airlineLogo)" />
+                    <h6 class="fw-normal mb-0">
+                      <!-- {{flight.airlineName}} -->
+                    </h6>
+                    <h6 class="fw-normal mb-0">
+                      <!--{{flight.flightNumber}}  -->
+                    </h6>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                    <h4>{{ flight.departureTime | date : "hh:mm" }}</h4>
+                    <h6 class="mb-0">
+                      {{ flight.departureTime | date : "MMM d, y" }}
+                    </h6>
+                    <p class="mb-0">
+                      {{ flight.fromAirport }},
+                      <strong>{{ flight.fromCity }}</strong>
+                    </p>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                    <h4>{{ flight.arrivalTime | date : "hh:mm" }}</h4>
+                    <h6 class="mb-0">
+                      {{ flight.arrivalTime | date : "MMM d,y" }}
+                    </h6>
+                    <p class="mb-0">
+                      {{ flight.toAirport }},
+                      <strong>{{ flight.toCity }}</strong>
+                    </p>
+                  </div>
+                  <div class="col-md-3 col-sm-4">
+                    <h4>{{ flight.originalPrice | currency : "USD" }}</h4>
+                    <a class="btn btn-dark" routerLink="/flight-booking"
+                      >Book Now
+                    </a>
+                    <a
+                      data-bs-toggle="modal"
+                      data-bs-target="#flightDetail"
+                      class="text-decoration-underline p-0 mb-0 items-center btn btn-link"
+                      (click)="selectSpecificFlight(flight)"
+                    >
+                    <i class="fa-solid fa-eye"></i> Flight Details
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="p-4 card-footer">
+                <div class="bg-light p-2 rounded-2">
+                  <ul
+                    class="list-inline d-sm-flex justify-content-sm-between mb-0 mx-4"
+                  >
+                    <li class="list-inline-item text-danger">
+                      Only {{ flight.seatAvailability }} Seat Left
+                    </li>
+                    <li class="list-inline-item">
+                      Total time: {{ flight.flightDuration }}
+                    </li>
+                    <li
+                      class="list-inline-item"
+                      [ngClass]="{
+                        'text-success': flight.refundable,
+                        'text-danger': !flight.refundable
+                      }"
+                    >
+                      {{ flight.refundable ? "Refundable" : "Non-refundable" }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!--Modal flight Detail -->
+            <div 
+    class="modal fade" id="flightDetail" tabindex="-1" role="dialog" 
+    aria-labelledby="flightDetail" aria-hidden="false"
+  >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content" >
+        <div class="modal-header">
+          <h5 class="modal-title">Flight Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="p-3 modal-body">
+          <div
+            class="nav-pills nav-responsive bg-primary bg-opacity-10 rounded p-2 mb-3 nav nav-tabs nav-justified"
+            role="tablist"
+          >
+            <div class="nav-item" role="presentation">
+              <a 
+              role="tab" [ngClass]="{'active': activeTab === 1}" (click)="setActiveTab(1)" id="tab-1" aria-controls="tabpane-1" aria-selected="true" class="mb-0 nav-link"
+                >Flight Information
+              </a>
+              
+            </div>
+            <div class="nav-item" role="presentation">
+              <a
+              
+              role="tab" [ngClass]="{'active': activeTab === 2}" (click)="setActiveTab(2)" id="tab-2" aria-controls="tabpane-2" aria-selected="false" class="mb-0 nav-link"
+                >Fare Detail</a
+              >
+            </div>
+            <div class="nav-item" role="presentation">
+              <a
+              role="tab" [ngClass]="{'active': activeTab === 3}" (click)="setActiveTab(3)" id="tab-3" aria-controls="tabpane-3" aria-selected="false" class="mb-0 nav-link"
+                >Baggage Rules</a
+              >
+            </div>
+            <div class="nav-item" role="presentation">
+              <a
+              role="tab" [ngClass]="{'active': activeTab === 4}" (click)="setActiveTab(4)" id="tab-4" aria-controls="tabpane-4" aria-selected="false" class="mb-0 nav-link"
+                >Cancellation Rules</a
+              >
+            </div>
+          </div>
+          <div class="mb-0 tab-content">
+            <div
+            role="tabpanel" id="tabpane-1" aria-labelledby="tab-1" [ngClass]="{'show active': activeTab === 1, 'fade': activeTab !== 1}" class="tab-pane"
+            >
+              <div class="border card">
+                <div class="card-header">
+                  <div
+                    class="d-sm-flex justify-content-sm-between align-items-center"
+                  >
+                    <div class="d-flex mb-2 mb-sm-0">
+                      <img
+                        [src]="getFlightImage(selectedFlight.airlineLogo)"
+                        class="w-40px me-2"
+                      />
+                      <h6 class="fw-normal mb-0">
+                        {{selectedFlight.airlineName}} ({{selectedFlight.flightNumber}}),
+                      </h6>
+                    </div>
+
+                    <h6 class="fw-normal mb-0">
+                      <span class="text-body">Travel Class:</span> Economy
+                    </h6>
+
+                  </div>
+                </div>
+
+                <div class="p-4 card-body">
+                  <div class="g-4 row">
+                    <div class="col-sm-4">
+                      <h4>{{selectedFlight.fromAirport | initials }}</h4>
+                      <h6 class="mb-0">{{selectedFlight.departureTime | date:'hh:mm'}}</h6>
+                      <p class="mb-0">
+                        {{selectedFlight.fromAirport}}
+                      </p>
+                    </div>
+                    <div class="my-sm-auto text-center col-sm-4">
+                      <h5>{{selectedFlight.flightDuration}}</h5>
+                      <div class="position-relative my-4">
+                        <hr class="bg-primary opacity-5 position-relative" />
+                        <div
+                          class="icon-md bg-primary text-white rounded-circle position-absolute top-50 start-50 translate-middle"
+                        >
+                          <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 576 512"
+                            class="fa-fw rtl-flip"
+                            height="1em"
+                            width="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M480 192H365.71L260.61 8.06A16.014 16.014 0 0 0 246.71 0h-65.5c-10.63 0-18.3 10.17-15.38 20.39L214.86 192H112l-43.2-57.6c-3.02-4.03-7.77-6.4-12.8-6.4H16.01C5.6 128-2.04 137.78.49 147.88L32 256 .49 364.12C-2.04 374.22 5.6 384 16.01 384H56c5.04 0 9.78-2.37 12.8-6.4L112 320h102.86l-49.03 171.6c-2.92 10.22 4.75 20.4 15.38 20.4h65.5c5.74 0 11.04-3.08 13.89-8.06L365.71 320H480c35.35 0 96-28.65 96-64s-60.65-64-96-64z"
+                            ></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <h4>{{selectedFlight.toAirport}}</h4>
+                      <h6 class="mb-0">{{selectedFlight.arrivalTime | date:'hh:mm'}}</h6>
+                      <p class="mb-0">{{selectedFlight.toAirport}}</p>
+                    </div>
+                  </div>
+                  <!-- <div
+                    class="bg-light text-center fw-normal rounded-2 mt-3 mb-4 p-2"
+                  >
+                    Change of planes: 3h 15m Layover in France
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div
+            role="tabpanel" id="tabpane-1" aria-labelledby="tab-2" [ngClass]="{'show active': activeTab === 2, 'fade': activeTab !== 2}" class="tab-pane"
+            >
+              <div class="card-body card">
+                <div class="table-responsive-lg">
+                  <table class="table caption-bottom mb-0">
+                    <caption class="pb-0">
+                      From The Date Of Departure
+                    </caption>
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col" class="border-0 rounded-start">
+                          Base Fare
+                        </th>
+                        <th scope="col" class="border-0">Taxes and Fees</th>
+                        <th scope="col" class="border-0 rounded-end">
+                          Total Fees
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>{{selectedFlight.originalPrice | currency}}</td>
+                        <td>{{tax + fee | currency}}</td>
+                        <td><h5 class="mb-0">{{totalPrice | currency}}</h5></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div
+            role="tabpanel" id="tabpane-3" aria-labelledby="tab-3" [ngClass]="{'show active': activeTab === 3, 'fade': activeTab !== 3}" class="tab-pane"
+            >
+              <div class="border card">
+                <div
+                  class="card-header d-flex align-items-center border-bottom"
+                >
+                  <img
+                    src="data:image/svg+xml,%3csvg%20id='logo-38'%20width='78'%20height='32'%20viewBox='0%200%2078%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M55.5%200H77.5L58.5%2032H36.5L55.5%200Z'%20class='ccustom'%20fill='%23FF7A00'%3e%3c/path%3e%3cpath%20d='M35.5%200H51.5L32.5%2032H16.5L35.5%200Z'%20class='ccompli1'%20fill='%23FF9736'%3e%3c/path%3e%3cpath%20d='M19.5%200H31.5L12.5%2032H0.5L19.5%200Z'%20class='ccompli2'%20fill='%23FFBC7D'%3e%3c/path%3e%3c/svg%3e"
+                    class="h-20px me-1"
+                  />
+                  <h5 class="card-title mb-0">BOM - CDG</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-lg">
+                    <table class="table caption-bottom mb-0">
+                      <caption class="pb-0">
+                        *1PC = 23KG
+                      </caption>
+                      <thead class="table-dark">
+                        <tr>
+                          <th scope="col" class="border-0 rounded-start">
+                            Baggage Type
+                          </th>
+                          <th scope="col" class="border-0">Check In</th>
+                          <th scope="col" class="border-0 rounded-end">
+                            Cabin
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="border-top-0">
+                        <tr>
+                          <td>Adult</td>
+                          <td>2 PC</td>
+                          <td>7 Kg</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+            role="tabpanel" id="tabpane-4" aria-labelledby="tab-4" [ngClass]="{'show active': activeTab === 4, 'fade': activeTab !== 4}" class="tab-pane"
+            >
+              <div class="border card">
+                <div
+                  class="d-flex align-items-center border-bottom card-header"
+                >
+                  <img
+                    src="data:image/svg+xml,%3csvg%20id='logo-38'%20width='78'%20height='32'%20viewBox='0%200%2078%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M55.5%200H77.5L58.5%2032H36.5L55.5%200Z'%20class='ccustom'%20fill='%23FF7A00'%3e%3c/path%3e%3cpath%20d='M35.5%200H51.5L32.5%2032H16.5L35.5%200Z'%20class='ccompli1'%20fill='%23FF9736'%3e%3c/path%3e%3cpath%20d='M19.5%200H31.5L12.5%2032H0.5L19.5%200Z'%20class='ccompli2'%20fill='%23FFBC7D'%3e%3c/path%3e%3c/svg%3e"
+                    class="h-20px me-1"
+                  />
+                  <h5 class="card-title mb-0">BOM - CDG</h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-lg">
+                    <table class="table caption-bottom mb-0">
+                      <caption class="pb-0">
+                        *From The Date Of Departure
+                      </caption>
+                      <thead class="table-dark">
+                        <tr>
+                          <th scope="col" class="border-0 rounded-start">
+                            Time Frame
+                          </th>
+                          <th scope="col" class="border-0 rounded-end">
+                            Air Free + MMT Free
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="border-top-0">
+                        <tr>
+                          <td>0 hours to 24 hours</td>
+                          <td>Non Refundable</td>
+                        </tr>
+                        <tr>
+                          <td>24 hours to 365 days</td>
+                          <td>$16,325 + $250</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          </div>
+
+          <!--Pagination Here-->
+          <div class="pagination_area d-flex my-2 justify-content-center">
+            <pagination
+              [boundaryLinks]="true"
+              [totalItems]="this.totalElements"
+              [maxSize]="this.totalPages - 1"
+              [itemsPerPage]="this.pageSize"
+              (pageChanged)="pageChanged($event)"
+              previousText="&lsaquo;"
+              nextText="&rsaquo;"
+              firstText="&laquo;"
+              lastText="&raquo;"
+            >
+            </pagination>
+          </div>
+
+        </div>
+      </div>
     </div>
 </section>
+ 
+</main>

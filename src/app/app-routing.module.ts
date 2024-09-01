@@ -22,10 +22,13 @@ import { BookingReceivedComponent } from './feature/booking/booking-received/boo
 import { RoomBookingsComponent } from './auth/myBookings/room/room-bookings/room-bookings.component';
 import { HotelReservationComponent } from './feature/hotel/hotel-reservation/hotel-reservation.component';
 import { FlightListComponent } from './feature/flights/flight-list/flight-list.component';
+import { FlightBookingComponent } from './feature/flights/flight-booking/flight-booking.component';
+import { TestComponent } from './feature/test/test.component';
 
 
 const routes: Routes = [
   {path:"",redirectTo:"'home",pathMatch: "full"},
+  {path:"test",component:TestComponent},
   {path:"home",component: HomeComponent,data:{breadcrumd:"Home"}},
   {path:"hotels",component:HotelListComponent},
   {path:"server-error",component:ServerErrorComponent},
@@ -34,6 +37,7 @@ const routes: Routes = [
   {path:"booking-received",component: BookingReceivedComponent},
   {path:"hotel-reservation",component:HotelReservationComponent},
   {path:"flights",component:FlightListComponent},
+  {path:"flight-booking",component:FlightBookingComponent},
   {path:"hotel-detail/:hotelId",component:HotelDetailComponent},
   {path:"room-detail/:roomId",component:RoomDetailComponent},
   {path:"room-booking",component:RoomBookingComponent},

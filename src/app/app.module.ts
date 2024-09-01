@@ -19,6 +19,7 @@ import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { FormsModule } from '@angular/forms';
+import { InitialsPipe } from './core/initials.pipe';
 @NgModule({
   declarations: [
     AppComponent

@@ -1,5 +1,5 @@
 export interface Flight {
-    
+    flightId:any
     airlineLogo :any
     airlineName: any
     fromCity:any
@@ -16,4 +16,6 @@ export interface Flight {
     discountPercentage:any
     refundPolicy:any
     baggageInfo:any
+    seatAvailability:any
+    refundable:boolean
 }

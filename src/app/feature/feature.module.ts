@@ -24,12 +24,15 @@ import { BookingReceivedComponent } from './booking/booking-received/booking-rec
 import { RecomendedHotelsComponent } from './hotel/recomended-hotels/recomended-hotels.component';
 import { HotelReservationComponent } from './hotel/hotel-reservation/hotel-reservation.component';
 import { FlightListComponent } from './flights/flight-list/flight-list.component';
+import { FlightBookingComponent } from './flights/flight-booking/flight-booking.component';
+import { InitialsPipe } from '../core/initials.pipe';
 
 @NgModule({
   declarations: [
     HotelListComponent,
     ContactComponent,
     FooterComponent,
+    InitialsPipe,
     SectionHeaderComponent,
     HotelDetailComponent,
     ReviewComponent,
@@ -41,14 +44,14 @@ import { FlightListComponent } from './flights/flight-list/flight-list.component
     BookingReceivedComponent,
     RecomendedHotelsComponent,
     HotelReservationComponent,
-    FlightListComponent
+    FlightListComponent,
+    FlightBookingComponent
   ],
   imports: [
     CommonModule,
     CardModule,
     ButtonModule,
     PaginationModule.forRoot(),
-    CoreModule,
     GalleryModule,
     FormsModule,
     LightboxModule,

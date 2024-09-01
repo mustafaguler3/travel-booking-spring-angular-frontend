@@ -15,12 +15,8 @@ export class FlightService {
   constructor(private http: HttpClient) { }
 
   getFlight(flightId:any){
-    let params = new HttpParams()
     
-    if (flightId != null) {
-      params = params.set("flightId", flightId.toString());
-    }
-    return this.http.get<Flight>(this.apiUrl + "flight",{params})
+    return this.http.get<Flight>(this.apiUrl + "flights/" + flightId)
   }
 
   getFlights(pageNumber:any,pageSize:any):Observable<Pagination<Flight[]>>{

@@ -1330,7 +1330,10 @@
               <div class="p-4 pb-0 card-body">
                 <div class="g-4 row">
                   <div class="col-md-3">
-                    <img [src]="getFlightImage(flight.airlineLogo)" />
+                    <a routerLink="/flight/{{flight.flightId}}">
+                      <img [src]="getFlightImage(flight.airlineLogo)" />
+                    </a>
+                    
                     <h6 class="fw-normal mb-0">
                       <!-- {{flight.airlineName}} -->
                     </h6>

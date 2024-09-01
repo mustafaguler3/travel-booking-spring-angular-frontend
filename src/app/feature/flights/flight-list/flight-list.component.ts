@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-flight-list',
   templateUrl: './flight-list.component.html',
-  styleUrls: ['./flight-list.component.css']
+  styleUrls: ['./flight-list.component.scss']
 })
 export class FlightListComponent implements OnInit{
   

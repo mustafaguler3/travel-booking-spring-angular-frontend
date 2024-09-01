@@ -8,6 +8,10 @@ Flights
 ![alt text](image-36.png)
 ![alt text](image-37.png)
 
+Flight Detail Page
+![alt text](image-39.png)
+![alt text](image-40.png)
+
 Login & Register Screen
 ![alt text](image-3.png)
 

@@ -26,6 +26,7 @@ import { HotelReservationComponent } from './hotel/hotel-reservation/hotel-reser
 import { FlightListComponent } from './flights/flight-list/flight-list.component';
 import { FlightBookingComponent } from './flights/flight-booking/flight-booking.component';
 import { InitialsPipe } from '../core/initials.pipe';
+import { FlightDetailComponent } from './flights/flight-detail/flight-detail.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { InitialsPipe } from '../core/initials.pipe';
     RecomendedHotelsComponent,
     HotelReservationComponent,
     FlightListComponent,
-    FlightBookingComponent
+    FlightBookingComponent,
+    FlightDetailComponent
   ],
   imports: [
     CommonModule,

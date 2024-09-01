@@ -24,6 +24,7 @@ import { HotelReservationComponent } from './feature/hotel/hotel-reservation/hot
 import { FlightListComponent } from './feature/flights/flight-list/flight-list.component';
 import { FlightBookingComponent } from './feature/flights/flight-booking/flight-booking.component';
 import { TestComponent } from './feature/test/test.component';
+import { FlightDetailComponent } from './feature/flights/flight-detail/flight-detail.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:"home",component: HomeComponent,data:{breadcrumd:"Home"}},
   {path:"hotels",component:HotelListComponent},
   {path:"server-error",component:ServerErrorComponent},
+  {path:"flight/:flightId",component:FlightDetailComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
   {path:"hotel-search",component:HotelSearchComponent},
   {path:"booking-received",component: BookingReceivedComponent},

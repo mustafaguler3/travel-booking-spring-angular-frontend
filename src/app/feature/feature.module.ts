@@ -27,7 +27,9 @@ import { FlightListComponent } from './flights/flight-list/flight-list.component
 import { FlightBookingComponent } from './flights/flight-booking/flight-booking.component';
 import { InitialsPipe } from '../core/initials.pipe';
 import { FlightDetailComponent } from './flights/flight-detail/flight-detail.component';
-
+import { FlightPaymentComponent } from './flights/flight-payment/flight-payment.component';
+import { CalendarModule } from 'primeng/calendar';
+import { BookingConfirmedComponent } from './flights/booking-confirmed/booking-confirmed.component';
 @NgModule({
   declarations: [
     HotelListComponent,
@@ -47,7 +49,9 @@ import { FlightDetailComponent } from './flights/flight-detail/flight-detail.com
     HotelReservationComponent,
     FlightListComponent,
     FlightBookingComponent,
-    FlightDetailComponent
+    FlightDetailComponent,
+    FlightPaymentComponent,
+    BookingConfirmedComponent
   ],
   imports: [
     CommonModule,
@@ -55,6 +59,7 @@ import { FlightDetailComponent } from './flights/flight-detail/flight-detail.com
     ButtonModule,
     PaginationModule.forRoot(),
     GalleryModule,
+    CalendarModule,
     FormsModule,
     LightboxModule,
     ReactiveFormsModule,

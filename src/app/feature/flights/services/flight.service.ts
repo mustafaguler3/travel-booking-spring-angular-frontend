@@ -14,6 +14,12 @@ export class FlightService {
 
   constructor(private http: HttpClient) { }
 
+
+  
+  bookingFlight(booking:any){
+    return this.http.post<any>(this.apiUrl + "flight/booking",booking)
+  }
+
   getFlight(flightId:any){
     
     return this.http.get<Flight>(this.apiUrl + "flights/" + flightId)

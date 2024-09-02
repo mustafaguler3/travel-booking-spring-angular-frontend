@@ -1,8 +1,10 @@
-@charset "UTF-8";@import"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap";/*!
-* bsStepper v1.7.0 (https://github.com/Johann-S/bs-stepper)
-* Copyright 2018 - 2019 Johann-S <johann.servoire@gmail.com>
-* Licensed under MIT (https://github.com/Johann-S/bs-stepper/blob/master/LICENSE)
-*/
+@import "~primeng/resources/themes/saga-blue/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~primeicons/primeicons.css";
+
+
+@import"https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap";
+
 .bs-stepper .step-trigger {
     display: -ms-inline-flexbox;
     display: inline-flex;

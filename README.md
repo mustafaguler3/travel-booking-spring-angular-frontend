@@ -20,9 +20,6 @@ Login & Register Screen
 
 ![alt text](image-4.png)
 
-Flights
-![alt text](image-31.png)
-![alt text](image-32.png)
 
 Profile Screen
 ![alt text](image-5.png)

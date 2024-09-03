@@ -21,6 +21,7 @@ export class FlightPaymentComponent implements OnInit{
   firstName:any
   lastName:any
   dateOfBirth: any
+  totalPrice:any = 0;
 
   constructor(private route: Router,
               private fb: FormBuilder,
@@ -41,10 +42,12 @@ export class FlightPaymentComponent implements OnInit{
       this.firstName = data.firstName
       this.dateOfBirth = data.dateOfBirth
       this.lastName = data.lastName;
-      
+      this.totalPrice = data.totalPrice;
+
       console.log("Flight ID : "+this.flightId)
       
       this.paymentForm = this.fb.group({
+        paymentType: ["CREDIT_CARD"],
         cardNumber: ["",[Validators.required]],
         cardHolderName: ["",[Validators.required]],
         cardExpiryDate: ["",[Validators.required]],
@@ -53,6 +56,7 @@ export class FlightPaymentComponent implements OnInit{
 
       console.log("Data for Local : "+JSON.stringify(data))
       console.log("Data for email : "+data.email)
+      console.log("Total Price :" +data.totalPrice)
 
       this.getFlight()
   }
@@ -74,6 +78,7 @@ export class FlightPaymentComponent implements OnInit{
     const flightData = JSON.parse(flightDetail)
     
     const data = {
+      paymentType: this.paymentForm.get('paymentType').value,
       cardNumber: this.paymentForm.get('cardNumber').value,
       cardHolderName:this.paymentForm.get('cardHolderName').value,
       cardExpiryDate:this.paymentForm.get('cardExpiryDate').value,
@@ -83,9 +88,15 @@ export class FlightPaymentComponent implements OnInit{
     this.flightService.bookingFlight(data).subscribe({
       next:(response) => {
         console.log("res-> "+response)
-        this.toastService.showSuccess("Success","Your payment has been received")
+        response.airline = this.flight.airlineName
+        response.airlineLogo = this.flight.airlineLogo
+        response.totalPrice = this.totalPrice
+        localStorage.setItem('bookingDetails', JSON.stringify(response));
+        this.route.navigate(["/booking-confirmed"])
+        localStorage.removeItem("flightDetail")
       },
       error: (err) => {
+        console.log("Error : "+err)
         this.toastService.showError("Error","Your payment has not been received")
       }
     })

@@ -26,6 +26,7 @@ import { FlightBookingComponent } from './feature/flights/flight-booking/flight-
 import { TestComponent } from './feature/test/test.component';
 import { FlightDetailComponent } from './feature/flights/flight-detail/flight-detail.component';
 import { FlightPaymentComponent } from './feature/flights/flight-payment/flight-payment.component';
+import { BookingConfirmedComponent } from './feature/flights/booking-confirmed/booking-confirmed.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:"flight-payment",component:FlightPaymentComponent},
   {path:"unauthorized",component:UnauthorizedComponent},
   {path:"hotel-search",component:HotelSearchComponent},
+  {path:"booking-confirmed",component:BookingConfirmedComponent},
   {path:"booking-received",component: BookingReceivedComponent},
   {path:"hotel-reservation",component:HotelReservationComponent},
   {path:"flights",component:FlightListComponent},

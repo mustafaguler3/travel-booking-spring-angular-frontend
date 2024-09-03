@@ -33,7 +33,7 @@ export class FlightDetailComponent implements OnInit{
       title: ["",[Validators.required]],
       flightClass: ["",[Validators.required]],
       ticketType: ["",[Validators.required]],
-      firstName: ["",[Validators.required]],
+      passengerFirstName: ["",[Validators.required]],
       lastName: ["",[Validators.required]],
       dateOfBirth: ["",[Validators.required]],
       nationality: ["",[Validators.required]],
@@ -61,7 +61,7 @@ export class FlightDetailComponent implements OnInit{
       email: this.flightForm.get("email").value,
       title: this.flightForm.get("title").value,
       flightClass: this.flightForm.get('flightClass').value,
-      firstName: this.flightForm.get("firstName").value,
+      passengerFirstName: this.flightForm.get("passengerFirstName").value,
       ticketType: this.flightForm.get("ticketType").value,
       lastName: this.flightForm.get("lastName").value,
       dateOfBirth: this.flightForm.get("dateOfBirth").value,
@@ -69,6 +69,7 @@ export class FlightDetailComponent implements OnInit{
       passportNumber: this.flightForm.get("passportNumber").value,
       passportCountry: this.flightForm.get("passportCountry").value,
       passportExpiry: this.flightForm.get("passportExpiry").value,
+      totalPrice: this.flight.originalPrice - this.flight.discountedPrice
     }
     if(this.flightForm.valid){
       localStorage.setItem("flightDetail", JSON.stringify(data));
@@ -77,10 +78,6 @@ export class FlightDetailComponent implements OnInit{
     }else {
       console.log("an error occurred during form ")
     }
-
-      
-    
-    //this.router.navigate(["flight-payment"],{state:data})
 
   }
 

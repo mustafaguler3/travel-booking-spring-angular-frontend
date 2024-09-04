@@ -11,9 +11,12 @@ export interface Hotel {
     averageRating:any
     rooms: Room[]
     country: string,
-    pricePerPerson: any,
     roomNumber: number,
-    reviews: Review[]
+    reviews: Review[],
+    refundable:boolean
+    originalPrice:any
+    discountedPrice:any
+    discountPercentage:any
 }
 
 export interface Amenity {

@@ -12,7 +12,9 @@
       >
         <div class="row my-2 my-xl-5 row">
           <div class="mx-auto col-md-8">
-            <h1 class="text-center text-white">{{hotels.length}} Found Hotels</h1>
+            <h1 class="text-center text-white">
+              {{ hotels.length }} Found Hotels
+            </h1>
           </div>
         </div>
         <form
@@ -394,7 +396,6 @@
             </div>
           </div>
 
-
           <div class="btn-position-md-middle">
             <button
               type="submit"
@@ -417,7 +418,6 @@
             </button>
           </div>
         </form>
-        
       </div>
     </div>
   </section>
@@ -546,8 +546,6 @@
         </div>
       </div>
       <div class="row">
-
-
         <div class="col-xxl-3 col-xl-4">
           <div class="d-none d-xl-block">
             <form class="rounded-3 shadow">
@@ -1046,10 +1044,8 @@
           </div>
         </div>
 
-
         <div class="col-xxl-9 col-xl-8">
           <div class="vstack gap-4">
-
             <div class="shadow p-2 card" *ngFor="let hotel of hotels">
               <div class="g-0 row">
                 <div class="position-relative col-md-5">
@@ -1109,21 +1105,49 @@
                       </div>
                       <div id="tns24-mw" class="tns-ovh">
                         <div class="tns-inner" id="tns24-iw">
-                          <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                          <div
+                            id="carousel"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
+                          >
                             <div class="carousel-inner">
                               <div
-                                *ngFor="let image of hotel.images; let i = index"
-                                class="carousel-item" [ngClass]="{'active': i === 0}"
+                                *ngFor="
+                                  let image of hotel.images;
+                                  let i = index
+                                "
+                                class="carousel-item"
+                                [ngClass]="{ active: i === 0 }"
                               >
-                                <img [src]="getHotelImageUrl(image)" class="d-block w-100" alt="Hotel Image">
+                                <img
+                                  [src]="getHotelImageUrl(image)"
+                                  class="d-block w-100"
+                                  alt="Hotel Image"
+                                />
                               </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <button
+                              class="carousel-control-prev"
+                              type="button"
+                              data-bs-target="#carousel"
+                              data-bs-slide="prev"
+                            >
+                              <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                              ></span>
                               <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <button
+                              class="carousel-control-next"
+                              type="button"
+                              data-bs-target="#carousel"
+                              data-bs-slide="next"
+                            >
+                              <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                              ></span>
                               <span class="visually-hidden">Next</span>
                             </button>
                           </div>
@@ -1131,7 +1155,6 @@
                       </div>
                     </div>
                   </div>
-                  
                 </div>
 
                 <div class="col-md-7">
@@ -1141,16 +1164,12 @@
                     <div
                       class="d-flex justify-content-between align-items-center"
                     >
-                    <div
-                    class="tour_details_top_heading_right"
-                    
-                  >
-                  <div class="average-rating">
-                    <span>{{ getStars(hotel.averageRating) }}</span>
-                    <span>({{ hotel.averageRating }} / 5)</span>
-                  </div>
-                  </div>
-
+                      <div class="tour_details_top_heading_right">
+                        <div class="average-rating">
+                          <span>{{ getStars(hotel.averageRating) }}</span>
+                          <span>({{ hotel.averageRating }} / 5)</span>
+                        </div>
+                      </div>
 
                       <ul class="list-inline mb-0 z-index-2">
                         <li class="list-inline-item">
@@ -1202,9 +1221,7 @@
                       </ul>
                     </div>
                     <h5 class="card-title mb-1">
-                      <a href="/hotels/detail"
-                        >{{hotel.name}}</a
-                      >
+                      <a href="/hotels/detail">{{ hotel.name }}</a>
                     </h5>
                     <small class="items-center"
                       ><svg
@@ -1223,21 +1240,40 @@
                         <path
                           d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
                         ></path></svg
-                      >{{hotel.location}}</small
+                      >{{ hotel.location }}</small
                     >
-                    
+
+                    <ul
+                      class="list-group list-group-borderless small mb-0 mt-2"
+                    >
+                      <li
+                        [ngClass]="
+                          hotel.refundable ? 'text-success' : 'text-danger'
+                        "
+                      >
+                        {{ hotel.refundable ? "Refundable" : "Non Refundable" }}
+                      </li>
+                    </ul>
+
+                    <ul class="list-inline mt-3">
+                      <li class="list-inline-item" *ngFor="let amenity of hotel.amenities">
+                        {{amenity.name}}
+                      </li>
+                    </ul>
+
                     <div
                       class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto"
                     >
                       <div class="d-flex align-items-center">
-                        <h5 class="fw-bold mb-0 me-1">{{hotel.pricePerPerson | currency}}</h5>
+                        <h5 class="fw-bold mb-0 me-1">
+                          {{ hotel.originalPrice | currency }}
+                        </h5>
                         <span class="mb-0 me-2">/per Person</span
-                        ><span class="text-decoration-line-through mb-0"
-                          ></span
-                        >
+                        ><span class="text-decoration-line-through mb-0"></span>
                       </div>
                       <div class="mt-3 mt-sm-0">
-                        <a routerLink="/hotel-detail/{{hotel.id}}"
+                        <a
+                          routerLink="/hotel-detail/{{ hotel.id }}"
                           type="button"
                           class="mb-0 w-100 btn btn-dark btn-sm"
                         >
@@ -1247,30 +1283,26 @@
                     </div>
                   </div>
                 </div>
-
-
               </div>
             </div>
 
-              <div class="d-flex justify-content-center">
-                  <pagination
-                    [boundaryLinks]="true"
-                    [totalItems]="this.totalElements"
-                    [maxSize]="2"
-                    [itemsPerPage]="this.pageSize"
-                    (pageChanged)="pageChanged($event)"
-                    previousText="&lsaquo;"
-                    nextText="&rsaquo;"
-                    firstText="&laquo;"
-                    lastText="&raquo;"
-                  >
-                  </pagination>
-                </div>
+            <div class="d-flex justify-content-center">
+              <pagination
+                [boundaryLinks]="true"
+                [totalItems]="this.totalElements"
+                [maxSize]="2"
+                [itemsPerPage]="this.pageSize"
+                (pageChanged)="pageChanged($event)"
+                previousText="&lsaquo;"
+                nextText="&rsaquo;"
+                firstText="&laquo;"
+                lastText="&raquo;"
+              >
+              </pagination>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </main>
-
-

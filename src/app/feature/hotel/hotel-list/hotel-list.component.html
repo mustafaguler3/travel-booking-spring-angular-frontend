@@ -1050,7 +1050,7 @@
               <div class="g-0 row">
                 <div class="position-relative col-md-5">
                   <div class="position-absolute top-0 start-0 z-index-1 m-2">
-                    <div class="badge text-bg-danger">30% Off</div>
+                    <div class="badge text-bg-danger">{{hotel.discountPercentage}}% Off</div>
                   </div>
                   <div
                     class="tiny-slider arrow-round arrow-xs arrow-dark overflow-hidden rounded-2"
@@ -1221,7 +1221,7 @@
                       </ul>
                     </div>
                     <h5 class="card-title mb-1">
-                      <a href="/hotels/detail">{{ hotel.name }}</a>
+                      <a routerLink="/hotel-detail/{{hotel.id}}">{{ hotel.name }}</a>
                     </h5>
                     <small class="items-center"
                       ><svg
@@ -1265,8 +1265,11 @@
                       class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto"
                     >
                       <div class="d-flex align-items-center">
-                        <h5 class="fw-bold mb-0 me-1">
+                        <del class="fw-bold mb-0 me-1">
                           {{ hotel.originalPrice | currency }}
+                        </del>
+                        <h5 class="i fw-bold mb-0 me-1">
+                          {{ hotel.discountedPrice | currency }}
                         </h5>
                         <span class="mb-0 me-2">/per Person</span
                         ><span class="text-decoration-line-through mb-0"></span>

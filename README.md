@@ -32,8 +32,8 @@ Spinner Service
 
 Hotels 
 ![alt text](image-45.png)
-![alt text](image-50.png)
-![alt text](image-51.png)
+![alt text](image-52.png)
+![alt text](image-53.png)
 
 Hotel Search
 ![alt text](image-15.png)

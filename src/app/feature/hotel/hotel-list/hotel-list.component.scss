@@ -150,7 +150,6 @@ a {
     -webkit-transition: all 0.3s ease-in-out 0.1s;
     transition: all 0.3s ease-in-out 0.1s;
     outline: 0 !important;
-    color: $main-color;
 
     
 }
@@ -270,3 +269,25 @@ h3 {
 .theme_two_box_content h3 {
     font-weight: 500;
 }
+
+.nav.nav-divider .nav-item {
+    display: inline-block;
+    vertical-align: middle;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .average-rating {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
+  
+  .average-rating span {
+    margin-left: 8px;
+    font-weight: bold;
+    color: $main-color;
+  }

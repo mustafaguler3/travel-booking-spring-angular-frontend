@@ -1,482 +1,1276 @@
-<section id="explore_area" class="section_padding">
-  <div *ngIf="errorMessage != null">
-    <p>{{ errorMessage }}</p>
-  </div>
-  <div class="container">
-    <!-- Section Heading -->
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-        <div class="section_heading_center">
-          <h2>{{ hotels.length }} hotel found</h2>
+<main class="mt-3">
+  <section class="pt-0">
+    <div class="container">
+      <div
+        class="rounded-3 p-3 p-sm-5"
+        style="
+          background-image: url('/assets/05-4tYh3WRJ.jpg');
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
+        <div class="row my-2 my-xl-5 row">
+          <div class="mx-auto col-md-8">
+            <h1 class="text-center text-white">{{hotels.length}} Found Hotels</h1>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="left_side_search_area">
-          <div class="left_side_search_boxed">
-            <div class="item_searc_map_area">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.6962663570607!2d89.56355961427838!3d22.813715829827952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff901efac79b59%3A0x5be01a1bc0dc7eba!2sAnd+IT!5e0!3m2!1sen!2sbd!4v1557901943656!5m2!1sen!2sbd"
-              ></iframe>
-            </div>
-          </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Search by name</h5>
-            </div>
-            <div class="name_search_form">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="e.g Deluxe bus"
-              />
-              <i class="fas fa-search"></i>
-            </div>
-          </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Filter by price</h5>
-            </div>
-            <div class="filter-price">
+        <form
+          class="bg-mode shadow rounded-3 position-relative p-4 pe-md-5 pb-5 pb-md-4 mb-4"
+        >
+          <div class="g-4 align-items-center row">
+            <div class="col-lg-4">
               <div
-                id="price-slider"
-                class="noUi-target noUi-ltr noUi-horizontal"
+                class="form-control-border form-control-transparent form-fs-md flex-centered gap-2"
               >
-                <div class="noUi-base">
-                  <div class="noUi-connects">
-                    <div
-                      class="noUi-connect"
-                      style="transform: translate(0%, 0px) scale(0.75, 1)"
-                    ></div>
-                  </div>
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  height="37"
+                  width="37"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                  ></path>
+                  <path
+                    d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                  ></path>
+                </svg>
+                <div class="flex-grow-1">
+                  <label class="form-label form-label">Location</label>
                   <div
-                    class="noUi-origin"
-                    style="transform: translate(-100%, 0px); z-index: 5"
+                    class="choices"
+                    data-type="select-one"
+                    tabindex="0"
+                    role="combobox"
+                    aria-autocomplete="list"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
+                    <div class="choices__inner">
+                      <select
+                        class="choices__input"
+                        hidden=""
+                        tabindex="-1"
+                        data-choice="active"
+                      >
+                        <option
+                          value="-1"
+                          data-custom-properties="[object Object]"
+                        >
+                          Select location
+                        </option>
+                      </select>
+                      <div class="choices__list choices__list--single">
+                        <div
+                          class="choices__item choices__item--selectable"
+                          data-item=""
+                          data-id="1"
+                          data-value="-1"
+                          data-custom-properties="[object Object]"
+                          aria-selected="true"
+                        >
+                          Select location
+                        </div>
+                      </div>
+                    </div>
                     <div
-                      class="noUi-handle noUi-handle-lower"
-                      data-handle="0"
-                      tabindex="0"
-                      role="slider"
-                      aria-orientation="horizontal"
-                      aria-valuemin="0.0"
-                      aria-valuemax="550.0"
-                      aria-valuenow="0.0"
-                      aria-valuetext="$0"
+                      class="choices__list choices__list--dropdown"
+                      aria-expanded="false"
                     >
-                      <div class="noUi-touch-area"></div>
-                      <div class="noUi-tooltip">$0</div>
+                      <input
+                        type="search"
+                        name="search_terms"
+                        class="choices__input choices__input--cloned"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        role="textbox"
+                        aria-autocomplete="list"
+                        aria-label="Type and hit enter"
+                        placeholder=""
+                        aria-activedescendant="choices--1128-item-choice-2"
+                      />
+                      <div class="choices__list" role="listbox">
+                        <div
+                          id="choices--1128-item-choice-1"
+                          class="choices__item choices__item--choice is-selected choices__item--disabled"
+                          role="option"
+                          data-choice=""
+                          data-id="1"
+                          data-value="-1"
+                          data-select-text="Press to select"
+                          data-choice-disabled=""
+                          aria-disabled="true"
+                        >
+                          Select location
+                        </div>
+                        <div
+                          id="choices--1128-item-choice-2"
+                          class="choices__item choices__item--choice choices__item--selectable is-highlighted"
+                          role="option"
+                          data-choice=""
+                          data-id="2"
+                          data-value="1"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                          aria-selected="true"
+                        >
+                          San Jacinto, USA
+                        </div>
+                        <div
+                          id="choices--1128-item-choice-3"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="3"
+                          data-value="2"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                          aria-selected="false"
+                        >
+                          North Dakota, Canada
+                        </div>
+                        <div
+                          id="choices--1128-item-choice-4"
+                          class="choices__item choices__item--choice choices__item--selectable"
+                          role="option"
+                          data-choice=""
+                          data-id="4"
+                          data-value="3"
+                          data-select-text="Press to select"
+                          data-choice-selectable=""
+                          aria-selected="false"
+                        >
+                          West Virginia, Paris
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div
-                    class="noUi-origin"
-                    style="transform: translate(-25%, 0px); z-index: 4"
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="flex-centered">
+                <div>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    class="me-2"
+                    height="37"
+                    width="37"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
+                    <path
+                      d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+                    ></path>
+                  </svg>
+                </div>
+                <div
+                  class="form-control-border form-control-transparent form-fs-md"
+                >
+                  <label class="form-label form-label">Check in - out</label
+                  ><input
+                    class="form-control flatpickr flatpickr-input"
+                    value=""
+                    type="text"
+                    readonly="readonly"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div
+                class="form-control-border form-control-transparent form-fs-md flex-centered"
+              >
+                <div>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    class="me-2"
+                    height="37"
+                    width="37"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="w-100">
+                  <label class="form-label">Guests &amp; rooms</label>
+                  <div class="guest-selector me-2 dropdown">
+                    <input
+                      class="form-guest-selector form-control selection-result dropdown-toggle"
+                      id="react-aria788809450-:r3e:"
+                      aria-expanded="false"
+                      value="1 Adult 3 Rooms "
+                    />
                     <div
-                      class="noUi-handle noUi-handle-upper"
-                      data-handle="1"
-                      tabindex="0"
-                      role="slider"
-                      aria-orientation="horizontal"
-                      aria-valuemin="200.0"
-                      aria-valuemax="1000.0"
-                      aria-valuenow="750.0"
-                      aria-valuetext="$750"
+                      x-placement="bottom-start"
+                      aria-labelledby="react-aria788809450-:r3e:"
+                      class="guest-selector-dropdown dropdown-menu"
+                      data-popper-reference-hidden="false"
+                      data-popper-escaped="false"
+                      data-popper-placement="bottom-start"
+                      style="
+                        position: absolute;
+                        inset: 0px auto auto 0px;
+                        transform: translate3d(876px, 417px, 0px);
+                      "
                     >
-                      <div class="noUi-touch-area"></div>
-                      <div class="noUi-tooltip">$750</div>
+                      <li class="d-flex justify-content-between">
+                        <div>
+                          <h6 class="mb-0">Adults</h6>
+                          <small>Ages 13 or above</small>
+                        </div>
+                        <div class="hstack gap-1 align-items-center">
+                          <button
+                            type="button"
+                            class="adult-remove p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <h6 class="guest-selector-count mb-0 adults">1</h6>
+                          <button
+                            type="button"
+                            class="adult-add p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </li>
+                      <hr class="dropdown-divider" role="separator" />
+                      <li class="d-flex justify-content-between">
+                        <div>
+                          <h6 class="mb-0">Children</h6>
+                          <small>Ages 13 below</small>
+                        </div>
+                        <div class="hstack gap-1 align-items-center">
+                          <button
+                            type="button"
+                            class="btn btn-link child-remove p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <h6 class="guest-selector-count mb-0 child">0</h6>
+                          <button
+                            type="button"
+                            class="btn btn-link child-add p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </li>
+                      <hr class="dropdown-divider" role="separator" />
+                      <li class="d-flex justify-content-between">
+                        <div>
+                          <h6 class="mb-0">Rooms</h6>
+                          <small>Max room 8</small>
+                        </div>
+                        <div class="hstack gap-1 align-items-center">
+                          <button
+                            type="button"
+                            class="room-remove p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                              ></path>
+                            </svg>
+                          </button>
+                          <h6 class="guest-selector-count mb-0 rooms">3</h6>
+                          <button
+                            type="button"
+                            class="btn btn-link room-add p-0 mb-0 btn btn-link"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 16 16"
+                              class="fs-5 fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                              ></path>
+                              <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </li>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="apply" type="button">Apply</button>
           </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Filter by Review</h5>
-            </div>
-            <div class="filter_review">
-              <form class="review_star">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault1"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault1">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault2"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault2">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault3"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault3">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefault5"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault5">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-              </form>
-            </div>
+
+
+          <div class="btn-position-md-middle">
+            <button
+              type="submit"
+              class="icon-lg btn btn-round btn-primary mb-0 flex-centered"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                class="fa-fw"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                ></path>
+              </svg>
+            </button>
           </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Filter by hotel star</h5>
+        </form>
+        
+      </div>
+    </div>
+  </section>
+  <section class="pt-0">
+    <div class="container">
+      <div class="mb-4 row">
+        <div class="col-12">
+          <div
+            role="alert"
+            class="fade d-flex justify-content-between align-items-center rounded-3 fade show mb-4 mb-0 pe-2 py-3 alert alert-danger show"
+          >
+            <div class="items-center">
+              <span class="alert-heading h5 mb-0 me-2"
+                ><svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zM8 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                  ></path></svg></span
+              ><span
+                ><strong class="alert-heading me-2">Covid Policy:</strong>You
+                may require to present an RT-PCR negative test report at the
+                hotel</span
+              >
             </div>
-            <div class="filter_review">
-              <form class="review_star">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefaulta"
-                  />
-                  <label class="form-check-label" for="flexCheckDefaulta">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefaulf21"
-                  />
-                  <label class="form-check-label" for="flexCheckDefaulf21">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefaultf3"
-                  />
-                  <label class="form-check-label" for="flexCheckDefaultf3">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefaultf4"
-                  />
-                  <label class="form-check-label" for="flexCheckDefaultf4">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id="flexCheckDefaultf5"
-                  />
-                  <label class="form-check-label" for="flexCheckDefaultf5">
-                    <i class="fas fa-star color_theme"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                    <i class="fas fa-star color_asse"></i>
-                  </label>
-                </div>
-              </form>
-            </div>
+            <button
+              type="button"
+              data-bs-dismiss="alert"
+              aria-label="Close"
+              class="pb-0 pt-1 text-end btn btn-link"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                class="text-dark"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                ></path>
+              </svg>
+            </button>
           </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Facilities</h5>
-            </div>
-            <div class="tour_search_type">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultf1"
-                />
-                <label class="form-check-label" for="flexCheckDefaultf1">
-                  <span class="area_flex_one">
-                    <span>Wake-up call</span>
-                    <span>20</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultf2"
-                />
-                <label class="form-check-label" for="flexCheckDefaultf2">
-                  <span class="area_flex_one">
-                    <span>Flat TV</span>
-                    <span>14</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultaf3"
-                />
-                <label class="form-check-label" for="flexCheckDefaultaf3">
-                  <span class="area_flex_one">
-                    <span>Vehicle service</span>
-                    <span>30</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultaf4"
-                />
-                <label class="form-check-label" for="flexCheckDefaultaf4">
-                  <span class="area_flex_one">
-                    <span>Guide service</span>
-                    <span>22</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultaf5"
-                />
-                <label class="form-check-label" for="flexCheckDefaultaf5">
-                  <span class="area_flex_one">
-                    <span>Internet, Wi-fi</span>
-                    <span>41</span>
-                  </span>
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="left_side_search_boxed">
-            <div class="left_side_search_heading">
-              <h5>Hotel service</h5>
-            </div>
-            <div class="tour_search_type">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultt1"
-                />
-                <label class="form-check-label" for="flexCheckDefaultt1">
-                  <span class="area_flex_one">
-                    <span>Gymnasium</span>
-                    <span>20</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultt2"
-                />
-                <label class="form-check-label" for="flexCheckDefaultt2">
-                  <span class="area_flex_one">
-                    <span>Mountain Bike</span>
-                    <span>14</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultt3"
-                />
-                <label class="form-check-label" for="flexCheckDefaultt3">
-                  <span class="area_flex_one">
-                    <span>Wifi</span>
-                    <span>62</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultt4"
-                />
-                <label class="form-check-label" for="flexCheckDefaultt4">
-                  <span class="area_flex_one">
-                    <span>Aerobics Room</span>
-                    <span>08</span>
-                  </span>
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefaultt5"
-                />
-                <label class="form-check-label" for="flexCheckDefaultt5">
-                  <span class="area_flex_one">
-                    <span>Golf Cages</span>
-                    <span>12</span>
-                  </span>
-                </label>
-              </div>
-            </div>
+          <div
+            class="hstack gap-3 justify-content-between justify-content-md-end"
+          >
+            <button
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasSidebar"
+              aria-controls="offcanvasSidebar"
+              class="btn-primary-check mb-0 d-xl-none btn btn-primary-soft"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                class="me-1"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 416c0 17.7 14.3 32 32 32l54.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 448c17.7 0 32-14.3 32-32s-14.3-32-32-32l-246.7 0c-12.3-28.3-40.5-48-73.3-48s-61 19.7-73.3 48L32 384c-17.7 0-32 14.3-32 32zm128 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM320 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm32-80c-32.8 0-61 19.7-73.3 48L32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l246.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48l54.7 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-54.7 0c-12.3-28.3-40.5-48-73.3-48zM192 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm73.3-64C253 35.7 224.8 16 192 16s-61 19.7-73.3 48L32 64C14.3 64 0 78.3 0 96s14.3 32 32 32l86.7 0c12.3 28.3 40.5 48 73.3 48s61-19.7 73.3-48L480 128c17.7 0 32-14.3 32-32s-14.3-32-32-32L265.3 64z"
+                ></path>
+              </svg>
+              Show filters
+            </button>
+            <ul
+              class="nav nav-pills nav-pills-dark"
+              id="tour-pills-tab"
+              role="tablist"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link rounded-start rounded-0 mb-0 active"
+                  href="/hotels/list"
+                  ><svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    class="fa-fw mb-1"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"
+                    ></path></svg
+                ></a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link rounded-end rounded-0 mb-0"
+                  href="/hotels/grid"
+                  ><svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    class="fa-fw mb-1"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"
+                    ></path></svg
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="col-lg-9">
-        <div class="row">
-          <div
-            class="col-lg-4 col-md-6 col-sm-6 col-12"
-            *ngFor="let hotel of hotels"
-          >
-            <div class="theme_common_box_two">
-              <div class="theme_two_box_img">
-                <a routerLink="/hotel-detail/{{ hotel.id }}">
-                  <img
-                    class="hotel-img"
-                    [src]="
-                      hotel.images && hotel.images.length > 0
-                        ? getHotelImageUrl(hotel.images[0])
-                        : '/assets/img/no.png'
-                    "
-                    alt="img"
-                  />
-                </a>
-                <p>
-                  <i class="fas fa-map-marker-alt"></i>{{ hotel.location }},
-                  {{ hotel.country }}
-                </p>
+      <div class="row">
+
+
+        <div class="col-xxl-3 col-xl-4">
+          <div class="d-none d-xl-block">
+            <form class="rounded-3 shadow">
+              <div class="rounded-0 rounded-top p-4 card card-body">
+                <h6 class="mb-2">Hotel Type</h6>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType1"
+                    /><label class="form-check-label" for="hotelType1"
+                      >All</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType2"
+                    /><label class="form-check-label" for="hotelType2"
+                      >Hotel</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType3"
+                    /><label class="form-check-label" for="hotelType3"
+                      >Apartment</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType4"
+                    /><label class="form-check-label" for="hotelType4"
+                      >Resort</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType5"
+                    /><label class="form-check-label" for="hotelType5"
+                      >Villa</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="hotelType6"
+                    /><label class="form-check-label" for="hotelType6"
+                      >Lodge</label
+                    >
+                  </div>
+                  <div class="multi-collapse collapse" id="hotelType">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="hotelType7"
+                      /><label class="form-check-label" for="hotelType7"
+                        >Guest House</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="hotelType10"
+                      /><label class="form-check-label" for="hotelType10"
+                        >Cottage</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="hotelType8"
+                      /><label class="form-check-label" for="hotelType8"
+                        >Beach Hut</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="hotelType9"
+                      /><label class="form-check-label" for="hotelType9"
+                        >Farm house</label
+                      >
+                    </div>
+                  </div>
+                  <a
+                    class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="hotelType"
+                    href="/hotels/list"
+                    >See <span class="ms-1">more</span
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      class="ms-2"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                      ></path></svg
+                  ></a>
+                </div>
               </div>
-              <div class="theme_two_box_content">
-                <h4>
-                  <a routerLink="/hotel-detail/{{ hotel.id }}">{{
-                    hotel.name
-                  }}</a>
-                </h4>
-                <p>
-                  <span class="review_rating">Rev</span>
-                  <span class="review_count">review count</span>
-                </p>
-                <h3>
-                  {{ hotel.pricePerPerson | currency }}
-                  <span>Price starts from </span>
-                </h3>
+              <hr class="my-0" />
+              <div class="card card-body rounded-0 p-4">
+                <h6 class="mb-2">Price range</h6>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="priceRange1"
+                    /><label class="form-check-label" for="priceRange1"
+                      >Up to $500</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="priceRange2"
+                    /><label class="form-check-label" for="priceRange2"
+                      >$500 - $1000</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="priceRange3"
+                    /><label class="form-check-label" for="priceRange3"
+                      >$1000 - $1500</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="priceRange4"
+                    /><label class="form-check-label" for="priceRange4"
+                      >$1500 - $2000</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="priceRange5"
+                    /><label class="form-check-label" for="priceRange5"
+                      >$2000+</label
+                    >
+                  </div>
+                </div>
               </div>
+              <hr class="my-0" />
+              <div class="card card-body rounded-0 p-4">
+                <h6 class="mb-2">Popular Type</h6>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="popolarType1"
+                    /><label class="form-check-label" for="popolarType1"
+                      >Free Breakfast Included</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="popolarType2"
+                    /><label class="form-check-label" for="popolarType2"
+                      >Pay At Hotel Available</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="popolarType3"
+                    /><label class="form-check-label" for="popolarType3"
+                      >Free Cancellation Available</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <hr class="my-0" />
+              <div class="card card-body rounded-0 p-4">
+                <h6 class="mb-2">Customer Rating</h6>
+                <ul class="list-inline mb-0 g-3">
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c1"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c1"
+                      >3+</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c2"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c2"
+                      >3.5+</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c3"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c3"
+                      >4+</label
+                    >
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-c4"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check"
+                      for="btn-check-c4"
+                      >4.5+</label
+                    >
+                  </li>
+                </ul>
+              </div>
+              <hr class="my-0" />
+              <div class="card card-body rounded-0 p-4">
+                <h6 class="mb-2">Rating Star</h6>
+                <ul class="list-inline mb-0 g-3">
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-6"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check items-center"
+                      for="btn-check-6"
+                      >1<svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        ></path></svg
+                    ></label>
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-7"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check items-center"
+                      for="btn-check-7"
+                      >2<svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        ></path></svg
+                    ></label>
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-8"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check items-center"
+                      for="btn-check-8"
+                      >3<svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        ></path></svg
+                    ></label>
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-15"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check items-center"
+                      for="btn-check-15"
+                      >4<svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        ></path></svg
+                    ></label>
+                  </li>
+                  <li class="list-inline-item mb-0">
+                    <input
+                      type="checkbox"
+                      class="btn-check"
+                      id="btn-check-16"
+                    /><label
+                      class="btn btn-sm btn-light btn-primary-soft-check items-center"
+                      for="btn-check-16"
+                      >5<svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                        ></path></svg
+                    ></label>
+                  </li>
+                </ul>
+              </div>
+              <hr class="my-0" />
+              <div class="card card-body rounded-0 rounded-bottom p-4">
+                <h6 class="mb-2">Amenities</h6>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType1"
+                    /><label class="form-check-label" for="amenitiesType1"
+                      >All</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType2"
+                    /><label class="form-check-label" for="amenitiesType2"
+                      >Air Conditioning</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType3"
+                    /><label class="form-check-label" for="amenitiesType3"
+                      >Bar</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType4"
+                    /><label class="form-check-label" for="amenitiesType4"
+                      >Bonfire</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType5"
+                    /><label class="form-check-label" for="amenitiesType5"
+                      >Business Services</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="amenitiesType6"
+                    /><label class="form-check-label" for="amenitiesType6"
+                      >Caretaker</label
+                    >
+                  </div>
+                  <div class="multi-collapse collapse" id="amenitiesCollapes">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="amenitiesType7"
+                      /><label class="form-check-label" for="amenitiesType7"
+                        >Dining</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="amenitiesType8"
+                      /><label class="form-check-label" for="amenitiesType8"
+                        >Free Internet</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="amenitiesType9"
+                      /><label class="form-check-label" for="amenitiesType9"
+                        >Hair nets</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="amenitiesType10"
+                      /><label class="form-check-label" for="amenitiesType10"
+                        >Masks</label
+                      >
+                    </div>
+                  </div>
+                  <a
+                    class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="amenitiesCollapes"
+                    href="/hotels/list"
+                    >See <span class="ms-1">more</span
+                    ><svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      class="ms-2"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                      ></path></svg
+                  ></a>
+                </div>
+              </div>
+            </form>
+            <div class="d-flex justify-content-between p-2 p-xl-0 mt-xl-4">
+              <button class="btn btn-link p-0 mb-0">Clear all</button
+              ><button class="btn btn-primary mb-0">Filter Result</button>
             </div>
           </div>
-          <!--Pagination Here-->
-          <div class="col-lg-12">
-            <div class="pagination_area page-link">
-              <pagination 
-                [boundaryLinks]="true"
-                [totalItems]="this.totalElements"
-                [maxSize]="this.totalPages - 1"
-                [itemsPerPage]="this.pageSize"
-                (pageChanged)="pageChanged($event)"
-                previousText="&lsaquo;"
-                nextText="&rsaquo;"
-                firstText="&laquo;"
-                lastText="&raquo;"
-              >
-              </pagination>
+        </div>
+
+
+        <div class="col-xxl-9 col-xl-8">
+          <div class="vstack gap-4">
+
+            <div class="shadow p-2 card" *ngFor="let hotel of hotels">
+              <div class="g-0 row">
+                <div class="position-relative col-md-5">
+                  <div class="position-absolute top-0 start-0 z-index-1 m-2">
+                    <div class="badge text-bg-danger">30% Off</div>
+                  </div>
+                  <div
+                    class="tiny-slider arrow-round arrow-xs arrow-dark overflow-hidden rounded-2"
+                  >
+                    <div class="tns-outer" id="tns24-ow">
+                      <div
+                        class="tns-controls"
+                        aria-label="Carousel Navigation"
+                        tabindex="0"
+                      >
+                        <button
+                          type="button"
+                          data-controls="prev"
+                          tabindex="-1"
+                          aria-controls="tns24"
+                        >
+                          <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 16 16"
+                            height="16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                            ></path>
+                          </svg></button
+                        ><button
+                          type="button"
+                          data-controls="next"
+                          tabindex="-1"
+                          aria-controls="tns24"
+                        >
+                          <svg
+                            stroke="currentColor"
+                            fill="currentColor"
+                            stroke-width="0"
+                            viewBox="0 0 16 16"
+                            height="16"
+                            width="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                            ></path>
+                          </svg>
+                        </button>
+                      </div>
+                      <div id="tns24-mw" class="tns-ovh">
+                        <div class="tns-inner" id="tns24-iw">
+                          <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              <div
+                                *ngFor="let image of hotel.images; let i = index"
+                                class="carousel-item" [ngClass]="{'active': i === 0}"
+                              >
+                                <img [src]="getHotelImageUrl(image)" class="d-block w-100" alt="Hotel Image">
+                              </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+
+                <div class="col-md-7">
+                  <div
+                    class="py-md-2 d-flex flex-column h-100 position-relative card-body"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                    <div
+                    class="tour_details_top_heading_right"
+                    
+                  >
+                  <div class="average-rating">
+                    <span>{{ getStars(hotel.averageRating) }}</span>
+                    <span>({{ hotel.averageRating }} / 5)</span>
+                  </div>
+                  </div>
+
+
+                      <ul class="list-inline mb-0 z-index-2">
+                        <li class="list-inline-item">
+                          <button
+                            type="button"
+                            class="btn-round btn btn-light btn-sm"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 512 512"
+                              class="fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </li>
+                        <div class="list-inline-item dropdown dropdown">
+                          <button
+                            type="button"
+                            id="dropdownShare"
+                            aria-expanded="false"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            class="arrow-none btn btn-sm btn-light btn-round dropdown-toggle btn btn-primary"
+                          >
+                            <svg
+                              stroke="currentColor"
+                              fill="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 448 512"
+                              class="fa-fw"
+                              height="1em"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M352 320c-22.608 0-43.387 7.819-59.79 20.895l-102.486-64.054a96.551 96.551 0 0 0 0-41.683l102.486-64.054C308.613 184.181 329.392 192 352 192c53.019 0 96-42.981 96-96S405.019 0 352 0s-96 42.981-96 96c0 7.158.79 14.13 2.276 20.841L155.79 180.895C139.387 167.819 118.608 160 96 160c-53.019 0-96 42.981-96 96s42.981 96 96 96c22.608 0 43.387-7.819 59.79-20.895l102.486 64.054A96.301 96.301 0 0 0 256 416c0 53.019 42.981 96 96 96s96-42.981 96-96-42.981-96-96-96z"
+                              ></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </ul>
+                    </div>
+                    <h5 class="card-title mb-1">
+                      <a href="/hotels/detail"
+                        >{{hotel.name}}</a
+                      >
+                    </h5>
+                    <small class="items-center"
+                      ><svg
+                        stroke="currentColor"
+                        fill="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 16 16"
+                        class="me-2"
+                        height="1em"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"
+                        ></path>
+                        <path
+                          d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                        ></path></svg
+                      >{{hotel.location}}</small
+                    >
+                    
+                    <div
+                      class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto"
+                    >
+                      <div class="d-flex align-items-center">
+                        <h5 class="fw-bold mb-0 me-1">{{hotel.pricePerPerson | currency}}</h5>
+                        <span class="mb-0 me-2">/per Person</span
+                        ><span class="text-decoration-line-through mb-0"
+                          ></span
+                        >
+                      </div>
+                      <div class="mt-3 mt-sm-0">
+                        <a routerLink="/hotel-detail/{{hotel.id}}"
+                          type="button"
+                          class="mb-0 w-100 btn btn-dark btn-sm"
+                        >
+                          Select Room
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
             </div>
+
+              <div class="d-flex justify-content-center">
+                  <pagination
+                    [boundaryLinks]="true"
+                    [totalItems]="this.totalElements"
+                    [maxSize]="2"
+                    [itemsPerPage]="this.pageSize"
+                    (pageChanged)="pageChanged($event)"
+                    previousText="&lsaquo;"
+                    nextText="&rsaquo;"
+                    firstText="&laquo;"
+                    lastText="&raquo;"
+                  >
+                  </pagination>
+                </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
+
+

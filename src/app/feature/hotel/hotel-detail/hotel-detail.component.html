@@ -97,7 +97,11 @@
                 >
                   <div class="room_booking_area">
                     <div class="tour_search_form">
-                      <form [formGroup]="checkForm"  (ngSubmit)="checkRoom()" method="post">
+                      <form
+                        [formGroup]="checkForm"
+                        (ngSubmit)="checkRoom()"
+                        method="post"
+                      >
                         <div class="row">
                           <div class="col-lg-8 col-md-6 col-sm-12 col-12">
                             <div class="form_search_date">
@@ -137,9 +141,7 @@
                                   data-bs-toggle="dropdown"
                                   aria-expanded="false"
                                 >
-                                  {{
-                                    adultCount + infantCount + childCount
-                                  }}
+                                  {{ adultCount + infantCount + childCount }}
                                   Guests
                                 </button>
                                 <div
@@ -164,13 +166,17 @@
                                             <button type="button">
                                               <i
                                                 class="fas fa-plus"
-                                                (click)="increaseCount('adults')"
+                                                (click)="
+                                                  increaseCount('adults')
+                                                "
                                               ></i>
                                             </button>
                                             <button type="button">
                                               <i
                                                 class="fas fa-minus"
-                                                (click)="decreaseCount('adults')"
+                                                (click)="
+                                                  decreaseCount('adults')
+                                                "
                                               ></i>
                                             </button>
                                           </div>
@@ -213,7 +219,7 @@
                                             </div>
                                           </div>
                                           <div class="button-set">
-                                            <button type="button" >
+                                            <button type="button">
                                               <i
                                                 class="fas fa-plus"
                                                 (click)="
@@ -221,7 +227,7 @@
                                                 "
                                               ></i>
                                             </button>
-                                            <button type="button" >
+                                            <button type="button">
                                               <i
                                                 class="fas fa-minus"
                                                 (click)="
@@ -240,7 +246,11 @@
                             </div>
                           </div>
                           <div class="top_form_search_button text-right">
-                            <button (click)="checkRoom()" class="btn btn_theme btn_md" type="submit">
+                            <button
+                              (click)="checkRoom()"
+                              class="btn btn_theme btn_md"
+                              type="submit"
+                            >
                               Check availability
                             </button>
                           </div>
@@ -250,7 +260,7 @@
 
                     <div
                       class="room_book_item"
-                      *ngFor="let room of rooms; else noRoom"
+                      *ngFor="let room of rooms; else: noRoom"
                       style="
                         display: inline-block;
                         margin-bottom: 20px;
@@ -263,22 +273,20 @@
                         class="room_book_img"
                         style="flex: 1; margin-right: 20px"
                       >
-                        <a routerLink="/room-detail/{{room.id}}">
+                        <a routerLink="/room-detail/{{ room.id }}">
                           <img
-                          [src]="getRoomImage(room.images[0])"
-                          alt="img"
-                          style="
-                            width: 100%;
-                            height: auto;
-                            border-radius: 10px;
-                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                          "
-                        />
+                            [src]="getRoomImage(room.images[0])"
+                            alt="img"
+                            style="
+                              width: 100%;
+                              height: auto;
+                              border-radius: 10px;
+                              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                            "
+                          />
                         </a>
                       </div>
                       <div class="room_booking_right_side" style="flex: 2">
-
-
                         <div
                           class="room_booking_heading"
                           style="margin-bottom: 15px"
@@ -328,42 +336,47 @@
                             </ul>
                           </div>
 
-
                           <div
-                          class="room_person_select"
-                          style="
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                          "
-                        >
-                          <h3 style="font-size: 34px; color: #6200ea">
-                            {{ room.pricePerNight | currency }}
-                            <sub style="font-size: 25px; color: #888"
-                              >/Per night</sub
-                            >
-                          </h3>
-                        </div>
+                            class="room_person_select"
+                            style="
+                              display: flex;
+                              align-items: center;
+                              justify-content: space-between;
+                            "
+                          >
+                            <h3 style="font-size: 34px; color: #6200ea">
+                              {{ room.pricePerNight | currency }}
+                              <sub style="font-size: 25px; color: #888"
+                                >/Per night</sub
+                              >
+                            </h3>
+                          </div>
                         </div>
 
-                        
-                        <p>{{room.description}}</p>
-                        <p>Room Type : {{room.roomType}}</p>
+                        <p>{{ room.description }}</p>
+                        <p>Room Type : {{ room.roomType }}</p>
                         <p>Room Capasity : {{ room.capacity }}</p>
-                        
-                        <h5 [ngStyle]="{
-                          'color': room.roomStatus === 'AVAILABLE' ? 'green' : 
-                                   room.roomStatus === 'OCCUPIED' ? 'red' : 
-                                   room.roomStatus === 'RESERVED' ? 'orange' : 'black'
-                        }">Status : {{room.roomStatus}}</h5>
-                      </div>
 
-                      
+                        <h5
+                          [ngStyle]="{
+                            color:
+                              room.roomStatus === 'AVAILABLE'
+                                ? 'green'
+                                : room.roomStatus === 'OCCUPIED'
+                                ? 'red'
+                                : room.roomStatus === 'RESERVED'
+                                ? 'orange'
+                                : 'black'
+                          }"
+                        >
+                          Status : {{ room.roomStatus }}
+                        </h5>
+                      </div>
                     </div>
 
                     <ng-template #noRoom>
                       <p>Not found room with your criteria</p>
-                  </ng-template>
+                    </ng-template>
                   </div>
                 </div>
                 <div
@@ -449,8 +462,7 @@
                 </ul>
               </div>
             </div>
-          
-        </div>
+          </div>
           <div class="tour_detail_right_sidebar">
             <div class="tour_details_right_boxed">
               <div class="tour_details_right_box_heading">

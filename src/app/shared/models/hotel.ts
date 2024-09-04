@@ -8,6 +8,7 @@ export interface Hotel {
     city: string,
     description: string,
     location: string,
+    averageRating:any
     rooms: Room[]
     country: string,
     pricePerPerson: any,

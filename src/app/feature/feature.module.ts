@@ -11,7 +11,7 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 import { BreadcrumbComponent, BreadcrumbItemDirective } from 'xng-breadcrumb';
 import { HotelDetailComponent } from './hotel/hotel-detail/hotel-detail.component';
 import { GalleryModule } from 'ng-gallery';
-import { LightboxModule } from 'ng-gallery/lightbox';
+import { LightboxModule } from 'ngx-lightbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReviewComponent } from './hotel/review/review.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
@@ -30,6 +30,8 @@ import { FlightDetailComponent } from './flights/flight-detail/flight-detail.com
 import { FlightPaymentComponent } from './flights/flight-payment/flight-payment.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BookingConfirmedComponent } from './flights/booking-confirmed/booking-confirmed.component';
+
+
 @NgModule({
   declarations: [
     HotelListComponent,

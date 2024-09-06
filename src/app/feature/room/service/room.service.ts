@@ -54,7 +54,7 @@ export class RoomService {
 
 
   calculateTempPrice(room: Room, adults: number, children: number, infants: number, daysStayed: number): number {
-    let totalPrice = room.pricePerNight * daysStayed;
+    let totalPrice = room.originalPrice * daysStayed;
 
     if (adults > room.capacity) {
       const additionalAdults = adults - room.capacity;

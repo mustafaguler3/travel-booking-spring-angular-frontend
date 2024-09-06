@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Hotel, Review } from 'src/app/shared/models/hotel';
+import { Hotel, HotelWithReviews, Review, ReviewStats } from 'src/app/shared/models/hotel';
 import { HotelService } from '../services/hotel.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GalleryItem, ImageItem } from 'ng-gallery';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ToastService } from 'src/app/shared/services/toast.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { User } from 'src/app/shared/models/user';
 import { RoomService } from '../../room/service/room.service';
-import { RoomSearchRequest } from 'src/app/shared/models/room-search-request';
+import { Lightbox } from 'ngx-lightbox';
+
 
 @Component({
   selector: 'app-hotel-detail',
@@ -18,9 +17,9 @@ import { RoomSearchRequest } from 'src/app/shared/models/room-search-request';
 export class HotelDetailComponent implements OnInit{
 
   reviewForm: any
-  hotel!: Hotel
+  hotel: Hotel
   hotelId: any
-  hotelImages: GalleryItem[] = [];
+  hotelImages: any[] = [];
   rooms: any[]
   checkForm:any
 
@@ -35,20 +34,30 @@ export class HotelDetailComponent implements OnInit{
   averageRating = 0;
   locationForRoom:any;
 
+  ratingPercentages:any
+  totalReviews:any
+  ratingCounts:any
+
   constructor(private hotelService: HotelService,
               private activatedRoute : ActivatedRoute,
-              private router:Router,
               private fb: FormBuilder,
               private toastService: ToastService,
-              private authService: AuthService,
-              private roomService: RoomService
-  ){}
+              public authService: AuthService,
+              private roomService: RoomService,
+              private lightbox: Lightbox
+  ){
+    
+  }
 
   get f(){
     return this.reviewForm.controls
   }
 
   ngOnInit(): void {
+    this.hotelId = this.activatedRoute.snapshot.paramMap.get("hotelId")
+    this.getHotel()
+    this.getReviewsForHotel()
+
     this.checkForm = this.fb.group({
       checkInDate: ["",Validators.required],
       checkOutDate: ["",Validators.required],
@@ -56,14 +65,12 @@ export class HotelDetailComponent implements OnInit{
       children: [0,[Validators.required]],
       infant: [0,[Validators.required]]
     })
-    
-    this.hotelId = this.activatedRoute.snapshot.paramMap.get("hotelId")
-    this.getHotel()
-    this.getReviewsForHotel()
     this.reviewForm = this.fb.group({
       comment: ["",[Validators.required]],
       rating: [null,[Validators.required]]
     })
+    console.log("Reviews " + JSON.stringify(this.reviews))
+
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
       this.userId = this.currentUser.userId;
@@ -71,6 +78,13 @@ export class HotelDetailComponent implements OnInit{
     
   }
 
+  openLightbox(index: number): void {
+    this.lightbox.open(this.hotelImages, index);
+  }
+
+  closeLightbox(): void {
+    this.lightbox.close();
+  }
   increaseCount(type: string) {
     if (type === 'adults') {
       this.adultCount++;
@@ -91,14 +105,7 @@ export class HotelDetailComponent implements OnInit{
     }
   }
 
-  calculateAverageRating(){
-    if(this.reviews.length === 0){
-      this.averageRating = 0;
-    }else {
-      const totalRating = this.reviews.reduce((sum,review) => sum + review.rating,0)
-      this.averageRating = totalRating / this.reviews.length;
-    }
-  }
+  
   addReview() {
       const reviewData = {
         userId: this.userId,
@@ -127,9 +134,16 @@ export class HotelDetailComponent implements OnInit{
       }); 
   }
 
+
   getImages(hotelImage: any){
-    return this.hotelService.getHotelImageUrl(hotelImage)
+    const imageUrl = this.hotelService.getHotelImageUrl(hotelImage);
+    return imageUrl;
   }
+  
+  getUserPictureInReview(image:any){
+    return "http://localhost:8080/api/auth/uploads/users/"+image
+  }
+  
 
   getRoomImage(roomImage:any){
     return this.hotelService.getRoomImage(roomImage)
@@ -139,30 +153,34 @@ export class HotelDetailComponent implements OnInit{
     return this.hotelService.getAmenityImage(amenityImage)
   }
 
+
   getReviewsForHotel(){
     this.hotelService.getReviews(this.hotelId).subscribe({
-      next: (response) => {
-        console.log("Response ->"+response)
-        this.reviews = response
-        this.calculateAverageRating()
+      next: (response:any) => {
+        //console.log("Response ->" + JSON.stringify(response))
+        this.reviews = response.hotel.reviews
+        this.ratingCounts = response.reviewStats.ratingCounts
+        this.ratingPercentages = response.reviewStats.ratingPercentages
+        this.totalReviews = response.reviewStats.totalReviews
+        this.averageRating = response.reviewStats.averageRating
+        
       },
       error: (err) => {
         console.log("Error in review -> "+err)
       }
     })
-  
   }
-
 
   getHotel(){
       this.hotelService.getHotel(this.hotelId).subscribe({
         next: (res) => {
           this.hotel = res
           this.rooms = res.rooms
-
+          this.averageRating = res.averageRating
+          
           if(this.hotel.images && Array.isArray(this.hotel.images)){
             this.hotelImages = res.images.map(image => 
-              new ImageItem({
+              ({
                 src: this.getImages(image),
                 thumb: this.getImages(image)
               })
@@ -174,8 +192,6 @@ export class HotelDetailComponent implements OnInit{
           console.log("Message : "+err.message)
         }
       })
-    
-    
   }
 
   checkRoom(){
@@ -202,4 +218,13 @@ export class HotelDetailComponent implements OnInit{
       }
     })
   }
+
+  getStars(averageRating: number): string {
+    const fullStars = Math.floor(averageRating);  // Full star count
+    const halfStar = averageRating % 1 >= 0.5 ? 1 : 0;  // Half star condition
+    const emptyStars = 5 - fullStars - halfStar;  // Empty stars
+  
+    return '★'.repeat(fullStars) + (halfStar ? '★' : '') + '☆'.repeat(emptyStars);
+  }
+  
 }

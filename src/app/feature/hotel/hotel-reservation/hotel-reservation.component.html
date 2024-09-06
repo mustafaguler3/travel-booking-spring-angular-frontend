@@ -16,7 +16,7 @@
       <div class="form-group">
         <label for="room">Select Room:</label>
         <select id="room" [(ngModel)]="booking.roomId" name="roomId" required>
-          <option *ngFor="let room of rooms" [value]="room.id">{{ room.roomType }} - {{ room.pricePerNight }}$</option>
+          <option *ngFor="let room of rooms" [value]="room.id">{{ room.roomType }} - {{ room.originalPrice }}$</option>
         </select>
       </div>
   

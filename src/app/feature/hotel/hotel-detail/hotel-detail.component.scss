@@ -6,226 +6,55 @@ $paragraph-color: #818090;
 $bg-color: #F3F6FD;
 $transition: .4s all ease-in-out;
 
-gallery{
-    background-color: white;
-} 
-
-.top_form_search_button {
-    text-align: center;
-    margin-top: 30px;
+.image-card {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
 }
 
-.btn_md {
-    padding: 12px 35px;
-    font-size: 18px;
-}
-.btn_theme {
-    color: $white-color;
-    background-color: $main-color;
-    transition: $transition;
-    box-shadow: none;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    z-index: 0;
-    border: none;
-}
-.btn {
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    font-size: 16px;
-    border-radius: 5px;
-    box-shadow: none;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    z-index: 0;
+.image-link {
+  text-decoration: none;
 }
 
-.review_star_all i {
-    color: #8B3EEA;
-    font-size: 1.2em;
-    margin-right: 2px;
+.overlay-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
 }
 
-.all_review_star h5 {
-    margin: 0;
-    padding-bottom: 5px;
+.view-all {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.write_your_review_wrapper {
-    margin-bottom: 20px;
+.view-all-text {
+  color: white;
+  font-size: 20px;
 }
 
 
-
-.star-rating {
-    display: flex;
-    font-size: 24px;
-    direction: rtl; 
-}
-
-.star-rating input[type="radio"] {
-    display: none;
-}
-
-.star-rating label {
-    color: #ccc;
-    cursor: pointer;
-    transition: color 0.3s;
+.i {
+  color: $main-color;
+  list-style-type: none;
+  text-decoration: none;
 }
 
 
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-    color: #6f42c1; 
+ul.px-2.mx-2.mb-2.d-flex.flex-wrap {
+  list-style: none;
+}.average-rating span {
+  color: #8B3EEA; /* Your preferred star color */
 }
 
-
-.star-rating input[type="radio"]:checked ~ label {
-    color: #ccc;
+.average-rating {
+  font-size: 1.2rem; /* Adjust the size as necessary */
 }
-
-.star-rating input[type="radio"]:checked + label,
-.star-rating input[type="radio"]:checked + label ~ label {
-    color: #8B3EEA; 
-}
-
-
-
-.average-rating i {
-    font-size: 24px;
-    color: #8B3EEA; 
-    margin-right: 2px; 
-  }
-  
-  
-  .average-rating i.fa-star-half-alt {
-    color: #8B3EEA; 
-  }
-  
-
-
-  
-  .room_book_item {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  
-    &:hover {
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      transform: translateY(-5px);
-    }
-  
-    .room_book_img {
-      flex: 1;
-      margin-right: 20px;
-  
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-  
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-    }
-  
-    .room_booking_right_side {
-      flex: 2;
-      display: inline-block;
-      justify-content: space-between;
-      height: 100%; 
-  
-      .room_booking_heading {
-        margin-bottom: 10px; 
-  
-        h3 {
-          font-size: 24px;
-          font-weight: bold;
-          margin-bottom: 5px;
-          
-          a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s ease;
-  
-            &:hover {
-              color: #6200ea;
-            }
-          }
-        }
-  
-        .room_fasa_area {
-          ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            padding: 0;
-            margin: 0; 
-  
-            li {
-              display: flex;
-              align-items: center;
-              margin-right: 10px; 
-              margin-bottom: 5px;
-  
-              img {
-                width: 20px;
-                height: 20px;
-                margin-right: 5px;
-              }
-            }
-          }
-        }
-      }
-  
-      .room_person_select {
-        margin-top: auto; 
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-  
-        h3 {
-          font-size: 22px;
-          color: #6200ea;
-          margin-right: 15px;
-  
-          sub {
-            font-size: 16px;
-            color: #888;
-          }
-        }
-  
-        select {
-          width: 60px;
-          padding: 5px;
-          border-radius: 5px;
-          border: 1px solid #ddd;
-          transition: border-color 0.3s ease;
-  
-          &:hover, &:focus {
-            border-color: #6200ea;
-            outline: none;
-          }
-        }
-      }
-    }
-  }
-  

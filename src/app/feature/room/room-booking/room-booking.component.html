@@ -45,7 +45,7 @@
                   <div class="tour_package_bar_price">
                     <h6><del>$ 200,000</del></h6>
                     <h3>
-                      {{ room.pricePerNight | currency }} <sub>/Per serson</sub>
+                      {{ room.originalPrice | currency }} <sub>/Per serson</sub>
                     </h3>
                   </div>
                 </div>
@@ -638,7 +638,7 @@
                 <div class="tour_booking_amount_area">
                   <ul>
                     <li>
-                      {{ room.pricePerNight }} x
+                      {{ room.originalPrice }} x
                       {{ calculateDaysStayed() }} days
                       <span>{{ totalPrice | currency }}</span>
                     </li>

@@ -35,10 +35,12 @@ Hotels
 ![alt text](image-52.png)
 ![alt text](image-53.png)
 
-Hotel Search
-![alt text](image-15.png)
-
-![alt text](image-16.png)
+Hotel Detail
+![alt text](image-54.png)
+![alt text](image-55.png)
+![alt text](image-56.png)
+![alt text](image-57.png)
+![alt text](image-58.png)
 
 Forgot Password
 ![alt text](image-18.png)
@@ -49,13 +51,6 @@ Reset Password
 ![alt text](image-22.png)
 ![alt text](image-23.png)
 
-
-Hotel Detail
-
-![alt text](image-11.png)
-![alt text](image-9.png)
-![alt text](image-12.png)
-![alt text](image-24.png)
 
 Hotel rooms
 ![alt text](image-14.png) 

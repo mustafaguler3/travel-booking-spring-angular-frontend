@@ -39,7 +39,9 @@ export interface Room {
     roomType: any,
     capacity: number,
     location: string,
-    pricePerNight: any,
+    originalPrice:any
+    discountedPrice:any
+    discountPercentage:any
     roomNumber: any,
     roomStatus:any
     description: any,
@@ -54,3 +56,14 @@ export interface Room {
 
     
 }
+export interface HotelWithReviews {
+    hotel: Hotel;
+    reviewStats: ReviewStats;
+  }
+  
+  export interface ReviewStats {
+    ratingPercentages: number[];
+    ratingCounts: number[];
+    totalReviews: number;
+    averageRating: number
+  }
